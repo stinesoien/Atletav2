@@ -7,16 +7,11 @@ var con = mysql.createConnection({
     database: "g_sysu_atleta"
 });
 
+
 con.connect(function(err) {
     if (err) throw err;
-    console.log("Connected!");
+    con.query("SELECT fornavn FROM bruker", function (err, result, fields) {
+        if (err) throw err;
+        console.log(fields);
+    });
 });
-
-con.query('SELECT * FROM bruker', function(err, rows, fields) {
-    if (!err)
-        console.log('The solution is: ', rows);
-    else
-        console.log('Error while performing Query.');
-});
-
-con.end();
