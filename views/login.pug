@@ -1,14 +1,14 @@
 html
     head
-        title Form Tester
+        title Logg inn
     body
-        form(action = "/", method = "POST")
+        form(action = "/login", method = "POST")
             div
-                label(for = "epost") E-post:
+                label(for = "email") E-post:
                 input(name = "epost")
             br
             div
-                label(for = "passord") Passord:
+                label(for = "password") Passord:
                 input(name = "passord")
             br
             button(type = "submit") Logg inn

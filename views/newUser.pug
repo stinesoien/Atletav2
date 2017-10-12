@@ -1,0 +1,30 @@
+html
+    head
+        title Ny bruker
+    body
+        form(action = "/newuser", method = "POST")
+            div
+                label(for = "firstName") Fornavn:
+                input(name = "fornavn")
+            br
+            div
+                label(for = "lastName") Etternavn:
+                input(name = "etternavn")
+            br
+            div
+                label(for = "phone") Telefonnummer:
+                input(name = "mobilnr")
+            br
+            div
+                label(for = "email") E-post:
+                input(name = "epost")
+            br
+            div
+                label(for = "adress") Adresse:
+                input(name = "adresse")
+            br
+            div
+                label(for = "password") Passord:
+                input(name = "passord")
+            br
+            button(type = "submit") Registrer
