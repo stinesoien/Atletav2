@@ -6,6 +6,7 @@ var app = express();
 var authenticateController = require('./controllers/login');
 var registerController = require('./controllers/newUser');
 
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 

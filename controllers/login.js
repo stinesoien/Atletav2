@@ -14,7 +14,9 @@ module.exports.login=function (req, res) {
                 if(password==results[0].passord){
                     res.json({
                         status: true,
-                        message: 'successfully authenticated'
+                        message: 'successfully authenticated',
+
+
                     })
                 } else {
                     res.json({

@@ -1,5 +1,23 @@
 html
     head
+        link(rel="stylesheet", type="type/css", href="login.css")
+        script(type="text/javascript", src="jquery.js")
+        script(type="text/javascript", src="login.js")
+    body
+        center
+            input#show_login(type="button", value="Show Login")
+            #loginform
+                form(method="post", action="")
+                    p Logg inn
+                    input#close_login(type="image", src="images/testimage.jpg")
+                    input#login(type='text', placeholder='E-post', name='uid')
+                    input#password(type='password', name='upass', placeholder='***')
+                    input#dologin(type='submit', value='Login')
+
+
+
+//html
+    head
         title Logg inn
     body
         form(action = "/login", method = "POST")
