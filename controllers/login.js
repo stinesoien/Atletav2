@@ -1,4 +1,5 @@
 var connection = require('./../config');
+var editUser;
 
 module.exports.login=function (req, res) {
     var email=req.body.epost;
@@ -12,6 +13,7 @@ module.exports.login=function (req, res) {
         } else {
             if(results.length > 0){
                 if(password==results[0].passord){
+                    // noinspection JSAnnotator
                     res.json({
                         status: true,
                         message: 'successfully authenticated',

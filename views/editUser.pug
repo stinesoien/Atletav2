@@ -1,0 +1,26 @@
+html
+    head
+        //link(type='text/css', rel='stylesheet', href='/site.css')
+        title EditUser
+    body
+        h1 Rediger profil
+
+        form(action = "/", method = "PUT")
+            div
+                label(for = "qddress") Adresse:
+                    input(name = "adresse")
+
+                    br
+                    div
+                        label(for = "phonenr") Telefonnummer:
+                            input(name = "mobilnr")
+
+                            br
+                            div
+                                label(for= "password") Ditt nye passord:
+                                input(name = "passord")
+
+                                br
+                                button(type='submit') Lagre
+
+
