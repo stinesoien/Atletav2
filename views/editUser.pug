@@ -1,26 +1,40 @@
 html
     head
-        //link(type='text/css', rel='stylesheet', href='/site.css')
         title EditUser
+        script(type="text/javascript", src="js/jquery-3.2.1.js")
+        script(type="text/javascript", src="js/editUser.js")
     body
         h1 Rediger profil
-
-        form(action = "/", method = "PUT")
+        div
             div
-                label(for = "qddress") Adresse:
-                    input(name = "adresse")
+                label(for= "fornavn") Fornavn:
+                input(id = "fornavn")
+                br
+            div
+                label(for= "etternavn") Etternavn:
+                input(id = "etternavn")
+                br
+            div
+                label(for = "adresse") Adresse:
+                input(id = "adresse" )
+                br
+            div
+                label(for = "mobilnr") Telefonnummer:
+                input(id = "mobilnr"  )
+                br
+            button(onclick="updateUser()") Oppdater profil
 
-                    br
-                    div
-                        label(for = "phonenr") Telefonnummer:
-                            input(name = "mobilnr")
+        h2 Endre passord
 
-                            br
-                            div
-                                label(for= "password") Ditt nye passord:
-                                input(name = "passord")
-
-                                br
-                                button(type='submit') Lagre
+        form()
+            div
+                label(for = "gammeltPassord") Gammelt passord:
+                input(id = "gammeltPassord", type="password" )
+                br
+            div
+                label(for = "nyttPassord") Nytt passord:
+                input(id = "nyttPassord" type="password"  )
+                br
+            button() Lagre passord
 
 

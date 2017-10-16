@@ -3,9 +3,14 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
+
 //var authenticateController = require('./controllers/login');
 //var registerController = require('./controllers/newUser');
 var editUserController = require('./controllers/editUser');
+var userController = require('./controllers/user');
+
+app.use(express.static('public'));
+
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -13,15 +18,19 @@ app.use(bodyParser.json());
 app.set('view engine', 'pug');
 app.set('views', './views');
 
-app.get('/user/:epost', function(req, res){
-    //res.send('The id you specified is ' + req.params.epost);
+app.get('/users/:email', function(req, res) {
+   userController.getUserByEmail(req, res);
+});
+
+app.put('/users/:email', function(req, res) {
+   editUserController.updateUser(req, res);
+});
+
+app.get('/editUser', function(req, res) {
     res.render('editUser');
 });
 
-app.put('/', editUserController.edit, function (req, res) {
-    console.log(req.body);
 
-});
 
 /* route to handle login and registration */
 //app.post('/login', authenticateController.login);

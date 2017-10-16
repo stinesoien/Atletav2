@@ -1,25 +1,22 @@
 var connection = require('./../config');
 
 
-module.exports.edit=function (req, res) {
-    var users = {
-        "adresse": req.body.adresse,
-        "mobilnr" : req.body.mobilnr,
-        "passord" : req.body.passord,
-        "epost" : req.body.epost,
-    };
-    console.log(epost);
-    connection.query('UPDATE bruker SET adresse=?, mobilnr= ?, passord=? WHERE epost=?', users, function (error, results, fields) {
+module.exports = {
+    updateUser: function(req, res) {
+        var fornavn = req.body.fornavn;
+        var etternavn =req.body.etternavn;
+        var adresse = req.body.adresse;
+        var mobilnr = req.body.mobilnr;
+        var epost = req.body.epost;
 
-        if (error){ throw error;
-            console.log('The response is: ', results);
-        } else {
-            res.json({
-            status: true,
-            data: results,
-            message: 'user registered sucessfully'
-        })
+        console.log(req.body);
+        connection.query('UPDATE bruker SET fornavn=?, etternavn=?, adresse=?, mobilnr=? WHERE epost=?', [fornavn, etternavn, adresse, mobilnr, epost], function (error, results) {
+
+            if (error){
+                return res.status(500).json({message: 'Something went wrong'});
+            }
+            return res.status(200).json({message: 'User updated.'});
+        });
     }
-    });
 
 };
