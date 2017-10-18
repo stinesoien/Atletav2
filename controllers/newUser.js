@@ -1,4 +1,5 @@
 var connection = require('./../config');
+var bcrypt = require('bcrypt');
 
 module.exports.register = function (req, res) {
     var users = {
@@ -10,18 +11,27 @@ module.exports.register = function (req, res) {
         "mobilnr" : req.body.mobilnr
     }
 
-    connection.query('INSERT INTO bruker SET ?', users, function (error, results, fields) {
-        if (error) {
-            res.json({
-                status:false,
-                message: 'there are some error with query'
-            })
-        } else {
-            res.json({
-                status: true,
-                data: results,
-                message: 'user registered sucessfully'
-            })
-        }
+
+    bcrypt.genSalt(10, function(err, salt) {
+        bcrypt.hash('passord', salt, function (err, hash) {
+            users.passord = hash;
+            connection.query('INSERT INTO bruker SET ?', users, function (error, results, fields) {
+                if (error) {
+                    res.json({
+                        status:false,
+                        message: 'there are some error with query'
+                    })
+                } else {
+                    res.json({
+                        status: true,
+                        data: results,
+                        message: 'user registered sucessfully'
+                    })
+                }
+
+            });
+
+        });
     });
-}
+
+};
