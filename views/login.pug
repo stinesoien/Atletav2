@@ -1,32 +1,34 @@
 html
     head
-        link(rel="stylesheet", type="type/css", href="login.css")
-        script(type="text/javascript", src="jquery.js")
-        script(type="text/javascript", src="login.js")
-    body
-        center
-            input#show_login(type="button", value="Show Login")
-            #loginform
-                form(method="post", action="")
-                    p Logg inn
-                    input#close_login(type="image", src="images/testimage.jpg")
-                    input#login(type='text', placeholder='E-post', name='uid')
-                    input#password(type='password', name='upass', placeholder='***')
-                    input#dologin(type='submit', value='Login')
-
-
-
-//html
-    head
         title Logg inn
+        link(rel='stylesheet', href='/stylesheets/login.css')
     body
         form(action = "/login", method = "POST")
-            div
+            .imgcontainer
+                img.avatar(src='/images/avatar.png', alt='Avatar')
+
+            .container
+                label(for = "email") E-post
+                input(type='text', placeholder='Skriv inn e-post', name='epost', required='')
+                label(for = "password") Passord
+                input(type="password" placeholder="Skriv inn passord" name="passord" required='')
+                button(type="submit") Logg inn
+                //input(type="checkbox" checked="checked") Husk meg
+
+            .container(style="background-color:#f1f1f1")
+                button.cancelbtn(type="button") Avbryt
+
+
+
+            //div
                 label(for = "email") E-post:
                 input(name = "epost")
-            br
-            div
+            //br
+            //div
                 label(for = "password") Passord:
                 input(name = "passord")
-            br
-            button(type = "submit") Logg inn
+            //br
+            //button(type = "submit") Logg inn
+
+        //a(href = "edituser")
+            button(type = "button") Rediger info

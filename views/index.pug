@@ -1,12 +1,10 @@
 html
-    title Hello
-    h1 Logg inn her:
-    label
-        b Username
-    input(type='text', placeholder='Enter Username', name='uname', required='')
-    label
-        b Password
-    input(type='password', placeholder='Enter Password', name='psw', required='')
-    button(type='submit') Login
+    head
+        link(rel='stylesheet', href='/stylesheets/index.css')
+    body
+        p Hei
+        a(href="login")
+                button(type="button") Logn inn
 
-
+        a(href = "newuser")
+                button(type = "button") Bli medlem
