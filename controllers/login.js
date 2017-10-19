@@ -1,5 +1,5 @@
 var connection = require('./../config');
-var editUser;
+var bcrypt = require('bcrypt');
 
 module.exports.login=function (req, res) {
     var email=req.body.epost;
@@ -12,28 +12,28 @@ module.exports.login=function (req, res) {
             })
         } else {
             if(results.length > 0){
-                if(password==results[0].passord){
-                    // noinspection JSAnnotator
-                    res.json({
-                        status: true,
-                        message: 'successfully authenticated',
+                bcrypt.compare(password, results[0].passord, function(err, ress) {
+                    if(!ress){
+                        res.json({
+                            status: false,
+                            message: "Epost og passord matcher ikke"
+                        });
+                    } else {
+                        res.json({
+                            status: true,
+                            message: "Logget inn"
+                        })
+                    }
+                });
 
-
-                    })
-                } else {
-                    res.json({
-                        status: false,
-                        message: "Email and password does not match"
-                    });
-                }
-            } else {
+        } else {
                 res.json({
                     status: false,
-                    message: "Email does not exist"
+                    message: "Epost eksisterer ikke"
                 });
             }
         }
-        
+
     });
-    
-}
+
+};
