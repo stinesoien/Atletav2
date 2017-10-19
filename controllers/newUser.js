@@ -13,7 +13,7 @@ module.exports.register = function (req, res) {
 
 
     bcrypt.genSalt(10, function(err, salt) {
-        bcrypt.hash('passord', salt, function (err, hash) {
+        bcrypt.hash(req.body.passord, salt, function (err, hash) {
             users.passord = hash;
             connection.query('INSERT INTO bruker SET ?', users, function (error, results, fields) {
                 if (error) {
