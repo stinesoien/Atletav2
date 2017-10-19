@@ -1,0 +1,27 @@
+CREATE TABLE categori(
+	c_id VARCHAR(50),
+	c_name VARCHAR(50),
+	PRIMARY KEY(c_id)
+);
+
+CREATE TABLE classes(
+	class_id VARCHAR(50),
+	class_name VARCHAR(50),
+time DATETIME,
+	PRIMARY KEY(class_id)
+);
+
+CREATE TABLE intensity(
+	level VARCHAR(3),
+	PRIMARY KEY(level)
+);
+
+CREATE TABLE classes(
+	email VARCHAR(50),
+	password VARCHAR(50),
+fname VARCHAR(50),
+sname VARCHAR(50),
+address VARCHAR(50),
+phone  VARCHAR(50),
+	PRIMARY KEY(email)
+);
