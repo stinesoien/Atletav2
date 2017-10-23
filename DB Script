@@ -1,14 +1,7 @@
-CREATE TABLE categori(
+CREATE TABLE category(
 	c_id VARCHAR(50),
 	c_name VARCHAR(50),
 	PRIMARY KEY(c_id)
-);
-
-CREATE TABLE classes(
-	class_id VARCHAR(50),
-	class_name VARCHAR(50),
-time DATETIME,
-	PRIMARY KEY(class_id)
 );
 
 CREATE TABLE intensity(
@@ -17,11 +10,43 @@ CREATE TABLE intensity(
 );
 
 CREATE TABLE classes(
+	class_id VARCHAR(50),
+	class_name VARCHAR(50),
+    time DATETIME,
+    c_id VARCHAR(50),
+    level VARCHAR(3),
+	PRIMARY KEY(class_id)
+);
+
+CREATE TABLE users(
 	email VARCHAR(50),
 	password VARCHAR(50),
-fname VARCHAR(50),
-sname VARCHAR(50),
-address VARCHAR(50),
-phone  VARCHAR(50),
+    fname VARCHAR(50),
+    sname VARCHAR(50),
+    address VARCHAR(50),
+    phone  VARCHAR(50),
 	PRIMARY KEY(email)
 );
+
+CREATE TABLE users_class(
+    class_id VARCHAR(50) NOT NULL,
+    email VARCHAR (50) NOT NULL,
+    PRIMARY KEY (class_id, email));
+
+    ALTER TABLE user_class
+    ADD FOREIGN KEY (class_id)
+    REFERENCES classes(class_id);
+
+    ALTER TABLE users_class
+    ADD FOREIGN KEY (email)
+    REFERENCES user(email);
+
+ALTER TABLE classes
+ADD FOREIGN KEY (c_id)
+REFERENCES category(c_id);
+
+ALTER TABLE classes
+ADD FOREIGN KEY (level)
+REFERENCES intensity(level);
+
+
