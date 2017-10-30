@@ -12,17 +12,19 @@ CREATE TABLE intensity(
 CREATE TABLE classes(
 	class_id VARCHAR(50),
 	class_name VARCHAR(50),
-time DATETIME,
+    time DATETIME,
+    c_id VARCHAR(50),
+    level VARCHAR(3),
 	PRIMARY KEY(class_id)
 );
 
 CREATE TABLE users(
 	email VARCHAR(50),
 	password VARCHAR(50),
-fname VARCHAR(50),
-sname VARCHAR(50),
-address VARCHAR(50),
-phone  VARCHAR(50),
+    fname VARCHAR(50),
+    sname VARCHAR(50),
+    address VARCHAR(50),
+    phone  VARCHAR(50),
 	PRIMARY KEY(email)
 );
 

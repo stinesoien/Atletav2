@@ -2,9 +2,9 @@ var connection = require('./../config');
 var bcrypt = require('bcrypt');
 
 module.exports.login=function (req, res) {
-    var email=req.body.epost;
-    var password=req.body.passord;
-    connection.query('SELECT * FROM bruker WHERE epost = ?', [email], function (error, results, fields) {
+    var email=req.body.email;
+    var password=req.body.password;
+    connection.query('SELECT * FROM users WHERE email = ?', [email], function (error, results, fields) {
         if (error) {
             res.json({
                 staus: false,
@@ -12,7 +12,7 @@ module.exports.login=function (req, res) {
             })
         } else {
             if(results.length > 0){
-                bcrypt.compare(password, results[0].passord, function(err, ress) {
+                bcrypt.compare(password, results[0].password, function(err, ress) {
                     if(!ress){
                         res.json({
                             status: false,
