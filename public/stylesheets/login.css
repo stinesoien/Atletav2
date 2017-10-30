@@ -1,6 +1,17 @@
 /* Bordered form */
 form {
     border: 3px solid #f1f1f1;
+    background: white;
+    display: inline-block;
+    text-align: left;
+    margin-left: 30%;
+    margin-right: 20%;
+}
+
+body {
+    font-family: Verdana;
+    background-color: #ad3232;
+    backgorund-opacity: 0.8;
 }
 
 /* Full-width inputs */
@@ -21,7 +32,7 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 50%;
 }
 
 /* Add a hover effect for buttons */
@@ -29,15 +40,19 @@ button:hover {
     opacity: 0.8;
 }
 
-/* Extra style for the cancel button (red) */
+/* Extra style for the cancel button (grey) */
 .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
+    margin-left: 52%;
+    margin-right: 10%;
+    margin-top: -15.2%;
+    width: 48%;
+    padding: 14px 20px;
+    background-color: darkgrey;
 }
 
 /* Center the avatar image inside this container */
 .imgcontainer {
+    background: white;
     text-align: center;
     margin: 24px 0 12px 0;
 }
@@ -50,6 +65,7 @@ img.avatar {
 
 /* Add padding to containers */
 .container {
+    background: white;
     padding: 16px;
 }
 
