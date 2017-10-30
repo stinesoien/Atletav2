@@ -5,6 +5,9 @@ html
         script(type="text/javascript", src="js/jquery-3.2.1.js")
         script(type="text/javascript", src="js/login.js")
     body
+
+        include ./fixed/header.pug
+
         form(action = "/login", method = "POST")
             .imgcontainer
                 img.avatar(src='/images/avatar.png', alt='Avatar')
