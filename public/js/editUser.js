@@ -6,11 +6,11 @@ var updateUser = function() {
         url: 'users/' + email,
         type: 'PUT',
         data: {
-            'fornavn': document.getElementById("fornavn").value,
-            'etternavn': document.getElementById("etternavn").value,
-            'adresse': document.getElementById("adresse").value,
-            'mobilnr': document.getElementById("mobilnr").value,
-            'epost': email
+            'fname': document.getElementById("fname").value,
+            'sname': document.getElementById("sname").value,
+            'address': document.getElementById("address").value,
+            'phone': document.getElementById("phone").value,
+            'email': email
         },
         dataType: 'json',
         success: function(data){
@@ -28,10 +28,10 @@ var getUser = function(email) {
         url: 'users/' + email,
         type: 'GET',
         success: function(data){
-            document.getElementById("adresse").value = data.User.adresse;
-            document.getElementById("mobilnr").value = data.User.mobilnr;
-            document.getElementById("fornavn").value = data.User.fornavn;
-            document.getElementById("etternavn").value = data.User.etternavn;
+            document.getElementById("address").value = data.User.address;
+            document.getElementById("phone").value = data.User.phone;
+            document.getElementById("fname").value = data.User.fname;
+            document.getElementById("sname").value = data.User.sname;
 
         },
         error: function(data) {
@@ -40,5 +40,5 @@ var getUser = function(email) {
     });
 };
 
-var email = 1; // her vil vi hente ut email fra f.eks en cookie, session eller token elns, lar den være hardkodet for nå.
+var email = 1;
 getUser(email);

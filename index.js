@@ -32,8 +32,6 @@ app.get('/editUser', function(req, res) {
     res.render('editUser');
 });
 
-
-
 /* route to handle login and registration */
 app.post('/login', authenticateController.login);
 app.post('/newuser', registerController.register);
