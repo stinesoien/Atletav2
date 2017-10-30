@@ -1,4 +1,5 @@
 
+
 var updateUser = function() {
     console.log("in update");
     $.ajax({
@@ -40,5 +41,4 @@ var getUser = function(email) {
 };
 
 var email = 1; // her vil vi hente ut email fra f.eks en cookie, session eller token elns, lar den være hardkodet for nå.
-
 getUser(email);

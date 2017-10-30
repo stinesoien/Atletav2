@@ -2,6 +2,8 @@ html
     head
         title Logg inn
         link(rel='stylesheet', href='/stylesheets/login.css')
+        script(type="text/javascript", src="js/jquery-3.2.1.js")
+        script(type="text/javascript", src="js/login.js")
     body
         form(action = "/login", method = "POST")
             .imgcontainer
@@ -9,26 +11,13 @@ html
 
             .container
                 label(for = "email") E-post
-                input(type='text', placeholder='Skriv inn e-post', name='epost', required='')
+                input(type='text', placeholder='Skriv inn e-post', name='email', required='')
+
                 label(for = "password") Passord
-                input(type="password" placeholder="Skriv inn passord" name="passord" required='')
+                input(type="password" placeholder="Skriv inn passord" name="password" required='')
+
                 button(type="submit") Logg inn
-                //input(type="checkbox" checked="checked") Husk meg
 
-            .container(style="background-color:#f1f1f1")
-                button.cancelbtn(type="button") Avbryt
-
-
-
-            //div
-                label(for = "email") E-post:
-                input(name = "epost")
-            //br
-            //div
-                label(for = "password") Passord:
-                input(name = "passord")
-            //br
-            //button(type = "submit") Logg inn
-
-        //a(href = "edituser")
-            button(type = "button") Rediger info
+            .container
+                a(href = "/")
+                    button.cancelbtn(type = "button") Avbryt
