@@ -1,0 +1,22 @@
+.container{
+    background-color: white;
+    font-family: Arial;
+    left: 0;
+    width: 102.5%;
+    margin-left: -2%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+.container a{
+    padding: 14px 16px;
+    color: #424242;
+    text-decoration: none;
+    font-family: Arial;
+}
+
+a:hover {
+    color: #ad3232;
+    background-color: transparent;
+    text-decoration: underline;
+}

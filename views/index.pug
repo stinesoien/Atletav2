@@ -4,4 +4,10 @@ html
     body
         include ./fixed/header.pug
 
+        .imgcontent
+            img(class="frontpic" src="/images/frontpicture.jpg" alt="Frontpage picture")
+            a(href = "/newuser")
+                button.button(type="button" style='vertical-align:middle')
+                    span Bli Medlem
+
         include ./fixed/footer.pug
