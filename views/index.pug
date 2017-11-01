@@ -1,16 +1,28 @@
 html
     head
         link(rel='stylesheet', href='/stylesheets/index.css')
+        script(type="text/javascript", src="js/jquery-3.2.1.js")
+        script(type="text/javascript", src="./js/index.js")
     body
         include ./fixed/header.pug
 
         if user
             du er logget inn som: #{user.email}
 
-        .imgcontent
-            img(class="frontpic" src="/images/frontpicture.jpg" alt="Frontpage picture")
+
+        //.imgcontainer
+            //img(class="frontpic" src="/images/frontpicture1.jpg" alt="Frontpage picture")
             a(href = "/newuser")
                 button.button(type="button" style='vertical-align:middle')
                     span Bli Medlem
+
+
+        section
+            a(href = "/newuser")
+                button.button(type="button" style='vertical-align:middle')
+                    span Bli Medlem
+            a.scroll-down(href='#', address='true')
+        section.ok
+            p Kategorier
 
         include ./fixed/footer.pug

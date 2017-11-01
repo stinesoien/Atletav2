@@ -4,9 +4,9 @@
     background-color: #ad3232;
     opacity: 0.8;
     position: fixed; /* Set the navbar to fixed position */
-    top: 5; /* Position the navbar at the top of the page */
+    top: 6; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
-    left: 0;
+
     z-index: 1;
 }
 
