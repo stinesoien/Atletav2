@@ -4,6 +4,9 @@ html
     body
         include ./fixed/header.pug
 
+        if user
+            du er logget inn som: #{user.email}
+
         .imgcontent
             img(class="frontpic" src="/images/frontpicture.jpg" alt="Frontpage picture")
             a(href = "/newuser")

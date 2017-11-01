@@ -2,6 +2,7 @@
   "name": "atletav2",
   "version": "0.0.0",
   "private": true,
+  "main": "server.js",
   "scripts": {
     "start": "node Server.js"
   },
@@ -10,10 +11,14 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "~1.18.2",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
     "jquery": "^3.2.1",
     "jsonwebtoken": "^8.1.0",
+    "morgan": "^1.9.0",
     "mysql": "^2.15.0",
     "nodemon": "^1.12.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "pug": "^2.0.0-rc.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"

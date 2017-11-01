@@ -3,5 +3,8 @@ html
         link(rel='stylesheet', href='/stylesheets/header.css')
     body
         .navbar
-            a(class="active" href='/login' style="float:right") Logg inn
+            if user
+                a(class="active" href='/logout' style="float:right") Logg ut
+            else
+                a(class="active" href='/login' style="float:right") Logg inn
             a(href='/edituser') Rediger
