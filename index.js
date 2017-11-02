@@ -59,6 +59,14 @@ passport.deserializeUser(function(email, done){
     });
 });
 
+app.get('/session', function(req, res){
+    if(req.user) {
+        res.json({epost: req.user.email});
+    } else {
+        res.send("Session failed");
+    }
+});
+
 app.get('/error', function(req, res){
     res.send('Login Failed');
 });

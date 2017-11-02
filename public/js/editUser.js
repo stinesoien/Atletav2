@@ -1,5 +1,4 @@
 
-
 var updateUser = function() {
     console.log("in update");
     $.ajax({
@@ -23,22 +22,33 @@ var updateUser = function() {
     });
 };
 
-var getUser = function(email) {
+var getUser = function() {
+    console.log("Henter brukerdata");
     $.ajax({
-        url: 'users/' + email,
+        url: 'session',
         type: 'GET',
         success: function(data){
-            document.getElementById("address").value = data.User.address;
-            document.getElementById("phone").value = data.User.phone;
-            document.getElementById("fname").value = data.User.fname;
-            document.getElementById("sname").value = data.User.sname;
+            console.log(data);
+            $.ajax({
+                url: 'users/' + data.epost,
+                type: 'GET',
+                success: function (data) {
+                    document.getElementById("address").value = data.User.address;
+                    document.getElementById("phone").value = data.User.phone;
+                    document.getElementById("fname").value = data.User.fname;
+                    document.getElementById("sname").value = data.User.sname;
 
+                },
+                error: function (data) {
+                    alert(data.responseJSON.message);
+                }
+            });
         },
         error: function(data) {
             alert(data.responseJSON.message);
         }
     });
+
 };
 
-var email = 1; // her vil vi hente ut email fra f.eks en cookie, session eller token elns, lar den være hardkodet for nå.
-getUser(email);
+getUser();
