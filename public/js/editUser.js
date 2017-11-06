@@ -2,24 +2,32 @@
 var updateUser = function() {
     console.log("in update");
     $.ajax({
-        url: 'users/' + email,
+        url: 'session',
         type: 'PUT',
-        data: {
-            'fname': document.getElementById("fname").value,
-            'sname': document.getElementById("sname").value,
-            'address': document.getElementById("address").value,
-            'phone': document.getElementById("phone").value,
-            'email': email
-        },
-        dataType: 'json',
-        success: function(data){
-            alert("Profilen din er lagret!");
-        },
-        error: function(data) {
+        success: function (data) {
             console.log(data);
-        }
+            $.ajax({
+                url: 'users/' + data.epost,
+                type: 'PUT',
+                data: {
+                    'fname': document.getElementById("fname").value,
+                    'sname': document.getElementById("sname").value,
+                    'address': document.getElementById("address").value,
+                    'phone': document.getElementById("phone").value,
+                    'email': data.epost
+                },
+                dataType: 'json',
+                success: function(data){
+                    alert("Profilen din er lagret!");
+                },
+                error: function(data) {
+                    console.log(data);
+                }
 
-    });
+            });
+
+        }
+    })
 };
 
 var getUser = function() {
@@ -50,5 +58,7 @@ var getUser = function() {
     });
 
 };
+
+//var email = 1; dette er den 'email': email
 
 getUser();

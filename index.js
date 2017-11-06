@@ -34,7 +34,7 @@ passport.use(new LocalStrategy({
             if (err)
                 return done(err);
             if (!rows.length) {
-                return done(null, false, req.flash('loginMessage', 'No user found')); // req.flash is the way to set flashdata using connect-flash
+                return done(null, false, req.flash('No user found', 'loginMessage')); // req.flash is the way to set flashdata using connect-flash
             }
 
             //Hvis brukeren er funnet, men passordet er feil
@@ -66,6 +66,14 @@ app.get('/session', function(req, res){
         res.send("Session failed");
     }
 });
+
+app.put('/session', function(req, res){
+    if(req.user){
+        res.json({epost: req.user.email});
+    }else{
+        res.send("Session failed");
+    }
+})
 
 app.get('/error', function(req, res){
     res.send('Login Failed');
