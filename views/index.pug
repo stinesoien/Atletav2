@@ -9,20 +9,17 @@ html
         if user
             du er logget inn som: #{user.email}
 
-
-        //.imgcontainer
-            //img(class="frontpic" src="/images/frontpicture1.jpg" alt="Frontpage picture")
+        section.first
             a(href = "/newuser")
                 button.button(type="button" style='vertical-align:middle')
                     span Bli Medlem
-
-
-        section
-            a(href = "/newuser")
-                button.button(type="button" style='vertical-align:middle')
-                    span Bli Medlem
-            a.scroll-down(href='#', address='true')
-        section.ok
-            p Kategorier
+            a.scroll-down1(href='#second', address='true')
+        section.second
+            p.p1 Kategorier
+            a.scroll-down2(href='#third', address='true')
+        section.third
+            p.p2 Velkommen til en av våre sentre!
+            div.box()
+            img.map(src="./images/kart.png", alt="Kart over Trondheim")
 
         include ./fixed/footer.pug
