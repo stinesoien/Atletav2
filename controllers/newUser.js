@@ -14,7 +14,7 @@ module.exports = {
         bcrypt.genSalt(10, function (err, salt) {
             bcrypt.hash(password, salt, function (err, hash) {
                 password = hash;
-                connection.query('INSERT INTO users SET email=?, password=?, fname=?, sname=?, address=?, phone =?', [email, password, fname, sname, address, phone], function (error, results) {
+                connection.pool.query('INSERT INTO users SET email=?, password=?, fname=?, sname=?, address=?, phone =?', [email, password, fname, sname, address, phone], function (error, results) {
                     if (error) {
                         res.json({
                             status: false,
