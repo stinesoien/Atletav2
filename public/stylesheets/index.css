@@ -27,7 +27,7 @@ body{
 }
 
 /* Sign up button*/
-.button {
+.button1 {
     display: inline-block;
     border-radius: 10px;
     background-color: #ad3232;
@@ -46,14 +46,14 @@ body{
     right: 50px;
 }
 
-.button span {
+.button1 span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
 
-.button span:after {
+.button1 span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -62,11 +62,11 @@ body{
     transition: 0.5s;
 }
 
-.button:hover span {
+.button1:hover span {
     padding-right: 30px;
 }
 
-.button:hover span:after {
+.button1:hover span:after {
     opacity: 1;
     right: 0;
 }

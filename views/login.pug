@@ -6,21 +6,6 @@ html
         script(type="text/javascript", src="js/login.js")
     body
 
-        include ./fixed/header.pug
+        include fixed/header
 
-        form(action = "/login", method = "POST")
-            .imgcontainer
-                img.avatar(src='/images/avatar.png', alt='Avatar')
 
-            .container
-                label(for = "email") E-post
-                input(type='text', placeholder='Skriv inn e-post', name='email', required='')
-
-                label(for = "password") Passord
-                input(type="password" placeholder="Skriv inn passord" name="password" required='')
-
-                button(type="submit") Logg inn
-
-            .container
-                a(href = "/")
-                    button.cancelbtn(type = "button") Avbryt
