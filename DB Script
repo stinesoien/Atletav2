@@ -1,6 +1,8 @@
-CREATE TABLE category(
-	c_id VARCHAR(50),
-	c_name VARCHAR(50),
+CREATE TABLE classes(
+	class_id VARCHAR(50),
+	class_name VARCHAR(50),
+	level VARCHAR(3),
+	information VARCHAR(500),
 	PRIMARY KEY(c_id)
 );
 
@@ -9,13 +11,13 @@ CREATE TABLE intensity(
 	PRIMARY KEY(level)
 );
 
-CREATE TABLE classes(
-	class_id VARCHAR(50),
-	class_name VARCHAR(50),
+CREATE TABLE booking(
+	b_id VARCHAR(50),
+	b_name VARCHAR(50),
     time DATETIME,
-    c_id VARCHAR(50),
-    level VARCHAR(3),
-	PRIMARY KEY(class_id)
+    class_id VARCHAR(50),
+    booked TINYINT(1),
+	PRIMARY KEY(b_id)
 );
 
 CREATE TABLE users(
@@ -28,22 +30,22 @@ CREATE TABLE users(
 	PRIMARY KEY(email)
 );
 
-CREATE TABLE users_class(
-    class_id VARCHAR(50) NOT NULL,
+CREATE TABLE users_booking(
+    b_id VARCHAR(50) NOT NULL,
     email VARCHAR (50) NOT NULL,
-    PRIMARY KEY (class_id, email));
+    PRIMARY KEY (b_id, email));
 
-    ALTER TABLE user_class
-    ADD FOREIGN KEY (class_id)
-    REFERENCES classes(class_id);
+    ALTER TABLE users_booking
+    ADD FOREIGN KEY (b_id)
+    REFERENCES booking(b_id);
 
-    ALTER TABLE users_class
+    ALTER TABLE users_booking
     ADD FOREIGN KEY (email)
-    REFERENCES user(email);
+    REFERENCES users(email);
 
-ALTER TABLE classes
-ADD FOREIGN KEY (c_id)
-REFERENCES category(c_id);
+ALTER TABLE booking
+ADD FOREIGN KEY (class_id)
+REFERENCES classes(class_id);
 
 ALTER TABLE classes
 ADD FOREIGN KEY (level)

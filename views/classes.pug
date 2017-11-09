@@ -1,0 +1,55 @@
+html
+    head
+        title Intensitet
+        link(rel='stylesheet', href='/stylesheets/classes.css')
+        script(type="text/javascript", src="js/jquery-3.2.1.js")
+        //script(type="text/javascript", src="js/classes.js")
+    body
+        #slidecontainer
+            input(type="range", min="1", max="3", value="1", id="myRange", class="slider")
+            p Nivå
+                span#demo
+
+            p Gruppetimer
+            .container#timer
+                pre#json
+
+
+        script.
+
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value;
+
+            var getLevel = function (level) {
+                $.ajax({
+                    url: 'classes/' + level,
+                    type: 'GET'
+                }).done(function(data) {
+                    document.getElementById("json").innerHTML = '';
+                    for (var i = 0; i < data.length; i++) {
+                        document.getElementById("json").innerHTML += '<div id="json2">' + JSON.stringify(data[i].class_name, null, 2) + '</div>';
+                    }
+
+
+                    //console.log(data);
+
+                    //$("body").append(JSON.stringify(data));
+                    /*
+                    data.forEach(function(d) {
+                      $("body").append(JSON.stringify(d));
+                    }) */
+
+                });
+            };
+
+            slider.oninput = function () {
+                output.innerHTML = this.value;
+                var level = this.value;
+                getLevel(level);
+            }
+
+
+
+
+
