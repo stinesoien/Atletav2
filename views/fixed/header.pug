@@ -10,19 +10,17 @@ html
                 //a(class="active" href='/login' style="float:right") Logg inn
                 a(class="active" style="float:right" onclick="document.getElementById('id01').style.display='block'") Logg inn
         #id01.modal
-            span.close(onclick="document.getElementById('id01').style.display='none'", title='Close Modal') &times;
-            form.modal-content.animate(action='/login')
+            form.modal-content.animate(action='/login' method="POST")
                 .imgcontainer
                     img.avatar(src='images/running_login.jpg', alt='Avatar')
                 div.container
-                    label(for = "email") E-postadresse
-                    input(type='text', placeholder='Skriv inn e-post', name='email', required='')
+                    label(for = "email")
+                    input(class="input-text", type='text', name='email', required='', placeholder="Skriv inn e-postadressen")
 
-                    label(for = "password") Passord
-                    input(type="password" placeholder="Skriv inn passord" name="password" required='')
+                    label(for = "password")
+                    input(class="input-text", type="password" placeholder="Skriv inn passord" name="password" required='')
 
                     button(type="submit") Logg inn
-
                     button.cancelbtn(type = "button", onclick="document.getElementById('id01').style.display='none'") Avbryt
 
                 script.

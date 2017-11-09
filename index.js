@@ -8,7 +8,7 @@ var bcrypt = require('bcrypt');
 
 var app = express();
 
-var authenticateController = require('./controllers/login');
+//var authenticateController = require('./controllers/login');
 var registerController = require('./controllers/newUser');
 var editUserController = require('./controllers/editUser');
 var userController = require('./controllers/user');
