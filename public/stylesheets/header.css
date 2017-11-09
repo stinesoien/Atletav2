@@ -6,7 +6,6 @@
     position: fixed; /* Set the navbar to fixed position */
     top: 0.5em; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
-    cursor: pointer;
     z-index: 1;
 }
 
@@ -26,6 +25,7 @@
     background-color: #ddd;
     color: black;
     text-decoration: none;
+    cursor: pointer;
 }
 
 /* Add a color to the active/current link */
@@ -35,40 +35,30 @@
 
 }
 
-/*button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 50%;
-}
-*/
-/* Add a hover effect for buttons */
-/*button:hover {
-    opacity: 0.8;
-}*/
-/*TEST*/
 /* Full-width input fields */
+
 input[type=text], input[type=password] {
-    width: 60%;
+    width: 30em;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #ccc;
 }
 
+
+/*DETTE SKAL VÆRE HER!*/
 /* Set a style for all buttons */
 button {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 1em 0.1em 0.1em 0.1em;
     border: none;
     cursor: pointer;
-    width: 60%;
+    width: 13em;
 }
 
 button:hover {
@@ -77,8 +67,6 @@ button:hover {
 
 /* Extra styles for the cancel button */
 .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
     background-color: #f44336;
 }
 
@@ -101,7 +89,6 @@ img.avatar {
     border-radius: 500px 500px 0 0px;
     -webkit-filter: grayscale(100%) opacity(30%);
     filter: grayscale(100%) opacity(30%);
-
 }
 
 div.container {
@@ -121,7 +108,7 @@ div.container {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    background-color: rgba(150,150,150,0.7); /* Black w/ opacity */
     padding-top: 60px;
 }
 
@@ -133,22 +120,7 @@ div.container {
     width: 30em; /* Could be more or less, depending on screen size */
     height: 30em;
     border-radius: 500px;
-}
-
-/* The Close Button (x) */
-.close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
+    z-index: 5;
 }
 
 /* Add Zoom Animation */
