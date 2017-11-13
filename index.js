@@ -34,12 +34,12 @@ passport.use(new LocalStrategy({
             if (err)
                 return done(err);
             if (!rows.length) {
-                return done(null, false, req.flash('No user found', 'loginMessage')); // req.flash is the way to set flashdata using connect-flash
+                return done(null, false); // req.flash is the way to set flashdata using connect-flash
             }
 
             //Hvis brukeren er funnet, men passordet er feil
             if (!bcrypt.compareSync(password, rows[0].password))
-                return done(null, false, req.flash('loginMessage', 'Wrong password')); // create the loginMessage and save it to session as flashdata
+                return done(null, false); // create the loginMessage and save it to session as flashdata
 
             // Returnerer suksessfull bruker
             return done(null, rows[0]);
@@ -107,6 +107,11 @@ app.put('/users/:email', function(req, res) {
 app.get('/editUser', function(req, res) {
     res.render('editUser');
 });
+
+//Henter booking.pug
+app.get('/booking', function (req, res) {
+    res.render('booking');
+})
 
 app.get('/editPassword', function (req, res) {
     res.render('editPassword');

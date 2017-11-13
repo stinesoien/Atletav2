@@ -1,5 +1,6 @@
 /* The navigation bar */
 .navbar {
+    left:0;
     overflow: hidden;
     background-color: #ad3232;
     opacity: 0.8;

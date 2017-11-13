@@ -1,0 +1,21 @@
+html
+    head
+        link(rel='stylesheet', href='/stylesheets/booking.css')
+        script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js")
+    body
+        include ./fixed/header.pug
+
+        if user
+            p du er logget inn som: #{user.email}
+
+
+
+        script.
+
+            var today = Date.today().toString("dd/MM/yyyy");
+            var tomorrow = Date.today().addDays(3).toString("dd/mm/yyyy");
+
+            document.write(today);
+            document.write(tomorrow);
+
+        include ./fixed/footer.pug
