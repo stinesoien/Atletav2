@@ -8,7 +8,7 @@ html
         include ./fixed/header.pug
 
         if user
-            du er logget inn som: #{user.email}
+            p du er logget inn som: #{user.email}
 
         section.first
             a(href = "/newuser")

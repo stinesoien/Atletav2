@@ -8,10 +8,10 @@ var bcrypt = require('bcrypt');
 
 var app = express();
 
-//var authenticateController = require('./controllers/login');
 var registerController = require('./controllers/newUser');
 var editUserController = require('./controllers/editUser');
 var userController = require('./controllers/user');
+var classesController = require('./controllers/classes');
 var editPasswordController = require('./controllers/editPassword');
 
 app.use(session({
@@ -141,13 +141,32 @@ app.get('/logout', function(req, res) {
     res.redirect('/');
 });
 
+/*
+app.get('/classes/:level', function (req, res) {
+    classesController.getClasses(req, res);
+}); */
+
 app.get('/login', function(req, res){
     res.render('login');
 });
 
 app.get('/newuser', function (req, res) {
-    res.render('newUser')
+    res.render('newUser');
 });
 
+/*
+app.get('/classes', function (req, res) {
+    var classes= classesController.getClasses(req,res);
+    res.render('classes', {classes: classes});
+});*/
+
+app.get('/classes', function (req, res) {
+    res.render('classes');
+});
+
+
+app.get('/classes/:level', function (req, res) {
+    classesController.getClasses(req, res);
+});
 
 app.listen(3000);
