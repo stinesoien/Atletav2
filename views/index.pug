@@ -1,6 +1,7 @@
 html
     head
         link(rel='stylesheet', href='/stylesheets/index.css')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
         script(type="text/javascript", src="js/jquery-3.2.1.js")
         script(type="text/javascript", src="./js/index.js")
     body
@@ -18,8 +19,9 @@ html
             p.p1 Kategorier
             a.scroll-down2(href='#third', address='true')
         section.third
-            p.p2 Velkommen til en av våre sentre!
             div.box()
             img.map(src="./images/kart.png", alt="Kart over Trondheim")
-
+            i(id="center1" class="fa fa-map-marker" style='font-size:50px')
+            i(id="center2" class="fa fa-map-marker" style='font-size:50px')
+            a.scroll-down3(href='#forth', address='true')
         include ./fixed/footer.pug

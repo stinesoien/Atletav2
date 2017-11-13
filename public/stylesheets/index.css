@@ -213,8 +213,26 @@ p.p1 {
 
 .map {
     position: absolute;
-    right: 50em;
-    bottom: -80em;
+    right: 54.2%;
+    bottom: -199.9%;
+    width: 40.76%;
+}
+
+i {
+    z-index: 2;
+    color: #ad3232;
+}
+
+#center1 {
+    position: absolute;
+    right: 70%;
+    bottom: -150%;
+}
+
+#center2 {
+    position: absolute;
+    right: 86%;
+    bottom: -140%;
 }
 
 p.p2{
