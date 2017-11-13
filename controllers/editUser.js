@@ -10,7 +10,7 @@ module.exports = {
         var email = req.body.email;
 
         console.log(req.body);
-        connection.pool.query('UPDATE users SET fname=?, sname=?, address=?, phone=? WHERE email=?', [fname, sname, address, phone, email], function (error, results) {
+        connection.pool.query('UPDATE users SET fname=?, sname=?, address=?, phone=? WHERE email=?', [fname, sname, address, phone, email], function (error) {
 
             if (error){
                 return res.status(500).json({message: 'Something went wrong'});

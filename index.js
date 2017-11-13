@@ -5,6 +5,7 @@ var session = require('express-session');
 var LocalStrategy = require('passport-local').Strategy;
 var connection = require('./config');
 var bcrypt = require('bcrypt');
+var flash = require('express-flash');
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.json());
+//app.use(flash());
 
 passport.use(new LocalStrategy({
         usernameField: 'email',
@@ -34,12 +36,12 @@ passport.use(new LocalStrategy({
             if (err)
                 return done(err);
             if (!rows.length) {
-                return done(null, false, req.flash('No user found', 'loginMessage')); // req.flash is the way to set flashdata using connect-flash
+                return done(null, false);
             }
 
             //Hvis brukeren er funnet, men passordet er feil
             if (!bcrypt.compareSync(password, rows[0].password))
-                return done(null, false, req.flash('loginMessage', 'Wrong password')); // create the loginMessage and save it to session as flashdata
+                return done(null, false);
 
             // Returnerer suksessfull bruker
             return done(null, rows[0]);
@@ -48,7 +50,7 @@ passport.use(new LocalStrategy({
 );
 
 
-
+//Serialize og deserialize lar oss være logget også når man går mellom ulike sider på applikasjonen
 passport.serializeUser(function(user, done){
     done(null, user.email);
 });
@@ -73,7 +75,16 @@ app.put('/session', function(req, res){
     }else{
         res.send("Session failed");
     }
-})
+});
+
+app.put('/session', function(req, res){
+    if(req.user){
+        res.json({passord: req.user.password});
+    }else{
+        res.send("Session failed");
+    }
+});
+
 
 app.get('/error', function(req, res){
     res.send('Login Failed');
@@ -82,6 +93,15 @@ app.get('/error', function(req, res){
 app.get('/callback', passport.authenticate('local', {failtureRedirect: '/error'}), function(req, res){
     res.redirect('/');
 });
+/*
+app.put('/reset/:token', function (req,res) {
+    async.waterfall([
+        function(done){
+        findOne({resetPasswordToken: })
+        }
+    ])
+
+})*/
 
 
 app.use(express.static('public'));
@@ -108,12 +128,21 @@ app.get('/editUser', function(req, res) {
     res.render('editUser');
 });
 
-app.get('/editPassword', function (req, res) {
-    res.render('editPassword');
+app.get('/users/:email', function (req, res) {
+    userController.getUserOnPassword(req, res);
 
 });
 
-app.put('/users/:email', function (req, res) {
+app.get('/editPassword', function (req, res) {
+    if(req.isAuthenticated()) {
+        res.render('editPassword', {user: req.user});
+    }
+    else {
+        res.redirect('/')
+    }
+});
+
+app.put('/updatePassword', function (req, res) {
     editPasswordController.updatePassword(req,res);
 });
 
