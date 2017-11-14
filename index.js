@@ -130,6 +130,11 @@ app.get('/booking', function (req, res) {
     res.render('booking');
 });
 
+//HER ØNSKER VI Å SENDE EN TILBAKEMELD OM FEIL PASSORD ELLER BRUKERNAVN!!!!
+app.get('/login', function(req, res){
+    res.redirect('/');
+});
+
 /* route to handle login and registration */
 app.post('/login',
     passport.authenticate('local', { failureRedirect: '/login' }),

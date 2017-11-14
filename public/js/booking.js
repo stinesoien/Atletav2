@@ -1,8 +1,9 @@
-var getClassesForBooking = function () {
+var getClassesForBooking = function (date) {
     $.ajax({
-        url: 'booking/',
+        url: 'booking/' + date,
         type: 'GET'
     }).done(function(data) {
+        document.get
 
     })
 };

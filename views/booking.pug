@@ -2,6 +2,7 @@ html
     head
         link(rel='stylesheet', href='/stylesheets/booking.css')
         script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js")
+        script(type="text/javascript", src="js/jquery-3.2.1.js")
     body
         include ./fixed/header.pug
 
@@ -17,10 +18,11 @@ html
 
         script.
             var thisDate = document.getElementById("theDate");
-            thisDate.innerHTML = Date.today().toString("dd/MM/yyyy");
+            thisDate.innerHTML = Date.today().toString("yyyy-MM-dd");
+            var date = Date.today().toString("yyyy-MM-dd");
 
-            var output=document.getElementById("bookClasses");
-            output.innerHTML = thisDate.value;
+            /*var output=document.getElementById("bookClasses");
+            output.innerHTML = thisDate.value;*/
 
 
             //var tomorrow = Date.today().addDays(1).toString("dd/mm/yyyy");
@@ -45,20 +47,7 @@ html
                     }
                 })
             };
-            /*
-            var bookClass = function () {
-                $.ajax({
-                    url: 'booking/',
-                    type: 'POST'
-                }).done(function (data) {
 
-                })
-            };*/
-
-            thisDate.oninput = function () {
-                output.innerHTML = this.value;
-                var date = this.value;
-                getClassesForBooking(date);
-            }
+            getClassesForBooking(date);
 
         include ./fixed/footer.pug

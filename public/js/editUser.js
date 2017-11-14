@@ -31,7 +31,6 @@ var updateUser = function() {
 };
 
 var getUser = function() {
-    console.log("Henter brukerdata fju6hyrg");
     $.ajax({
         url: 'session',
         type: 'GET',
