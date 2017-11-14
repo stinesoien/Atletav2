@@ -9,13 +9,18 @@ html
             p du er logget inn som: #{user.email}
 
 
+        a.nextDay()
+        pre#theDate
+        a.pastDay()
 
         script.
+            var thisDate = document.getElementById("theDate");
+            thisDate.innerHTML = Date.today().toString("dd/MM/yyyy");
 
-            var today = Date.today().toString("dd/MM/yyyy");
-            var tomorrow = Date.today().addDays(3).toString("dd/mm/yyyy");
 
-            document.write(today);
-            document.write(tomorrow);
+            //var tomorrow = Date.today().addDays(1).toString("dd/mm/yyyy");
+
+            //document.write(today);
+            //document.write(tomorrow);
 
         include ./fixed/footer.pug

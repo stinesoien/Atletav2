@@ -9,6 +9,7 @@ html
                 a(href='/edituser') Rediger
             else
                 a(class="active" style="float:right" onclick="document.getElementById('id01').style.display='block'") Logg inn
+
         #id01.modal
             form.modal-content.animate(action='/login' method="POST")
                 .imgcontainer

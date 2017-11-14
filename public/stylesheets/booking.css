@@ -1,3 +1,36 @@
 body {
     background-color: #d8d8d8;
 }
+
+.nextDay {
+    position: absolute;
+    top: calc(20% - 8px);
+    left: calc(50% + 100px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 15px;
+    height: 15px;
+    content: "";
+    border: 1px solid black;
+    border-width: 0px 4px 4px 0px;
+}
+
+.pastDay {
+    position: absolute;
+    top: calc(20% - 8px);
+    left: calc(50% - 150px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 15px;
+    height: 15px;
+    content: "";
+    border: 1px solid black;
+    border-width: 4px 0px 0px 4px;
+}
+
+#theDate {
+    color: black;
+    position: absolute;
+    top: calc(20% - 8px);
+    left: calc(50% - 150px);
+}
