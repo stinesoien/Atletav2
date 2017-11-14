@@ -10,6 +10,15 @@ module.exports={
             res.send(result);
         });
         //connection.pool.query('INSERT INTO users_booking (b_id, email) VALUES (?,?)');
+    },
+
+    getNextDay: function (req, res) {
+        var thisDate = req.body.theDate;
+        var tomorrow = thisDate.addDays(1).toString("dd/mm/yyyy");
+    },
+
+    getPastDay: function (req, res) {
+
     }
 
 };

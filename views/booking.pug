@@ -10,25 +10,40 @@ html
             p du er logget inn som: #{user.email}
 
 
-        a.nextDay()
-        pre#theDate
-        a.pastDay()
+        p.nextDay(onclick="getNextDay()")
+        #showDate
+        p.pastDay(onclick="getPastDay()")
+
         .container#bookClasses
             pre#json
 
         script.
-            var thisDate = document.getElementById("theDate");
-            thisDate.innerHTML = Date.today().toString("yyyy-MM-dd");
+            var thisDate = document.getElementById("showDate");
+            thisDate.innerHTML = Date.today().toString("dd-MM-yyyy");
+            var today = Date.today();
             var date = Date.today().toString("yyyy-MM-dd");
 
-            /*var output=document.getElementById("bookClasses");
-            output.innerHTML = thisDate.value;*/
+            var op = 0;
+            var compareDate = "";
 
+            var getNextDay = function() {
+                if(op <= 6) {
+                    thisDate.innerHTML = Date.today().addDays(op+1).toString("dd-MM-yyyy");
+                    op++;
+                }
+            }
 
-            //var tomorrow = Date.today().addDays(1).toString("dd/mm/yyyy");
+            var getPastDay = function () {
+                compareDate = Date.today().addDays(op - 1);
+                var compareRes = today.compareTo(compareDate);
+                console.log("Sammenligningsdato: " + compareDate);
+                console.log("ResTall: " + compareRes);
+                if(op >= -6 && compareRes < 1) {
+                    thisDate.innerHTML = Date.today().addDays(op-1).toString("dd-MM-yyyy");
+                    op--;
+                }
+            }
 
-            //document.write(today);
-            //document.write(tomorrow);
 
 
             var getClassesForBooking = function (date) {
