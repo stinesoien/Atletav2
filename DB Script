@@ -1,9 +1,15 @@
+DROP TABLE IF EXISTS users_booking;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS booking;
+DROP TABLE IF EXISTS classes;
+DROP TABLE IF EXISTS intensity;
+
 CREATE TABLE classes(
 	class_id VARCHAR(50),
 	class_name VARCHAR(50),
 	level VARCHAR(3),
 	information VARCHAR(500),
-	PRIMARY KEY(c_id)
+	PRIMARY KEY(class_id)
 );
 
 CREATE TABLE intensity(
@@ -14,15 +20,15 @@ CREATE TABLE intensity(
 CREATE TABLE booking(
 	b_id VARCHAR(50),
 	b_name VARCHAR(50),
-    time DATETIME,
+    time TIME,
+    date DATE,
     class_id VARCHAR(50),
-    booked TINYINT(1),
 	PRIMARY KEY(b_id)
 );
 
 CREATE TABLE users(
 	email VARCHAR(50),
-	password VARCHAR(50),
+	password VARCHAR(100),
     fname VARCHAR(50),
     sname VARCHAR(50),
     address VARCHAR(50),
@@ -50,6 +56,39 @@ REFERENCES classes(class_id);
 ALTER TABLE classes
 ADD FOREIGN KEY (level)
 REFERENCES intensity(level);
+
+INSERT INTO intensity (level) VALUES ('1');
+INSERT INTO intensity (level) VALUES ('2');
+INSERT INTO intensity (level) VALUES ('3');
+
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('1', 'HotYoga', '3', 'HotYoga er en time for viderekommende, timen utføres i et oppvarmet rom på cirka 40 grader');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('2', 'Pilates2', '3', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('3', 'Pilates1', '2', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('4', 'Yoga', '2', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('5', 'Mindfullness', '1', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('6', 'Stretch', '1', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('7', 'PulsSpinn', '3', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('8', 'Spinn90', '3', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('9', 'Spinn', '2', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('10', 'PulsSpinn45', '2', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('11', 'Spinn&Stretch', '1', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('12', 'Spinn30', '1', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('13', 'PulsStep', '3', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('14', 'Jump&Dance', '3', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('15', 'Step60', '2', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('16', 'Step&Dance', '2', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('17', 'Dance', '1', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('18', 'Step30', '1', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('19', 'Ukas Økt', '3', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('20', 'Dagens Økt', '3', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('21', 'MRL', '2', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('22', 'BootyBuilder', '2', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('23', 'Core', '1', 'hallo');
+INSERT INTO classes (class_id, class_name, level, information) VALUES ('24', 'Sirkel', '1', 'hallo');
+
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('1', 'HotYoga', '16:00:00', '2017-11-24', '1');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('2', 'Spinn30', '17:00:00', '2017-11-23', '12');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('3', 'Stretch', '15:00:00', '2017-11-22', '6');
 
 
 a(class = "active" style ="float:rigth" onclick="document.getElementById('popPassword').style.display='block'") Endre passord
