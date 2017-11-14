@@ -13,7 +13,7 @@ var editUserController = require('./controllers/editUser');
 var userController = require('./controllers/user');
 var classesController = require('./controllers/classes');
 var editPasswordController = require('./controllers/editPassword');
-//var bookingController = require('./controllers/booking');
+var bookingController = require('./controllers/booking');
 
 app.use(session({
     secret: 'myVerySecretKey',
@@ -164,6 +164,11 @@ app.get('/newuser', function (req, res) {
 app.get('/classes', function (req, res) {
     res.render('classes');
 });
+
+/*
+app.put('/booking', function (req, res) {
+    bookingController.getBooking(req, res);
+});*/
 
 
 app.get('/classes/:level', function (req, res) {

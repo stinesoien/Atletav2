@@ -12,6 +12,8 @@ html
         a.nextDay()
         pre#theDate
         a.pastDay()
+        .container#bookClasses
+            pre#json
 
         script.
             var thisDate = document.getElementById("theDate");
@@ -22,5 +24,27 @@ html
 
             //document.write(today);
             //document.write(tomorrow);
+
+            var getClassesForBooking = function (date) {
+                $.ajax({
+                    url: 'booking/' + date,
+                    type: 'GET',
+                    data: {
+                        'theDate': theDate
+                    },
+                }).done(function (data) {
+                    document.getElementById("json").innerHTML = ' ';
+
+                })
+            };
+
+            var bookClass = function () {
+                $.ajax({
+                    url: 'booking/',
+                    type: 'POST'
+                }).done(function (data) {
+
+                })
+            };
 
         include ./fixed/footer.pug

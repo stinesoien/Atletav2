@@ -89,6 +89,12 @@ INSERT INTO classes (class_id, class_name, level, information) VALUES ('24', 'Si
 INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('1', 'HotYoga', '16:00:00', '2017-11-24', '1');
 INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('2', 'Spinn30', '17:00:00', '2017-11-23', '12');
 INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('3', 'Stretch', '15:00:00', '2017-11-22', '6');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('4', 'BootyBuilder', '18:00:00', '2017-11-14', '22');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('5', 'BootyBuilder', '18:00:00', '2017-11-15', '22');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('6', 'BootyBuilder', '18:00:00', '2017-11-16', '22');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('7', 'BootyBuilder', '18:00:00', '2017-11-17', '22');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('8', 'BootyBuilder', '18:00:00', '2017-11-18', '22');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('9', 'BootyBuilder', '18:00:00', '2017-11-19', '22');
 
 
 a(class = "active" style ="float:rigth" onclick="document.getElementById('popPassword').style.display='block'") Endre passord
