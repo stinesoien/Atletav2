@@ -29,7 +29,7 @@ html
                     type: 'GET'
                 }).done(function(data) {
                     document.getElementById("json").innerHTML = '';
-                    for (var i = 1; i < data.length; i++) {
+                    for (var i = 0; i < data.length; i++) {
                         document.getElementById("json").innerHTML += '<div id="json2" onclick="myFunction()">' + JSON.stringify(data[i].class_name, null, 2) + '</div>';
                     }
 

@@ -34,3 +34,7 @@ body {
     top: calc(20% - 8px);
     left: calc(50% - 150px);
 }
+
+#bookClasses {
+    margin-top: 50%;
+}

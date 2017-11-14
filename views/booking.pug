@@ -19,25 +19,33 @@ html
             var thisDate = document.getElementById("theDate");
             thisDate.innerHTML = Date.today().toString("dd/MM/yyyy");
 
+            var output=document.getElementById("bookClasses");
+            output.innerHTML = thisDate.value;
+
 
             //var tomorrow = Date.today().addDays(1).toString("dd/mm/yyyy");
 
             //document.write(today);
             //document.write(tomorrow);
 
+
             var getClassesForBooking = function (date) {
+                console.log("test");
                 $.ajax({
                     url: 'booking/' + date,
-                    type: 'GET',
-                    data: {
+                    type: 'GET'
+                    /*data: {
                         'theDate': theDate
-                    },
+                    }*/
                 }).done(function (data) {
+                    console.log(data);
                     document.getElementById("json").innerHTML = ' ';
-
+                    for (var i = 0; i < data.length; i++){
+                        document.getElementById("json").innerHTML += JSON.stringify(data, null, 2);
+                    }
                 })
             };
-
+            /*
             var bookClass = function () {
                 $.ajax({
                     url: 'booking/',
@@ -45,6 +53,12 @@ html
                 }).done(function (data) {
 
                 })
-            };
+            };*/
+
+            thisDate.oninput = function () {
+                output.innerHTML = this.value;
+                var date = this.value;
+                getClassesForBooking(date);
+            }
 
         include ./fixed/footer.pug

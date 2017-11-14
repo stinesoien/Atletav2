@@ -165,10 +165,10 @@ app.get('/classes', function (req, res) {
     res.render('classes');
 });
 
-/*
-app.put('/booking', function (req, res) {
+
+app.get('/booking/:date', function (req, res) {
     bookingController.getBooking(req, res);
-});*/
+});
 
 
 app.get('/classes/:level', function (req, res) {
