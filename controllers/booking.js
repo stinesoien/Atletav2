@@ -2,7 +2,7 @@ var connection = require('./../config');
 
 module.exports={
     getBooking: function (req,res) {
-        connection.pool.query('SELECT time, b_name FROM booking WHERE date = ?', [req.params.date], function(err, result){
+        connection.pool.query('SELECT time, b_name FROM booking WHERE date = ? ORDER BY time', [req.params.date], function(err, result){
             if(err) {
                 return res.status(500).json({message: 'Something went wrong.'});
             }

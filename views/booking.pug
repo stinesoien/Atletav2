@@ -45,24 +45,24 @@ html
             }
 
 
-
             var getClassesForBooking = function (date) {
-                console.log("test");
                 $.ajax({
                     url: 'booking/' + date,
                     type: 'GET'
-                    /*data: {
-                        'theDate': theDate
-                    }*/
                 }).done(function (data) {
                     console.log(data);
                     document.getElementById("json").innerHTML = ' ';
                     for (var i = 0; i < data.length; i++){
-                        document.getElementById("json").innerHTML += JSON.stringify(data, null, 2);
+                        document.getElementById("json").innerHTML += '<div id="json1" >' + JSON.stringify(data[i].time + " " + data[i].b_name).replace(/\"/g, "")
+                            + '<button type="button" id="button" onclick="myFunction()">Book</button>' + '</div>';
                     }
                 })
             };
 
             getClassesForBooking(date);
 
-        include ./fixed/footer.pug
+            function myFunction() {
+                alert("Booking utført");
+                document.getElementById("button").onclick = this.disabled;
+            }
+    include ./fixed/footer.pug

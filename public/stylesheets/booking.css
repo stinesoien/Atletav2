@@ -38,5 +38,31 @@ body {
 }
 
 #bookClasses {
-    margin-top: 50%;
+    width: 35%;
+    margin-top: 20%;
+    margin-left: 30%;
+    text-align: left;
 }
+
+#json1 {
+    font-family: Arial;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#button {
+    margin-top: -2%;
+    width: 40%;
+    float: right;
+}
+
+#button:focus {
+    background: red;
+    opacity: 0.7;
+}
+
+
