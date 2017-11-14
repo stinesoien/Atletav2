@@ -34,12 +34,12 @@ passport.use(new LocalStrategy({
             if (err)
                 return done(err);
             if (!rows.length) {
-                return done(null, false); // req.flash is the way to set flashdata using connect-flash
+                return done(null, false);
             }
 
             //Hvis brukeren er funnet, men passordet er feil
             if (!bcrypt.compareSync(password, rows[0].password))
-                return done(null, false); // create the loginMessage and save it to session as flashdata
+                return done(null, false);
 
             // Returnerer suksessfull bruker
             return done(null, rows[0]);
@@ -48,7 +48,7 @@ passport.use(new LocalStrategy({
 );
 
 
-
+//Serialize og deserialize lar oss være logget også når man går mellom ulike sider på applikasjonen
 passport.serializeUser(function(user, done){
     done(null, user.email);
 });
@@ -73,7 +73,8 @@ app.put('/session', function(req, res){
     }else{
         res.send("Session failed");
     }
-})
+});
+
 
 app.get('/error', function(req, res){
     res.send('Login Failed');
@@ -93,7 +94,8 @@ app.use(bodyParser.json());
 app.set('view engine', 'pug');
 app.set('views', './views');
 
-//Henter en bruker på mailadressen sin via funksjonen getUserByEmail i users.js
+
+//Henter en bruker på mailadressen sin via funksjonen getUserByEmail i users.js(controllers)
 app.get('/users/:email', function(req, res) {
    userController.getUserByEmail(req, res);
 });
@@ -108,18 +110,23 @@ app.get('/editUser', function(req, res) {
     res.render('editUser');
 });
 
+//Gir oss editPassword-pug filen hvis bruker er logget inn.
+app.get('/editPassword', function (req, res) {
+    if(req.isAuthenticated()) {
+        res.render('editPassword', {user: req.user});
+    }
+    else {
+        res.redirect('/')
+    }
+});
+//Kjører funksjonen updatePassword(i controllers) og oppdaterer brukeren vha. sql-spørringen.
+app.put('/updatePassword', function (req, res) {
+    editPasswordController.updatePassword(req,res);
+});
+
 //Henter booking.pug
 app.get('/booking', function (req, res) {
     res.render('booking');
-})
-
-app.get('/editPassword', function (req, res) {
-    res.render('editPassword');
-
-});
-
-app.put('/users/:email', function (req, res) {
-    editPasswordController.updatePassword(req,res);
 });
 
 /* route to handle login and registration */
@@ -130,6 +137,13 @@ app.post('/login',
         res.redirect('/');
 
 });
+
+//Logger ut en bruker og sender h*n tilbake til hjemsiden
+app.get('/logout', function(req, res) {
+    req.logOut();
+    res.redirect('/');
+});
+
 app.post('/newuser', registerController.register);
 
 app.get('/', function(req, res){
@@ -141,19 +155,11 @@ app.get('/', function(req, res){
     }
 });
 
-app.get('/logout', function(req, res) {
-    req.logOut();
-    res.redirect('/');
-});
 
 /*
 app.get('/classes/:level', function (req, res) {
     classesController.getClasses(req, res);
 }); */
-
-app.get('/login', function(req, res){
-    res.render('login');
-});
 
 app.get('/newuser', function (req, res) {
     res.render('newUser');
