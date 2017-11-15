@@ -25,15 +25,19 @@ html
 
             var op = 0;
             var compareDate = "";
+            var correctDate = "";
 
             var getNextDay = function() {
+                correctDate = Date.today().addDays(op + 1).toString("yyyy-MM-dd");
                 if(op <= 6) {
                     thisDate.innerHTML = Date.today().addDays(op+1).toString("dd-MM-yyyy");
                     op++;
                 }
+                getClassesForBooking(correctDate);
             }
 
             var getPastDay = function () {
+                correctDate = Date.today().addDays(op - 1).toString("yyyy-MM-dd");
                 compareDate = Date.today().addDays(op - 1);
                 var compareRes = today.compareTo(compareDate);
                 console.log("Sammenligningsdato: " + compareDate);
@@ -42,6 +46,7 @@ html
                     thisDate.innerHTML = Date.today().addDays(op-1).toString("dd-MM-yyyy");
                     op--;
                 }
+                getClassesForBooking(correctDate);
             }
 
 
@@ -58,7 +63,6 @@ html
                     }
                 })
             };
-
             getClassesForBooking(date);
 
             function myFunction() {

@@ -17,11 +17,14 @@ html
                     pre#json
 
 
+
         script.
 
             var slider = document.getElementById("myRange");
             var output = document.getElementById("demo");
             output.innerHTML = slider.value;
+
+            var startLevel = slider.value;
 
             var getLevel = function (level) {
                 $.ajax({
@@ -34,15 +37,6 @@ html
                             + JSON.stringify(data[i].class_name, null, 2).replace(/\"/g, "") + '</div>';
                     }
 
-
-                    //console.log(data);
-
-                    //$("body").append(JSON.stringify(data));
-                    /*
-                    data.forEach(function(d) {
-                      $("body").append(JSON.stringify(d));
-                    }) */
-
                 });
             };
 
@@ -52,6 +46,12 @@ html
                 getLevel(level);
             }
 
-            function myFunction() {
+            getLevel(startLevel);
+
+            function myFunction(d) {
+                document.getElementById("json").innerHTML= '';
+                for (var i = 0; i < d.length; i++) {
+                    document.getElementById("json").innerHTML += JSON.stringify(d[i].information);
+                }
                 alert("hei");
             }
