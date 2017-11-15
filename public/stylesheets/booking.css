@@ -1,11 +1,12 @@
 body {
     background-color: #d8d8d8;
+    top: 33em;
 }
 
 .nextDay {
     position: absolute;
-    top: calc(20% - 8px);
-    left: calc(50% + 100px);
+    top: 7em;
+    left: calc(50% + 90px);
     transform: rotate(-45deg);
     display: block;
     width: 15px;
@@ -17,7 +18,7 @@ body {
 
 .pastDay {
     position: absolute;
-    top: calc(20% - 8px);
+    top: 7em;
     left: calc(50% - 150px);
     transform: rotate(-45deg);
     display: block;
@@ -32,37 +33,46 @@ body {
     color: black;
     font-size: 30px;
     position: absolute;
-    top: calc(20% - 1px);
-    left: calc(50% - 90px);
+    top: 4em;
+    left: 19.6em;
     cursor: default;
 }
 
 #bookClasses {
-    width: 35%;
-    margin-top: 20%;
-    margin-left: 30%;
+    margin-top: 11em;
+    margin-left: 21%;
     text-align: left;
+    width: 50%;
 }
 
 #json1 {
+    top: 10em;
     font-family: Arial;
+    margin: 0.7em;
     border-collapse: collapse;
     width: 100%;
     padding: 20px;
     text-align: left;
-    border: 1px solid black;
+    background-color: #ededed;
+    box-shadow: 4px 4px 4px #888888;
     cursor: pointer;
 }
 
+#json1:hover{
+    box-shadow: 7px 7px 7px #888888;
+}
+
 #button {
+    background: #2d7a27;
     margin-top: -2%;
-    width: 40%;
+    width: 20%;
     float: right;
 }
 
 #button:focus {
-    background: red;
+    background: #8c0000;
     opacity: 0.7;
+    outline:0;
 }
 
 

@@ -62,11 +62,13 @@ html
                     console.log(data);
                     document.getElementById("json").innerHTML = ' ';
                     for (var i = 0; i < data.length; i++){
-                        document.getElementById("json").innerHTML += '<div id="json1" >' + JSON.stringify(data[i].time + " " + data[i].b_name).replace(/\"/g, "")
-                            + '<button type="button" id="button" onclick="myFunction()">Book</button>' + '</div>';
+                        document.getElementById("json").innerHTML += '<div id="json1" >' + JSON.stringify("       "
+                        + data[i].time + "                       " + data[i].b_name).replace(/\"/g, "")
+                        + '<button type="button" id="button" onclick="myFunction()">Book</button>' + '</div>';
                     }
                 })
             };
+
             getClassesForBooking(date);
 
             function myFunction() {
