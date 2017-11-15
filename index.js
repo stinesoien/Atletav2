@@ -60,6 +60,7 @@ passport.deserializeUser(function(email, done){
     });
 });
 
+//Finner brukeren som er logget på via session, og henter dens brukerinformasjon og fyller inn i inputfeltene i editUser
 app.get('/session', function(req, res){
     if(req.user) {
         res.json({epost: req.user.email});
@@ -68,10 +69,19 @@ app.get('/session', function(req, res){
     }
 });
 
+//Legger inn endringene på brukeren som er logget inn via session.
 app.put('/session', function(req, res){
     if(req.user){
         res.json({epost: req.user.email});
     }else{
+        res.send("Session failed");
+    }
+});
+
+app.get('/Reservation', function(req, res){
+    if(req.user) {
+        res.json({epost: req.user.email}, {gruppetime: req.book});
+    } else {
         res.send("Session failed");
     }
 });
@@ -130,6 +140,8 @@ app.get('/booking', function (req, res) {
     res.render('booking');
 });
 
+app.post('/booking', bookingController.updateBooking);
+
 //HER ØNSKER VI Å SENDE EN TILBAKEMELD OM FEIL PASSORD ELLER BRUKERNAVN!!!!
 app.get('/login', function(req, res){
     res.redirect('/');
@@ -139,9 +151,7 @@ app.get('/login', function(req, res){
 app.post('/login',
     passport.authenticate('local', { failureRedirect: '/login' }),
     function(req, res ) {
-
         res.redirect('/');
-
 });
 
 //Logger ut en bruker og sender h*n tilbake til hjemsiden
@@ -151,6 +161,7 @@ app.get('/logout', function(req, res) {
 });
 
 app.post('/newuser', registerController.register);
+
 
 app.get('/', function(req, res){
     if(req.isAuthenticated()) {

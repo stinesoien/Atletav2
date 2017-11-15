@@ -16,10 +16,7 @@ module.exports = {
                 password = hash;
                 connection.pool.query('INSERT INTO users SET email=?, password=?, fname=?, sname=?, address=?, phone =?', [email, password, fname, sname, address, phone], function (error, results) {
                     if (error) {
-                        res.json({
-                            status: false,
-                            message: 'there are some error with query' + error
-                        })
+                        return res.status(500).json({message: 'Something went wrong.'});
                     } else {
                         res.json({
                             status: true,

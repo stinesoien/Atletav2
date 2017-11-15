@@ -51,9 +51,13 @@ html
 
 
             var getClassesForBooking = function (date) {
+                console.log("test");
                 $.ajax({
                     url: 'booking/' + date,
                     type: 'GET'
+                    /*data: {
+                        'theDate': theDate
+                    }*/
                 }).done(function (data) {
                     console.log(data);
                     document.getElementById("json").innerHTML = ' ';
