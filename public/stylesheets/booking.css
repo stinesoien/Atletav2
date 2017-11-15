@@ -69,15 +69,7 @@ body {
     float: right;
 }
 
-/*
+
 #bookButton:focus {
-    background: #8c0000;
-    opacity: 0.7;
-    outline:0;
+    outline: 0;
 }
-
-#bookButton:target {
-    background: #8c0000;
-}
-*/
-
