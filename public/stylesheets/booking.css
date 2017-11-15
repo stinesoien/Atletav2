@@ -45,7 +45,7 @@ body {
     width: 50%;
 }
 
-#json1 {
+#bookClass {
     top: 10em;
     font-family: Arial;
     margin: 0.7em;
@@ -58,21 +58,26 @@ body {
     cursor: pointer;
 }
 
-#json1:hover{
+#bookClass:hover{
     box-shadow: 7px 7px 7px #888888;
 }
 
-#button {
+#bookButton {
     background: #2d7a27;
     margin-top: -2%;
     width: 20%;
     float: right;
 }
 
-#button:focus {
+/*
+#bookButton:focus {
     background: #8c0000;
     opacity: 0.7;
     outline:0;
 }
 
+#bookButton:target {
+    background: #8c0000;
+}
+*/
 

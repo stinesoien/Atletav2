@@ -15,7 +15,7 @@ html
         p.pastDay(onclick="getPastDay()")
 
         .container#bookClasses
-            pre#json
+            pre#groupClass
 
         script.
             var thisDate = document.getElementById("showDate");
@@ -60,19 +60,21 @@ html
                     }*/
                 }).done(function (data) {
                     console.log(data);
-                    document.getElementById("json").innerHTML = ' ';
+                    document.getElementById("groupClass").innerHTML = ' ';
                     for (var i = 0; i < data.length; i++){
-                        document.getElementById("json").innerHTML += '<div id="json1" >' + JSON.stringify("       "
+                        document.getElementById("groupClass").innerHTML += '<div id="bookClass" >' + JSON.stringify("       "
                         + data[i].time + "                       " + data[i].b_name).replace(/\"/g, "")
-                        + '<button type="button" id="button" onclick="myFunction()">Book</button>' + '</div>';
+                        + '<button type="button" id="bookButton" onclick="bookClass(this)">Book time</button>' + '</div>';
                     }
                 })
             };
 
             getClassesForBooking(date);
 
-            function myFunction() {
-                alert("Booking utført");
-                document.getElementById("button").onclick = this.disabled;
+            function bookClass(bookButton) {
+                bookButton.innerHTML = "Avbestill time";
+                bookButton.style.backgroundColor = "8c0000";
+                bookButton.style.opacity = "0.7";
             }
+
     include ./fixed/footer.pug
