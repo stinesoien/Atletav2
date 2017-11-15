@@ -37,16 +37,16 @@ html
             }
 
             var getPastDay = function () {
-                correctDate = Date.today().addDays(op - 1).toString("yyyy-MM-dd");
                 compareDate = Date.today().addDays(op - 1);
                 var compareRes = today.compareTo(compareDate);
                 console.log("Sammenligningsdato: " + compareDate);
                 console.log("ResTall: " + compareRes);
                 if(op >= -6 && compareRes < 1) {
+                    correctDate = Date.today().addDays(op - 1).toString("yyyy-MM-dd");
+                    getClassesForBooking(correctDate);
                     thisDate.innerHTML = Date.today().addDays(op-1).toString("dd-MM-yyyy");
                     op--;
                 }
-                getClassesForBooking(correctDate);
             }
 
 
