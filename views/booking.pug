@@ -28,12 +28,12 @@ html
             var correctDate = "";
 
             var getNextDay = function() {
-                correctDate = Date.today().addDays(op + 1).toString("yyyy-MM-dd");
                 if(op <= 6) {
+                    correctDate = Date.today().addDays(op + 1).toString("yyyy-MM-dd");
+                    getClassesForBooking(correctDate);
                     thisDate.innerHTML = Date.today().addDays(op+1).toString("dd-MM-yyyy");
                     op++;
                 }
-                getClassesForBooking(correctDate);
             }
 
             var getPastDay = function () {
