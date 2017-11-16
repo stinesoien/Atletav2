@@ -30,6 +30,7 @@ var updateUser = function() {
     })
 };
 
+
 var getUser = function() {
     $.ajax({
         url: 'session',

@@ -78,11 +78,13 @@ app.put('/session', function(req, res){
     }
 });
 
-app.get('/Reservation', function(req, res){
+
+
+app.post('/booking/:b_id', function(req, res){
     if(req.user) {
-        res.json({epost: req.user.email}, {gruppetime: req.book});
+        bookingController.updateBooking(req, res);
     } else {
-        res.send("Session failed");
+        res.send("Reservation failed");
     }
 });
 
@@ -141,6 +143,12 @@ app.get('/booking', function (req, res) {
 });
 
 app.post('/booking', bookingController.updateBooking);
+
+app.post('/booking/:email/:b_id', function (req,res) {
+    bookingController.updateBooking(req,res);
+    //bookingController.getBooking(req, res);
+    //userController.getUserByEmail(req, res);
+});
 
 //HER ØNSKER VI Å SENDE EN TILBAKEMELD OM FEIL PASSORD ELLER BRUKERNAVN!!!!
 app.get('/login', function(req, res){
