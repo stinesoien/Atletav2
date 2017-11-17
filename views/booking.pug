@@ -77,8 +77,9 @@ html
             //var thisClass = document.getElementById("bookClass");
             var makeBooking = function (e) {
                 var test = $(e).data("id");
+                //console.log(test);
                 $.ajax({
-                    url: 'booking/' + test,
+                    url: 'booking/',
                     type: 'POST',
                     data: {
                         'b_id': test
@@ -94,13 +95,10 @@ html
                     },
                     error: function (data) {
                         console.log(data);
-                    },
-                    complete: function (data) {
-                        console.log(data);
-
                     }
 
                 });
+                console.log(test);
             };
 
             makeBooking(thisBook);

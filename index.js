@@ -80,7 +80,7 @@ app.put('/session', function(req, res){
 
 
 
-app.post('/booking/:b_id', function(req, res){
+app.post('/booking/', function(req, res){
     if(req.user) {
         bookingController.updateBooking(req, res);
     } else {
@@ -142,7 +142,7 @@ app.get('/booking', function (req, res) {
     res.render('booking');
 });
 
-app.post('/booking', bookingController.updateBooking);
+//app.post('/booking', bookingController.updateBooking);
 
 app.post('/booking/:email/:b_id', function (req,res) {
     bookingController.updateBooking(req,res);
