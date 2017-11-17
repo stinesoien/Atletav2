@@ -15,6 +15,8 @@ var classesController = require('./controllers/classes');
 var editPasswordController = require('./controllers/editPassword');
 var bookingController = require('./controllers/booking');
 
+
+
 app.use(session({
     secret: 'myVerySecretKey',
     resave: true,
@@ -22,6 +24,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
 passport.use(new LocalStrategy({
@@ -80,11 +83,12 @@ app.put('/session', function(req, res){
 
 
 
-app.post('/booking/', function(req, res){
+app.post('/booking', function(req, res){
+    console.log("inni post");
     if(req.user) {
         bookingController.updateBooking(req, res);
     } else {
-        res.send("Reservation failed");
+        res.status(401).json({message: "you are not logged in."});
     }
 });
 
@@ -143,12 +147,12 @@ app.get('/booking', function (req, res) {
 });
 
 //app.post('/booking', bookingController.updateBooking);
-
+/*
 app.post('/booking/:email/:b_id', function (req,res) {
     bookingController.updateBooking(req,res);
     //bookingController.getBooking(req, res);
     //userController.getUserByEmail(req, res);
-});
+});*/
 
 //HER ØNSKER VI Å SENDE EN TILBAKEMELD OM FEIL PASSORD ELLER BRUKERNAVN!!!!
 app.get('/login', function(req, res){

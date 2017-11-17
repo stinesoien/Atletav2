@@ -77,7 +77,7 @@ html
             //var thisClass = document.getElementById("bookClass");
             var makeBooking = function (e) {
                 var test = $(e).data("id");
-                //console.log(test);
+                console.log(test);
                 $.ajax({
                     url: 'booking/',
                     type: 'POST',
@@ -85,11 +85,11 @@ html
                         'b_id': test
                     },
                     dataType: 'json',
-                    success: function (data) {
-                        console.log(data);
-                        data.innerHTML = "Avbestill time";
-                        data.style.backgroundColor = "8c0000";
-                        data.style.opacity = "0.7";
+                    success: function (){
+                        console.log(this);
+                        this.innerHTML = "Avbestill time";
+                        this.style.backgroundColor = "8c0000";
+                        this.style.opacity = "0.7";
 
 
                     },
@@ -98,7 +98,7 @@ html
                     }
 
                 });
-                console.log(test);
+                //console.log(test);
             };
 
             makeBooking(thisBook);
