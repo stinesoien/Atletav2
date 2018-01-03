@@ -58,7 +58,4 @@ var getUser = function() {
     });
 
 };
-
-//var email = 1; dette er den 'email': email
-
 getUser();

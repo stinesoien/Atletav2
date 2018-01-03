@@ -14,6 +14,7 @@ var userController = require('./controllers/user');
 var classesController = require('./controllers/classes');
 var editPasswordController = require('./controllers/editPassword');
 var bookingController = require('./controllers/booking');
+var reservationController = require('./controllers/reservation');
 
 
 
@@ -84,12 +85,20 @@ app.put('/session', function(req, res){
 
 
 app.post('/booking', function(req, res){
-    console.log("inni post");
     if(req.user) {
         bookingController.updateBooking(req, res);
     } else {
         res.status(401).json({message: "you are not logged in."});
     }
+});
+
+app.get('/myReservations', function (req, res) {
+    if(req.user){
+        reservationController.getReservations(req, res);
+    }else{
+        res.status(401).json({message: "you are not logged in."});
+    }
+
 });
 
 
@@ -110,7 +119,6 @@ app.use(bodyParser.json());
 
 app.set('view engine', 'pug');
 app.set('views', './views');
-
 
 //Henter en bruker på mailadressen sin via funksjonen getUserByEmail i users.js(controllers)
 app.get('/users/:email', function(req, res) {
@@ -146,13 +154,9 @@ app.get('/booking', function (req, res) {
     res.render('booking');
 });
 
-//app.post('/booking', bookingController.updateBooking);
-/*
-app.post('/booking/:email/:b_id', function (req,res) {
-    bookingController.updateBooking(req,res);
-    //bookingController.getBooking(req, res);
-    //userController.getUserByEmail(req, res);
-});*/
+app.get('/myReservations', function (req,res) {
+    res.render('myReservations');
+});
 
 //HER ØNSKER VI Å SENDE EN TILBAKEMELD OM FEIL PASSORD ELLER BRUKERNAVN!!!!
 app.get('/login', function(req, res){

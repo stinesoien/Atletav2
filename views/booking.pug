@@ -55,16 +55,13 @@ html
                 $.ajax({
                     url: 'booking/' + date,
                     type: 'GET'
-                    /*data: {
-                        'theDate': theDate
-                    }*/
                 }).done(function (data) {
                     //console.log(data);
                     document.getElementById("groupClass").innerHTML = ' ';
                     for (var i = 0; i < data.length; i++){
                         thisBook = data[i].b_id;
                         document.getElementById("groupClass").innerHTML += '<div id="bookClass" >' + JSON.stringify("       "+
-                        data[i].b_id + data[i].time + "                       " + data[i].b_name).replace(/\"/g, "")
+                        data[i].time + "                       " + data[i].b_name).replace(/\"/g, "")
                         + '<button type="button" id="bookButton" onclick="makeBooking(this)" data-id='+ thisBook +'>Book time</button>' + '</div>';
                         //makeBooking(thisBook);
                         //thisBook = data[i].b_id;

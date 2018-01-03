@@ -1,0 +1,29 @@
+html
+    head
+        script(type="text/javascript", src="js/jquery-3.2.1.js")
+    body
+        include ./fixed/header.pug
+
+        .container#reservations
+            pre#oneReservation
+
+        script.
+            var getReservations = function () {
+                $.ajax({
+                    url: 'myReservations/',
+                    type: 'GET'
+                }).done(function (data) {
+                    document.getElementById("oneReservation").innerHTML = ' ';
+                    for(var i =0; i<data.length; i++){
+                        document.getElementById("oneReservation").innerHTML += '<div id="reservations">'+ JSON.stringify("        " +  data[i].b_name + "          " + data[i].time + "         " + data[i].date).replace(/\"/g, "");
+                            /*+ '<button type="button" id="bookButton" onclick="deleteReservation()">Avbestill time</button>' + '</div>';*/
+                    }
+
+                })
+            };
+
+            var deleteReservation = function(){
+
+            }
+
+            getReservations();
