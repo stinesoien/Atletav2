@@ -1,14 +1,18 @@
 html
     head
-        title EditUser
-        link(rel='stylesheet', href='/stylesheets/editUser.css')
+        title PT
+        link(rel='stylesheet', href='/stylesheets/pt.css')
         script(type="text/javascript", src="js/jquery-3.2.1.js")
-        script(type="text/javascript", src="js/editUser.js")
+        //script(type="text/javascript", src="js/editUser.js")
     body
         include ./fixed/header.pug
-            
+
+        .container
+            img.avatarman(src="./images/man.png", alt="Mann")
+            h4 Ola Nordmann
+            p Atleta Midtbyen
+            .overlay
+                .text 26 år gammel. Har jobbet her i 6 år.
 
 
-
-        .content
-            include ./fixed/footer.pug
+        include ./fixed/footer.pug

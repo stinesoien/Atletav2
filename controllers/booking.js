@@ -12,8 +12,6 @@ module.exports={
     },
 
     updateBooking: function (req, res) {
-        console.log("inni updateBooking");
-        console.log(req.body);
         connection.pool.query('INSERT INTO users_booking SET b_id=?, email=?',[req.body.b_id, req.user.email], function (err) {
             if (err) {
                 console.log(err);

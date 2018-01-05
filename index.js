@@ -98,7 +98,16 @@ app.get('/myReservations', function (req, res) {
     }else{
         res.status(401).json({message: "you are not logged in."});
     }
+});
 
+app.delete('/deleteReservation', function (req, res) {
+    console.log("jeg er utenfor index-delete");
+    if(req.user){
+        console.log("jeg er i index-delete");
+        reservationController.deleteReservations(req, res);
+    }else{
+        res.status(401).json({message: "you are not logged in."});
+    }
 });
 
 
@@ -154,8 +163,8 @@ app.get('/booking', function (req, res) {
     res.render('booking');
 });
 
-app.get('/myReservations', function (req,res) {
-    res.render('myReservations');
+app.get('/reservations', function (req,res) {
+    res.render('reservations');
 });
 
 //HER ØNSKER VI Å SENDE EN TILBAKEMELD OM FEIL PASSORD ELLER BRUKERNAVN!!!!
@@ -195,6 +204,10 @@ app.get('/newuser', function (req, res) {
 
 app.get('/classes', function (req, res) {
     res.render('classes');
+});
+
+app.get('/pt', function(req, res){
+    res.render('pt');
 });
 
 

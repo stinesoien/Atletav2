@@ -3,33 +3,9 @@ body {
     top: 33em;
 }
 
-.nextDay {
-    position: absolute;
-    top: 7em;
-    left: calc(50% + 90px);
-    transform: rotate(-45deg);
-    display: block;
-    width: 15px;
-    height: 15px;
-    content: "";
-    border: 1px solid black;
-    border-width: 0px 4px 4px 0px;
-}
 
-.pastDay {
-    position: absolute;
-    top: 7em;
-    left: calc(50% - 150px);
-    transform: rotate(-45deg);
-    display: block;
-    width: 15px;
-    height: 15px;
-    content: "";
-    border: 1px solid black;
-    border-width: 4px 0px 0px 4px;
-}
 
-#showDate {
+#myReservations {
     color: black;
     font-size: 30px;
     position: absolute;
@@ -38,14 +14,14 @@ body {
     cursor: default;
 }
 
-#bookClasses {
+#reservations {
     margin-top: 11em;
     margin-left: 21%;
     text-align: left;
     width: 50%;
 }
 
-#bookClass {
+#reservation {
     top: 10em;
     font-family: Arial;
     margin: 0.7em;
@@ -58,11 +34,11 @@ body {
     cursor: pointer;
 }
 
-#bookClass:hover{
+#reservation:hover{
     box-shadow: 7px 7px 7px #888888;
 }
 
-#bookButton {
+#deleteReservation {
     background: #2d7a27;
     margin-top: -2%;
     width: 20%;
@@ -70,10 +46,6 @@ body {
 }
 
 
-#bookButton:focus {
+#deleteReservation:focus {
     outline: 0;
 }
-
-
-
-

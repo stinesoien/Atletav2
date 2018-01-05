@@ -74,7 +74,7 @@ html
             //var thisClass = document.getElementById("bookClass");
             var makeBooking = function (e) {
                 var test = $(e).data("id");
-                console.log(test);
+                //console.log(test);
                 $.ajax({
                     url: 'booking/',
                     type: 'POST',
@@ -83,9 +83,9 @@ html
                     },
                     dataType: 'json',
                     success: function (){
-                        console.log(this);
+                        //console.log(this);
                         this.innerHTML = "Avbestill time";
-                        this.style.backgroundColor = "8c0000";
+                        //this.style.backgroundColor = "8c0000";
                         this.style.opacity = "0.7";
 
 

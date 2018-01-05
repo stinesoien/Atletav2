@@ -1,0 +1,48 @@
+html
+    head
+        link(rel='stylesheet', href='/stylesheets/myReservations.css')
+        script(type="text/javascript", src="js/jquery-3.2.1.js")
+        script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js")
+    body
+        include ./fixed/header.pug
+
+        #myReservations
+
+        .container#reservations
+            pre#oneReservation
+
+        script.
+            var today = Date.today();
+            var thisReservation = document.getElementById("reservation")
+            var getReservations = function () {
+                $.ajax({
+                    url: 'myReservations/',
+                    type: 'GET'
+                }).done(function (data) {
+                    if (data.date >= today) {
+                        document.getElementById("oneReservation").innerHTML = ' ';
+                        for (var i = 0; i < data.length; i++) {
+                            thisReservation = data[i].b_id;
+                            document.getElementById("oneReservation").innerHTML += '<div id="reservation">' + JSON.stringify("        " + data[i].b_name + "          " + data[i].time + "         " + data[i].date).replace(/\"/g, "")
+                                + '<button type="button" id="deleteReservation" onclick="deleteReservations()" data-id=' + thisReservation + '>Avbestill time</button>' + '</div>';
+                        }
+                    }
+                })
+            };
+
+            var deleteReservations = function(){
+                var test = $().data("id");
+                $.ajax({
+                    url: 'deleteReservation/',
+                    type: 'DELETE',
+                    data: {
+                        'b_id': test
+                    }
+                }).done(function(data){
+                    console.log(data.b_id);
+                    getReservations();
+                })
+
+            }
+
+            getReservations();
