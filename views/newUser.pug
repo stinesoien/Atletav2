@@ -1,30 +1,49 @@
 html
     head
         title Ny bruker
+        link(rel='stylesheet', href='/stylesheets/newUser.css')
+        script(type="text/javascript", src="js/jquery-3.2.1.js")
+        script(type="text/javascript", src="js/newUser.js")
     body
+        include ./fixed/header.pug
         form(action = "/newuser", method = "POST")
+
+        .addUser
             div
-                label(for = "fname") Fornavn:
-                input(name = "fname")
-            br
+                label
+                    b Fornavn:
+                    br
+                input(type = "text", id = "fname")
             div
-                label(for = "sname") Etternavn:
-                input(name = "sname")
-            br
+                label
+                    b Etternavn:
+                    br
+                input(type = "text", id = "sname")
             div
-                label(for = "phone") Telefonnummer:
-                input(name = "phone")
-            br
+                label
+                    b Telefonnummer:
+                    br
+                input(type = "text", id = "phone")
             div
-                label(for = "email") E-post:
-                input(name = "email")
-            br
+                label
+                    b E-post:
+                    br
+                input(type = "text", id = "email")
             div
-                label(for = "address") Adresse:
-                input(name = "address")
-            br
+                label
+                    b Adresse:
+                    br
+                input(type = "text", id = "address")
             div
+                label
+                    b Passord:
+                    br
+                input(type = "password", id = "password")
+            //div
                 label(for = "password") Passord:
                 input(name = "password")
             br
             button(type = "submit") Registrer
+
+        .content
+            include ./fixed/footer.pug

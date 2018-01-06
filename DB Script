@@ -95,6 +95,13 @@ INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('6', 'BootyBuil
 INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('7', 'BootyBuilder', '18:00:00', '2017-11-17', '22');
 INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('8', 'BootyBuilder', '18:00:00', '2017-11-18', '22');
 INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('9', 'BootyBuilder', '18:00:00', '2017-11-19', '22');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('16', 'BootyBuilder', '18:00:00', '2017-01-02', '22');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('17', 'BootyBuilder', '18:00:00', '2017-01-03', '22');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('18', 'BootyBuilder', '18:00:00', '2017-01-04', '22');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('19', 'BootyBuilder', '18:00:00', '2017-01-05', '22');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('20', 'BootyBuilder', '18:00:00', '2017-01-06', '22');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('21', 'BootyBuilder', '18:00:00', '2017-01-07', '22');
+INSERT INTO booking (b_id, b_name, time, date, class_id) VALUES ('22', 'BootyBuilder', '18:00:00', '2017-01-08', '22');
 
 
 
