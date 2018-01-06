@@ -3,43 +3,30 @@ html
         title Ny bruker
         link(rel='stylesheet', href='/stylesheets/newUser.css')
         script(type="text/javascript", src="js/jquery-3.2.1.js")
-        script(type="text/javascript", src="js/newUser.js")
     body
-        include ./fixed/header.pug
+        //include ./fixed/header.pug
         form(action = "/newuser", method = "POST")
-
-        .addUser
             div
-                label
-                    b Fornavn:
-                    br
-                input(type = "text", id = "fname")
+                label(for = "fname") Fornavn:
+                input(name = "fname")
+            br
             div
-                label
-                    b Etternavn:
-                    br
-                input(type = "text", id = "sname")
+                label(for = "sname") Etternavn:
+                input(name = "sname")
+            br
             div
-                label
-                    b Telefonnummer:
-                    br
-                input(type = "text", id = "phone")
+                label(for = "phone") Telefonnummer:
+                input(name = "phone")
+            br
             div
-                label
-                    b E-post:
-                    br
-                input(type = "text", id = "email")
+                label(for = "email") E-post:
+                input(name = "email")
+            br
             div
-                label
-                    b Adresse:
-                    br
-                input(type = "text", id = "address")
+                label(for = "address") Adresse:
+                input(name = "address")
+            br
             div
-                label
-                    b Passord:
-                    br
-                input(type = "password", id = "password")
-            //div
                 label(for = "password") Passord:
                 input(name = "password")
             br
