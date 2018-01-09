@@ -30,9 +30,19 @@ h4{
     padding-left: 30%;
 }
 
-p{
+
+
+.position{
     padding-left: 30%;
+
 }
+
+.mailAddress{
+    padding-left: 20%;
+    padding-bottom: 5%;
+
+}
+
 
 .overlay{
     position: absolute;
@@ -61,4 +71,11 @@ p{
     left:50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+}
+
+#more{
+    position: absolute;
+    left: 90%;
+    bottom: 5%;
+
 }
