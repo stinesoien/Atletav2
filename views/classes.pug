@@ -13,9 +13,21 @@ html
 
             table
                 th Gruppetimer
-            .container#timer
-                    pre#json
+            //.container#timer
+                pre#allClasses
 
+            .container
+                img.yogapic(src="./images/yoga.jpg", alt="Yoga")
+                h4.thisClass#0
+                .overlay
+                    .text#1
+
+
+            // .cards
+                .card
+                    img(src="http://www.stonystratford.gov.uk/upload/managerImage/Community%20Groups/Whitespace%20Yoga.jpg")
+                    h2
+                    p.thisClass#0
 
 
         script.
@@ -25,19 +37,26 @@ html
             output.innerHTML = slider.value;
 
             var startLevel = slider.value;
+            var info;
 
             var getLevel = function (level) {
                 $.ajax({
                     url: 'classes/' + level,
                     type: 'GET'
                 }).done(function(data) {
-                    document.getElementById("json").innerHTML = '';
+                    info = data;
+                    document.getElementById("allClasses").innerHTML = '';
                     for (var i = 0; i < data.length; i++) {
-                        document.getElementById("json").innerHTML += '<div id="json2" onclick="myFunction()">'
-                            + JSON.stringify(data[i].class_name, null, 2).replace(/\"/g, "") + '</div>';
-                    }
+                        document.getElementById("allClasses").innerHTML += '<ul id="' + i + '" class="thisClass">'
+                            + JSON.stringify(data[i].class_name).replace(/\"/g, "") + '</ul>';
 
+                    }/*
+                    buttons = document.getElementsByClassName("thisClass");
+                    for (var i = 0; i < buttons.length; i++) {
+                        buttons[i].addEventListener("click", redirect, false);
+                    }*/
                 });
+
             };
 
             slider.oninput = function () {
@@ -48,10 +67,10 @@ html
 
             getLevel(startLevel);
 
-            function myFunction(d) {
-                document.getElementById("json").innerHTML= '';
-                for (var i = 0; i < d.length; i++) {
-                    document.getElementById("json").innerHTML += JSON.stringify(d[i].information);
-                }
-                alert("hei");
+
+
+            function redirect(ev){
+                console.log("redirect");
+                var index = ev.target.id;
+                ev.target.innerHTML = info[index].information;
             }

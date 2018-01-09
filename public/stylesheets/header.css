@@ -151,3 +151,8 @@ div.container {
         width: 100%;
     }
 }
+
+/* scrolldown animasjon*/
+.scroll-gyms {
+    animation-duration: 4s;
+}

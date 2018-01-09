@@ -3,12 +3,17 @@ html
         link(rel='stylesheet', href='/stylesheets/header.css')
     body
         .navbar
+            a(href="/#main") ATLETA
             a(href="/booking") Timeplan
+            a(href="/pt") Personlig Trener
+            a.scroll-gyms(href="/#gyms") Sentre
+
             if user
                 a(class="active" href='/logout' style="float:right") Logg ut
                 a(href='/edituser') Rediger
             else
                 a(class="active" style="float:right" onclick="document.getElementById('id01').style.display='block'") Logg inn
+
         #id01.modal
             form.modal-content.animate(action='/login' method="POST")
                 .imgcontainer

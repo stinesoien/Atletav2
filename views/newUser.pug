@@ -1,7 +1,10 @@
 html
     head
         title Ny bruker
+        link(rel='stylesheet', href='/stylesheets/newUser.css')
+        script(type="text/javascript", src="js/jquery-3.2.1.js")
     body
+        //include ./fixed/header.pug
         form(action = "/newuser", method = "POST")
             div
                 label(for = "fname") Fornavn:
@@ -28,3 +31,6 @@ html
                 input(name = "password")
             br
             button(type = "submit") Registrer
+
+        .content
+            include ./fixed/footer.pug

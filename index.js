@@ -220,4 +220,9 @@ app.get('/classes/:level', function (req, res) {
     classesController.getClasses(req, res);
 });
 
+//Våre sentre
+app.get('/gyms', function (req, res) {
+    res.render('index')
+});
+
 app.listen(3000);
