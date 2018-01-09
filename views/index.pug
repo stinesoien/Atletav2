@@ -2,6 +2,7 @@ html
     head
         link(rel='stylesheet', href='/stylesheets/index.css')
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        link( rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css")
         script(type="text/javascript", src="js/jquery-3.2.1.js")
         script(type="text/javascript", src="./js/index.js")
     body
@@ -10,17 +11,83 @@ html
         if user
             p du er logget inn som: #{user.email}
 
-        section.first
+        section.first#main
             a(href = "/newuser")
                 button.button1(type="button" style='vertical-align:middle')
                     span Bli Medlem
             a.scroll-down1(href='#second', address='true')
+
         section.second
-            p.p1 Kategorier
             a.scroll-down2(href='#third', address='true')
-        section.third
+
+        section.third#gyms
+            h1 Vår treningsfilosofi
+            pre Lorem ipsum dolor sit amet,
+                |consectetuer adipiscing elit.
+                |Aenean commodo ligula eget dolor. Aenean massa.
+                |Cum sociis natoque penatibus et magnis dis parturient
+                |montes, nascetur ridiculus mus. Donec quam felis,
+                |ultricies nec, pellentesque eu, pretium quis, sem.
+                |Nulla consequat massa quis enim. Donec pede justo,
+                |fringilla vel, aliquet nec, vulputate eget, arcu.
+                |In enim justo, rhoncus ut, imperdiet a, venenatis
+                |vitae, justo. Nullam dictum felis eu pede mollis pretium.
+                |Integer tincidunt. Cras dapibus. Vivamus elementum
+                |semper nisi. Aenean vulputate eleifend tellus. Aenean leo
+                |ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+
             img.map(src="./images/kart.png", alt="Kart over Trondheim")
-            i(id="center1" class="fa fa-map-marker" style='font-size:50px')
-            i(id="center2" class="fa fa-map-marker" style='font-size:50px')
+            i(id="gym1Btn" class="fa fa-map-marker" style='font-size:50px')
+            i(id="gym2Btn" class="fa fa-map-marker" style='font-size:50px')
+            #modalGym1.modalGym1
+                .modal-contentGym
+                    div(class="w3-card-4", style="height:70%")
+                    img.gym1(src="./images/gym1.jpg", alt="Bilde av treningssenteret", style="width:100%")
+                    div(class="w3-container w3-center")
+                        pre Lorem ipsum dolor sit amet,
+                            | consectetuer adipiscing elit.
+                            | Aenean commodo ligula eget dolor. Aenean massa.
+                            | Cum sociis natoque penatibus et magnis dis parturient
+                            | montes, nascetur ridiculus mus. Donec quam felis,
+                            | ultricies nec, pellentesque eu, pretium quis, sem.
+            #modalGym2.modalGym2
+                .modal-contentGym
+                    div(class="w3-card-4", style="height:70%")
+                        img.gym1(src="./images/gym1.jpg", alt="Bilde av treningssenteret", style="width:100%")
+                        div(class="w3-container w3-center")
+                            pre Lorem ipsum dolor sit amet,
+                                | consectetuer adipiscing elit.
+                                | Aenean commodo ligula eget dolor. Aenean massa.
+                                | Cum sociis natoque penatibus et magnis dis parturient
+                                | montes, nascetur ridiculus mus. Donec quam felis,
+                                | ultricies nec, pellentesque eu, pretium quis, sem.
             a.scroll-down3(href='#forth', address='true')
+
+        script.
+            var modal1 = document.getElementById("modalGym1");
+            var modal2 = document.getElementById("modalGym2");
+
+            var iconBtn1 = document.getElementById("gym1Btn");
+            var iconBtn2 = document.getElementById("gym2Btn");
+
+            //Åpner modal 1
+            iconBtn1.onclick = function() {
+                modal1.style.display = "block";
+            };
+
+            //Åpner modal 2
+            iconBtn2.onclick = function() {
+                modal2.style.display = "block";
+            };
+
+            //Lukker når klikker utenfor
+            window.onclick = function (event) {
+                if(event.target == modal1 || event.target == modal2) {
+                    modal1.style.display = "none";
+                    modal2.style.display = "none"
+                }
+            };
+
+
+
         include ./fixed/footer.pug
