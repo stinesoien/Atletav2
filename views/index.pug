@@ -60,7 +60,7 @@ html
 
             a.scroll-down1(href='#second', address='true')
 
-        section.second
+        section.second#groupclasses
             h1.classesH Våre gruppetimer
                 p.intensitySlider Velg intensitet
                     input(type="range", min="1", max="3", value="1", id="myRange", class="slider")
@@ -153,6 +153,7 @@ html
                 newUserPop.style.display = "block";
             }
 
+            // Slider
             var slider = document.getElementById("myRange");
             var output = document.getElementById("demo");
             output.innerHTML = slider.value;
@@ -187,7 +188,6 @@ html
             }
 
             getLevel(startLevel);
-
 
 
             function redirect(ev) {
