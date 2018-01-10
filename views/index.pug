@@ -12,9 +12,51 @@ html
             p du er logget inn som: #{user.email}
 
         section.first#main
-            a(href = "/newuser")
-                button.button1(type="button" style='vertical-align:middle')
-                    span Bli Medlem
+            //a(href = "/newuser")
+            button.button1#newBtn(type="button" style='vertical-align:middle')
+                span Bli Medlem
+
+            #modalNew.modalNew
+                .modal-contentNew
+                    div.containerNew
+                        div
+                            label
+                                b Fornavn:
+                                br
+                            input(type = "text" id = "fname", required='')
+
+                        div
+                            label
+                                b Etternavn:
+                                br
+                            input(type = "text" id = "sname", required='')
+
+                        div
+                            label
+                                b Telefonnummer:
+                                br
+                            input(type = "text" id = "phone", required='')
+
+                        div
+                            label
+                                b E-post:
+                                br
+                            input(type = "text" id = "email", required='')
+
+                        div
+                            label
+                                b Adresse:
+                                br
+                            input(type = "text" id = "address", required='')
+
+                        div
+                            label
+                                b Passord:
+                                br
+                            input(type = "password" id = "password", required='')
+
+                        button(onclick="newMember()", type = "button" id="register") Registrer
+
             a.scroll-down1(href='#second', address='true')
 
         section.second
@@ -67,6 +109,9 @@ html
             var iconBtn1 = document.getElementById("gym1Btn");
             var iconBtn2 = document.getElementById("gym2Btn");
 
+            var newUserBtn = document.getElementById("newBtn");
+            var newUserPop = document.getElementById("modalNew");
+
             //Åpner modal 1
             iconBtn1.onclick = function() {
                 modal1.style.display = "block";
@@ -79,10 +124,17 @@ html
 
             //Lukker når klikker utenfor
             window.onclick = function (event) {
-                if(event.target == modal1 || event.target == modal2) {
+                if(event.target == modal1 || event.target == modal2 || event.target == newUserPop) {
                     modal1.style.display = "none";
-                    modal2.style.display = "none"
+                    modal2.style.display = "none";
+                    newUserPop.style.display = "none";
                 }
             };
+
+            // åpner bli medlem
+            newUserBtn.onclick = function () {
+                newUserPop.style.display = "block";
+            }
+
 
     include ./fixed/footer.pug
