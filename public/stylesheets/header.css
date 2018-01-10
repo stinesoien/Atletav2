@@ -36,7 +36,7 @@
     float: right;
 
 }
-
+/*
 .navbar p{
     position: static;
     float: right;
@@ -46,6 +46,16 @@
     padding: 14px 16px;
     text-decoration: none;
 
+} */
+
+#userName {
+    position: static;
+    float: right;
+    display: block;
+    color: white;
+    font-weight: bold;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 /* Full-width input fields */
