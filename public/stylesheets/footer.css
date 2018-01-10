@@ -1,4 +1,4 @@
-.container#footer {
+.container-footer {
     position: relative;
     left: -5em;
     bottom: 0em;
@@ -9,14 +9,14 @@
     text-align: center;
 }
 
-a {
+.container-footer a {
     padding: 14px 16px;
     color: #424242;
     text-decoration: none;
     font-family: Arial;
 }
 
-a :hover {
+.container-footer :hover {
     color: #ad3232;
     background-color: transparent;
     text-decoration: underline;

@@ -1,15 +1,21 @@
 html
     head
-        title min side
+        title Min Side
         link(rel='stylesheet', href='/stylesheets/userPage.css')
         script(type="text/javascript", src="js/jquery-3.2.1.js")
         script(type="text/javascript", src="js/editUser.js")
     body
         include ./fixed/header.pug
 
-        .endreInfo#editInfo
+         //Endre info - knapp
+        .endreInfoBtn#editInfo
             h3 Endre Info
 
+        //treningsprogram - knapp
+        .workoutProgBtn#woProg
+            h3 Treningsprogram
+
+        //Endre info - popup
         #editInfoBox.modal-editInfo
             .modal-contentInfo
                 div.containerInfo
@@ -23,7 +29,6 @@ html
                             b Etternavn:
                             br
                         input(type = "text", id = "sname")
-
                     div
                         label
                             b Adresse:
@@ -35,24 +40,43 @@ html
                             br
                         input(type = "text", id = "phone")
 
-                    button(onclick="updateUser()", type="button") Oppdater profil
+                    .updateBtn(onclick="updateUser()", type="button") Oppdater profil
+                    a.editPswBtn(href="/editPassword") Endre Passord
 
-                    a(href='/editPassword') Endre passord
+
+        #workoutProgBox.modal-woProg
+            .modal-content-woProg
+                h1 Treningsprogrammer til nedlastning:
+                a(href="./documents/TreningHelkropp.pdf" TreningHelkropp) Treningsprogram - Helkropp
+                a(href="./documents/TreningMRL.pdf" TreningsMRL) Treningsprogram - MRL (Mage, rumpe og lår)
+                a(href="./documents/TreningNybegynner.pdf" TreningNybegynner) Treningsprogram - Nybegynner
+
 
         script.
+
+            //Endre info
             var endreInfoBtn = document.getElementById("editInfo");
             var editInfoPopup = document.getElementById("editInfoBox");
 
-            // popupen åpnes
+            //Treninsprogram
+            var workoutProgBtn = document.getElementById("woProg");
+            var woProgPopup = document.getElementById("workoutProgBox");
+
+
+            // popup - endre info
             endreInfoBtn.onclick = function () {
                 editInfoPopup.style.display = "block";
             }
 
+            // popup - treningsprogram
+            workoutProgBtn.onclick = function () {
+                woProgPopup.style.display = "block";
+            }
 
-            //lukkes ved å klikke ved siden av
             window.onclick = function (event) {
-                if (event.target == editInfoPopup){
+                if (event.target == editInfoPopup || event.target == woProgPopup){
                     editInfoPopup.style.display = "none";
+                    woProgPopup.style.display = "none";
                 }
             }
 

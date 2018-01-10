@@ -9,32 +9,10 @@ html
         if user
             du er logget inn som: #{user.email}
 
-        .editInfo
-            div
-                label
-                    b Fornavn:
-                    br
-                input(type = "text", id = "fname")
-            div
-                label
-                    b Etternavn:
-                    br
-                input(type = "text", id = "sname")
-
-            div
-                label
-                    b Adresse:
-                    br
-                input(type = "text", id = "address")
-            div
-                label
-                    b Telefonnummer:
-                    br
-                input(type = "text", id = "phone")
-
-            button(onclick="updateUser()", type="button") Oppdater profil
-
-            a(href='/editPassword') Endre passord
+        .downloadLinks
+            a(href="./documents/TreningHelkropp.pdf" TreningHelkropp) Treningsprogramm - Helkropp
+            a(href="./documents/TreningMRL.pdf" TreningsMRL) Treningsprogramm - MRL (Mage, rumpe og lår)
+            a(href="./documents/TreningNybegynner.pdf" TreningNybegynner) Treningsprogramm - Nybegynner
 
         .content
             include ./fixed/footer.pug

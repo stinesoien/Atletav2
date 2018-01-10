@@ -12,29 +12,25 @@ html
                 a(class="active" href='/logout') Logg ut
                 a(href='/userPage' id="userName") #{user.fname +' ' + user.sname}
             else
-                a(class="active" style="float:right" onclick="document.getElementById('id01').style.display='block'") Logg inn
+                a(class="active" style="float:right" onclick="document.getElementById('loginForm').style.display='block'") Logg inn
 
-        #id01.modal
-            form.modal-content.animate(action='/login' method="POST")
-                .imgcontainer
+        #loginForm.modal-LoginPopup
+            form.modal-content-login.animate(action='/login' method="POST")
+                .imgcontainer-login
                     img.avatar(src='images/running_login.jpg', alt='Avatar')
-                div.container
+                .containerLoginForm
                     label(for = "email")
                     input(class="input-text", type='text', name='email', required='', placeholder="Skriv inn e-postadressen")
 
                     label(for = "password")
                     input(class="input-text", type="password" placeholder="Skriv inn passord" name="password" required='')
 
-                    button(type="submit") Logg inn
-                    button.cancelbtn(type = "button", onclick="document.getElementById('id01').style.display='none'") Avbryt
 
-                script.
-                    var modal = document.getElementById('id01');
+                    button.loginBtn(type="submit") Logg inn
+                    button.cancelBtn(type = "button", onclick="document.getElementById('loginForm').style.display='none'") Avbryt
 
-                    window.onclick = function (event) {
-                        if (event.target == modal) {
-                            modal.style.display = "none";
-                        }
-                    }
+
+
+
 
 

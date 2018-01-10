@@ -1,15 +1,50 @@
-.endreInfo {
-    height: 8em;
-    width: 5em;
-    background-color: lightgrey;
-    padding: 0 5em;
-    margin: 8em;
-    display: flex;
+body {
+    background: url(http://themes.wonster.co/symetrio/wp-content/uploads/2014/10/istock_000034011980large_wide-c1179ce23971180113b4c6706d9469f1c5e841a4-1200x600.jpg) center center / cover no-repeat;
+}
+
+/* ENDRE INFO */
+.endreInfoBtn {
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #ad3232;
+    border: none;
+    color: #FFFFFF;
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
+    font-size: 40px;
+    padding: 3%;
+    width: 25%;
+    height: 8%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    position:relative;
     font-family: Arial;
+    font-size: 30px;
+    left: 4em;
+    top: 5em;
+}
+
+.endreInfoBtn h3 {
+    margin: auto;
+    display: block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.endreInfoBtn h3:after {
+    /*content: '\00bb';*/
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    transition: 0.5s;
+}
+
+.endreInfoBtn:hover h3 {
+    font-size: 40px;
+}
+
+.endreInfoBtn:hover {
+    opacity: 0.8;
 }
 
 .modal-editInfo {
@@ -21,23 +56,129 @@
     width: 100%;
     height: 100%;
     background-color: rgb(0,0,0);
-    background-color: rgba(150,150,150,0.7);
+    background-color: rgba(0,0,0,0.4);
     padding-top: 60px;
 }
 
 .modal-contentInfo {
     background-color: #fefefe;
+    box-shadow: 10px 10px rgba(0,0,0,0.4);
     margin: 1% auto 15% auto;
-    border: 1px solid #888888;
-    width: 30em;
-    height: 30em;
+    width: 60%;
+    height: 70%;
     z-index: 5;
 }
 
-.containerInfo {
+.containerInfo  label{
     font-family: Arial;
-    margin-top: 10%;
-    margin-left: 15%;
+    padding: 7%;
+    align-items: center;
+}
 
-    /*transform: translate(-50%, -50%)*/
+.containerInfo div {
+
+}
+
+.containerInfo b {
+
+}
+
+.containerInfo .updateBtn, .editPswBtn {
+    text-decoration: none;
+    color: white;
+    background-color: #ad3232;
+    cursor: pointer;
+    font-family: Arial;
+    padding: 3% 5%;
+    margin: 2%;
+    text-align: center;
+    display: inline-block;
+}
+
+
+/* TRENINGSPROGRAM */
+.workoutProgBtn {
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #ad3232;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 40px;
+    padding: 3%;
+    width: 25%;
+    height: 8%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    position:absolute;
+    font-family: Arial;
+    font-size: 30px;
+    left: 4em;
+    top: 13em;
+}
+
+.workoutProgBtn h3 {
+    margin: auto;
+    display: block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.workoutProgBtn h3:after {
+    /*content: '\00bb';*/
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    transition: 0.5s;
+}
+
+.workoutProgBtn:hover h3 {
+    font-size: 40px;
+}
+
+.workoutProgBtn:hover {
+    opacity: 0.8;
+}
+
+.modal-content-woProg {
+    background-color: #fefefe;
+    box-shadow: 10px 10px rgba(0,0,0,0.4);
+    margin: 1% auto 15% auto;
+    width: 60%;
+    height: 70%;
+    z-index: 5;
+}
+
+.modal-woProg {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content-woProg h1 {
+    padding: 3%;
+    font-family: Arial;
+    text-align: center;
+
+}
+
+.modal-content-woProg a {
+    height: 2%;
+    width: 50%;
+    background-color: #ad3232;
+    color: white;
+    font-family: Arial;
+    padding: 5%;
+    margin: 2% auto 2% auto;
+    text-align: center;
+    text-decoration: none;
+    display: block;
 }
