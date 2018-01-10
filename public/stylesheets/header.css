@@ -33,6 +33,18 @@
 .navbar a.active {
     background-color: #510010;
     color: white;
+    float: right;
+
+}
+
+.navbar p{
+    position: static;
+    float: right;
+    display: block;
+    color: white;
+    font-weight: bold;
+    padding: 14px 16px;
+    text-decoration: none;
 
 }
 

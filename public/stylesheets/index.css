@@ -7,7 +7,7 @@ html, body {
 
 body{
     background-color: #d8d8d8;
-    text-align: center;
+    /*text-align: center;*/
     z-index:2;
 }
 
@@ -157,7 +157,7 @@ p.p1 {
     width: 32px;
     height: 32px;
     background-size: 14px auto;
-    z-index: 2;
+    z-index: 1;
     -webkit-animation: bounce 2s infinite 2s;
     animation: bounce 2s infinite 2s;
     -webkit-transition: all .2s ease-in;
@@ -212,10 +212,8 @@ p.p1 {
 }
 
 .map {
-    position: absolute;
-    right: 54.2%;
-    bottom: -199.9%;
-    width: 40.76%;
+    width: 41%;
+    height: 100%;
 }
 
 i {
@@ -223,29 +221,30 @@ i {
     color: #ad3232;
 }
 
-h1 {
+.h1SectionThree{
     position: absolute;
     right: 31%;
-    bottom: -130%;
+    bottom: -125%;
     text-align: left;
 }
 
-pre {
+.gymInfo{
     position: absolute;
     right: 15%;
-    bottom: -168%;
+
+    bottom: -175%;
     text-align: left;
 }
 
 #gym1Btn {
     position: absolute;
-    right: 70%;
-    bottom: -150%;
+    right: 80%;
+    bottom: -136%;
 }
 
 #gym2Btn {
     position: absolute;
-    right: 86%;
+    right: 90%;
     bottom: -140%;
 }
 
@@ -305,3 +304,12 @@ p.p2{
     width: 50%;
     height: auto;
 }
+/*
+.h1SectionThree{
+    padding-left: 55%;
+
+}
+
+.gymInfo{
+    padding-left: 55%;
+}*/

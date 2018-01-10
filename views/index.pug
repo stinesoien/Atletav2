@@ -21,24 +21,27 @@ html
             a.scroll-down2(href='#third', address='true')
 
         section.third#gyms
-            h1 Vår treningsfilosofi
-            pre Lorem ipsum dolor sit amet,
-                |consectetuer adipiscing elit.
-                |Aenean commodo ligula eget dolor. Aenean massa.
-                |Cum sociis natoque penatibus et magnis dis parturient
-                |montes, nascetur ridiculus mus. Donec quam felis,
-                |ultricies nec, pellentesque eu, pretium quis, sem.
-                |Nulla consequat massa quis enim. Donec pede justo,
-                |fringilla vel, aliquet nec, vulputate eget, arcu.
-                |In enim justo, rhoncus ut, imperdiet a, venenatis
-                |vitae, justo. Nullam dictum felis eu pede mollis pretium.
-                |Integer tincidunt. Cras dapibus. Vivamus elementum
-                |semper nisi. Aenean vulputate eleifend tellus. Aenean leo
-                |ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+            .h1SectionThree
+                h1 Vår treningsfilosofi
+            .gymInfo
+                pre Lorem ipsum dolor sit amet,
+                    |consectetuer adipiscing elit.
+                    |Aenean commodo ligula eget dolor. Aenean massa.
+                    |Cum sociis natoque penatibus et magnis dis parturient
+                    |montes, nascetur ridiculus mus. Donec quam felis,
+                    |ultricies nec, pellentesque eu, pretium quis, sem.
+                    |Nulla consequat massa quis enim. Donec pede justo,
+                    |fringilla vel, aliquet nec, vulputate eget, arcu.
+                    |In enim justo, rhoncus ut, imperdiet a, venenatis
+                    |vitae, justo. Nullam dictum felis eu pede mollis pretium.
+                    |Integer tincidunt. Cras dapibus. Vivamus elementum
+                    |semper nisi. Aenean vulputate eleifend tellus. Aenean leo
+                    |ligula, porttitor eu, consequat vitae, eleifend ac, enim.
 
-            img.map(src="./images/kart.png", alt="Kart over Trondheim")
-            i(id="gym1Btn" class="fa fa-map-marker" style='font-size:50px')
-            i(id="gym2Btn" class="fa fa-map-marker" style='font-size:50px')
+            .gymMap
+                img.map(src="./images/kart.png", alt="Kart over Trondheim")
+                i(id="gym1Btn" class="fa fa-map-marker" style='font-size:50px')
+                i(id="gym2Btn" class="fa fa-map-marker" style='font-size:50px')
             #modalGym1.modalGym1
                 .modal-contentGym
                     h3 Atleta Midtbyen
@@ -82,6 +85,4 @@ html
                 }
             };
 
-
-
-        include ./fixed/footer.pug
+    include ./fixed/footer.pug

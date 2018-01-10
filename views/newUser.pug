@@ -3,34 +3,47 @@ html
         title Ny bruker
         link(rel='stylesheet', href='/stylesheets/newUser.css')
         script(type="text/javascript", src="js/jquery-3.2.1.js")
+        script(type="text/javascript", src="js/newUser.js")
     body
-        //include ./fixed/header.pug
-        form(action = "/newuser", method = "POST")
+        include ./fixed/header.pug
+        .memberInfo
             div
-                label(for = "fname") Fornavn:
-                input(name = "fname")
-            br
-            div
-                label(for = "sname") Etternavn:
-                input(name = "sname")
-            br
-            div
-                label(for = "phone") Telefonnummer:
-                input(name = "phone")
-            br
-            div
-                label(for = "email") E-post:
-                input(name = "email")
-            br
-            div
-                label(for = "address") Adresse:
-                input(name = "address")
-            br
-            div
-                label(for = "password") Passord:
-                input(name = "password")
-            br
-            button(type = "submit") Registrer
+                label
+                    b Fornavn:
+                    br
+                input(type = "text" id = "fname", required='')
 
-        .content
+            div
+                label
+                    b Etternavn:
+                    br
+                input(type = "text" id = "sname", required='')
+
+            div
+                label
+                    b Telefonnummer:
+                    br
+                input(type = "text" id = "phone", required='')
+
+            div
+                label
+                    b E-post:
+                    br
+                input(type = "text" id = "email", required='')
+
+            div
+                label
+                    b Adresse:
+                    br
+                input(type = "text" id = "address", required='')
+
+            div
+                label
+                    b Passord:
+                    br
+                input(type = "password" id = "password", required='')
+
+            button(onclick="newMember()", type = "button") Registrer
+            
             include ./fixed/footer.pug
+            

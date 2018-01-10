@@ -185,7 +185,12 @@ app.get('/logout', function(req, res) {
     res.redirect('/');
 });
 
-app.post('/newuser', registerController.register);
+
+
+app.post('/newUser', function (req, res) {
+    registerController.register(req,res);
+});
+
 
 
 app.get('/', function(req, res){
@@ -197,7 +202,7 @@ app.get('/', function(req, res){
     }
 });
 
-app.get('/newuser', function (req, res) {
+app.get('/newUser', function (req, res) {
     res.render('newUser');
 });
 
@@ -208,6 +213,10 @@ app.get('/classes', function (req, res) {
 
 app.get('/pt', function(req, res){
     res.render('pt');
+});
+
+app.get('/statistic', function (req, res) {
+    res.render('statistic')
 });
 
 

@@ -9,7 +9,8 @@ html
             a.scroll-gyms(href="/#gyms") Sentre
 
             if user
-                a(class="active" href='/logout' style="float:right") Logg ut
+                a(class="active" href='/logout') Logg ut
+                p #{user.fname +' ' + user.sname}
                 a(href='/edituser') Rediger
             else
                 a(class="active" style="float:right" onclick="document.getElementById('id01').style.display='block'") Logg inn
