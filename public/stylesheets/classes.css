@@ -7,19 +7,19 @@ body {
 }
 
 
-.imgcontainer {
+.imgcontainerSpin {
     float: right;
-    margin-left: 50%;
     margin-top: -45%;
+    margin-right: 20%;
 }
 
-img.dans {
-    padding-top: 10%;
+.imgcontainerDance {
+    float: right;
+    margin-right: 20%;
+    margin-top: -27%;
+
 }
 
-img.spinning {
-
-}
 
 h4{
     padding-left: 30%;
@@ -54,10 +54,6 @@ h4{
     -ms-transform: translate(-50%, -50%);
 }
 
-
-
-
-
 .slider {
     -webkit-appearance: none;
     width: 20%;
@@ -68,6 +64,7 @@ h4{
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
+
 }
 
 .slider:hover {
