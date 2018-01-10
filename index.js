@@ -176,7 +176,7 @@ app.get('/login', function(req, res){
 app.post('/login',
     passport.authenticate('local', { failureRedirect: '/login' }),
     function(req, res ) {
-        res.redirect('/');
+        res.redirect('/userPage');
 });
 
 //Logger ut en bruker og sender h*n tilbake til hjemsiden
@@ -217,6 +217,10 @@ app.get('/pt', function(req, res){
 
 app.get('/statistic', function (req, res) {
     res.render('statistic')
+});
+
+app.get('/userPage', function (req, res) {
+    res.render('userPage');
 });
 
 

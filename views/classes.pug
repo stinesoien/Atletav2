@@ -4,29 +4,20 @@ html
         link(rel='stylesheet', href='/stylesheets/classes.css')
         script(type="text/javascript", src="js/jquery-3.2.1.js")
     body
-        h1 Intensitet
+        h1 Våre gruppetimer
+        p Velg den intensiteten som passer deg
         #slidecontainer
             input(type="range", min="1", max="3", value="1", id="myRange", class="slider")
             p Nivå <em> </em>
                 span#demo
 
             table
-                th Gruppetimer
-            //.container#timer
+            .container#timer
                 pre#allClasses
 
-            .container
-                img.yogapic(src="./images/yoga.jpg", alt="Yoga")
-                h4.thisClass#0
-                .overlay
-                    .text#1
-
-
-            // .cards
-                .card
-                    img(src="http://www.stonystratford.gov.uk/upload/managerImage/Community%20Groups/Whitespace%20Yoga.jpg")
-                    h2
-                    p.thisClass#0
+            .imgcontainer
+                img.spinning(src='images/spinning.jpg', alt='Spinning')
+                img.dans(src='images/dans.jpg', alt='Dans')
 
 
         script.
@@ -49,11 +40,11 @@ html
                         document.getElementById("allClasses").innerHTML += '<ul id="' + i + '" class="thisClass">'
                             + JSON.stringify(data[i].class_name).replace(/\"/g, "") + '</ul>';
 
-                    }/*
+                    }
                     buttons = document.getElementsByClassName("thisClass");
                     for (var i = 0; i < buttons.length; i++) {
                         buttons[i].addEventListener("click", redirect, false);
-                    }*/
+                    }
                 });
 
             };

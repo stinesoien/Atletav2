@@ -1,0 +1,60 @@
+html
+    head
+        title min side
+        link(rel='stylesheet', href='/stylesheets/userPage.css')
+        script(type="text/javascript", src="js/jquery-3.2.1.js")
+        script(type="text/javascript", src="js/editUser.js")
+    body
+        include ./fixed/header.pug
+
+        .endreInfo#editInfo
+            h3 Endre Info
+
+        #editInfoBox.modal-editInfo
+            form.modal-contentInfo
+                div.containerInfo
+                    div
+                        label
+                            b Fornavn:
+                            br
+                        input(type = "text", id = "fname")
+                    div
+                        label
+                            b Etternavn:
+                            br
+                        input(type = "text", id = "sname")
+
+                    div
+                        label
+                            b Adresse:
+                            br
+                        input(type = "text", id = "address")
+                    div
+                        label
+                            b Telefonnummer:
+                            br
+                        input(type = "text", id = "phone")
+
+                    button(onclick="updateUser()", type="button") Oppdater profil
+
+                    a(href='/editPassword') Endre passord
+
+        script.
+            var endreInfoBtn = document.getElementById("editInfo");
+            var editInfoPopup = document.getElementById("editInfoBox");
+
+            // popupen åpnes
+            endreInfoBtn.onclick = function () {
+                editInfoPopup.style.display = "block";
+            }
+
+
+            //lukkes ved å klikke ved siden av
+            window.onclick = function (event) {
+                if (event.target == editInfoPopup){
+                    editInfoPopup.style.display = "none";
+                }
+            }
+
+
+        include ./fixed/footer.pug
