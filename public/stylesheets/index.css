@@ -131,6 +131,10 @@ section.third {
     background-color: #ededed;
 }
 
+section.fourth {
+    background: url(https://i.pinimg.com/originals/aa/40/7f/aa407f4200c300311d4bfa00ebe16bbf.jpg) center center / cover no-repeat;
+}
+
 p.p1 {
     color: white;
     font-family: arial;
@@ -476,6 +480,30 @@ h4{
 
 .second {
     padding: 5% 0 0 0;
+}
+
+.h1sectionFour {
+    padding: 4% 0 0 5%;
+}
+
+.prices p {
+    font-size: smaller;
+    margin-left: 6%;
+}
+
+.prices h3 {
+    margin-left: 6%;
+}
+
+.infoPrice {
+    margin-top: 5%;
+    margin-left: 2%;
+    width: 40%;
+    height: 80%;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #ededed;
+    opacity: 0.8;
 }
 
 
