@@ -5,10 +5,17 @@ html, body {
     padding: 0px;
 }
 
-body{
+body {
     background-color: #d8d8d8;
     /*text-align: center;*/
     z-index:2;
+    padding-bottom: 3em;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .imgcontent{
@@ -27,7 +34,7 @@ body{
 }
 
 /* Sign up button*/
-.button1 {
+.newUserBtn {
     display: inline-block;
     border-radius: 10px;
     background-color: #ad3232;
@@ -44,16 +51,17 @@ body{
     position:absolute;
     bottom: 50px;
     right: 50px;
+    outline: 0;
 }
 
-.button1 span {
+.newUserBtn span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
 
-.button1 span:after {
+.newUserBtn span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -62,45 +70,81 @@ body{
     transition: 0.5s;
 }
 
-.button1:hover span {
+.newUserBtn:hover span {
     padding-right: 30px;
 }
 
-.button1:hover span:after {
+.newUserBtn:hover span:after {
     opacity: 1;
     right: 0;
 }
 
+/* NEW USER POPUP */
+
 .modalNew {
     display: none;
     position: fixed;
+    left: 30%;
+    top: 5%;
     z-index: 1;
-    left: 0;
-    top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(0,0,0);
-    background-color: rgba(150,150,150,0.7);
     padding-top: 4%;
 }
 
 .modal-contentNew {
-    background-color: #fefefe;
-    margin: 1% auto 15% auto;
-    border: 1px solid #888888;
-    width: 30em;
-    height: 38em;
-    z-index: 5;
+    margin: auto;
+    width: 40%;
+    height: 82%;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: white;
+    left: 50%;
+    box-shadow: 7px 10px 10px #474747;
+}
+
+.h1NewUser {
+    padding: 5% 0 0 35%;
 }
 
 .containerNew {
     font-family: Arial;
-    font-size: smaller;
-    margin-top: 4%;
+    margin-top: 1%;
     margin-left: 8%;
 }
 
+.containerNew input {
+    width: 90%;
+    padding: 1% 5% 1% 1%;
+    margin: 2%;
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #ccc;
+}
 
+.registerBtn {
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #ad3232;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    width: 33.5%;
+    height: 8%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 1% 1% 1% 0;
+    position:absolute;
+}
+
+
+.registerBtn:hover {
+    box-shadow: 2px 4px 15px #474747;
+    transition: 0.3s;
+}
 
 /*Scrollbutton*/
 *,
@@ -123,8 +167,8 @@ section.first {
 
 
 section.second {
-    /*background: url(http://themes.wonster.co/symetrio/wp-content/uploads/2014/10/istock_000034011980large_wide-c1179ce23971180113b4c6706d9469f1c5e841a4-1200x600.jpg) center center / cover no-repeat; */
-    background-color: #ededed;
+    background: url(https://media.self.com/photos/57d8844b4b76f0f832a0d8f6/master/pass/before-after-workout-tips-feat.jpg) center center / cover no-repeat;
+    /*background-color: #ededed;*/
 }
 
 section.third {
@@ -134,6 +178,7 @@ section.third {
 section.fourth {
     background: url(https://i.pinimg.com/originals/aa/40/7f/aa407f4200c300311d4bfa00ebe16bbf.jpg) center center / cover no-repeat;
 }
+
 
 p.p1 {
     color: white;
@@ -147,11 +192,8 @@ p.p1 {
     opacity: 1;
     -webkit-transition: all .5s ease-in 3s;
     transition: all .5s ease-in 3s;
-}
-
-.scroll-down1 {
     position: absolute;
-    bottom: 30px;
+    bottom: 4%;
     left: 50%;
     margin-left: -16px;
     display: block;
@@ -182,11 +224,8 @@ p.p1 {
     opacity: 1;
     -webkit-transition: all .5s ease-in 3s;
     transition: all .5s ease-in 3s;
-}
-
-.scroll-down2 {
     position: absolute;
-    bottom: -640px;
+    bottom: -96%;
     left: 50%;
     margin-left: -16px;
     display: block;
@@ -201,6 +240,38 @@ p.p1 {
 }
 
 .scroll-down2:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 30px;
+    height: 30px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 4px 4px;
+}
+
+.scroll-down3 {
+    opacity: 1;
+    -webkit-transition: all .5s ease-in 3s;
+    transition: all .5s ease-in 3s;
+    position: absolute;
+    bottom: -196%;
+    left: 50%;
+    margin-left: -16px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-size: 14px auto;
+    z-index: 1;
+    -webkit-animation: bounce 2s infinite 2s;
+    animation: bounce 2s infinite 2s;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.scroll-down3:before {
     position: absolute;
     top: calc(50% - 8px);
     left: calc(50% - 6px);
@@ -482,6 +553,8 @@ h4{
     padding: 5% 0 0 0;
 }
 
+
+/* PRIS */
 .h1sectionFour {
     padding: 4% 0 0 5%;
 }
@@ -497,9 +570,9 @@ h4{
 
 .infoPrice {
     margin-top: 5%;
-    margin-left: 2%;
-    width: 40%;
-    height: 80%;
+    margin-left: 5%;
+    width: 23%;
+    height: 75%;
     display: inline-block;
     border-radius: 10px;
     background-color: #ededed;

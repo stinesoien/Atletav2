@@ -9,54 +9,35 @@ html
     body
         include ./fixed/header.pug
 
-        if user
-            p du er logget inn som: #{user.email}
-
         section.first#main
             //a(href = "/newuser")
-            button.button1#newBtn(type="button" style='vertical-align:middle')
+            button.newUserBtn#newBtn(type="button" style='vertical-align:middle')
                 span Bli Medlem
 
             #modalNew.modalNew
                 .modal-contentNew
-                    div.containerNew
+                    .h1NewUser
+                        h1 Bli Medlem
+                    .containerNew
                         div
-                            label
-                                b Fornavn:
-                                br
-                            input(type = "text" id = "fname", required='')
+                            input(type = "text" id = "fname", required='', placeholder="Fornavn:")
+                        div
+                            input(type = "text" id = "sname", required='', placeholder="Etternavn:")
 
                         div
-                            label
-                                b Etternavn:
-                                br
-                            input(type = "text" id = "sname", required='')
+                            input(type = "text" id = "phone", required='', placeholder="Telefonnummer:")
 
                         div
-                            label
-                                b Telefonnummer:
-                                br
-                            input(type = "text" id = "phone", required='')
+                            input(type = "text" id = "email", required='', placeholder="E-postadresse:")
 
                         div
-                            label
-                                b E-post:
-                                br
-                            input(type = "text" id = "email", required='')
+                            input(type = "text" id = "address", required='', placeholder="Adresse:")
 
                         div
-                            label
-                                b Adresse:
-                                br
-                            input(type = "text" id = "address", required='')
+                            input(type = "password" id = "password", required='', placeholder="Passord:")
 
-                        div
-                            label
-                                b Passord:
-                                br
-                            input(type = "password" id = "password", required='')
-
-                        button(onclick="newMember()", type = "button") Registrer
+                        button.registerBtn(onclick="newMember()", type = "button", style="vertical-align:middle")
+                            span Registrer
 
             a.scroll-down1(href='#second', address='true')
 
@@ -73,9 +54,9 @@ html
                     .class-container#timer
                         pre#allClasses
 
-                    .imgcontainerSpin
+                    //.imgcontainerSpin
                         img.spinning(src='images/spinning.jpg', alt='Spinning')
-                    .imgcontainerDance
+                    //.imgcontainerDance
                         img.dans(src='images/dans.jpg', alt='Dans')
             a.scroll-down2(href='#third', address='true')
 
@@ -117,12 +98,12 @@ html
                     p Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
                     p montes, nascetur ridiculus mus. Donec quam felis,
 
-            a.scroll-down3(href='#forth', address='true')
+            a.scroll-down3(href='#fourth', address='true')
 
         section.fourth#information
             .infoPrice
                 .h1sectionFour
-                    h1 Priser og Informasjon
+                    h1 Priser
                 .prices
                     h3 Ordinært medslemskap
                         p 349,- per måned
@@ -130,16 +111,14 @@ html
                     h3 Studentmedlemskap
                         p 249,- per måned
 
-                    h3 Ungdommedemskap
+                    h3 Ungdomsmedemskap
                         p 199,- per måned
 
                     h3 Offshoremedlemskap
                         p 249,- per måned
 
-                    h3 Drop-in time
+                    h3 Drop-in
                         p 75,- for en dag
-
-
 
             a.scroll-down4(href='#fifth', address='true')
 
@@ -220,5 +199,5 @@ html
                 ev.target.innerHTML = info[index].information;
             }
 
-
-    include ./fixed/footer.pug
+    footer
+        include ./fixed/footer.pug

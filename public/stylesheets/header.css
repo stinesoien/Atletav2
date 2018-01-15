@@ -59,9 +59,55 @@
     text-decoration: none;
 }
 
-/* Full-width input fields */
+/* LOGIN POPUP */
 
-.containerLoginForm input[type=text], input[type=password] {
+/* The Modal background */
+.modal-LoginPopup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(150,150,150,0.7); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Box */
+.modal-content-login {
+    background-color: #fefefe;
+    margin: 1% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 30em; /* Could be more or less, depending on screen size */
+    height: 30em;
+    border-radius: 500px;
+    z-index: 5;
+}
+
+/* Center the image and position the close button */
+.imgcontainer-login {
+    width: 100.1%;
+    left: 0em;
+    text-align: center;
+    /* 24px from the top, 12px from the bottom and centered */
+    position: relative;
+    background: black;
+    -moz-border-radius: 150px 0 0 150px;
+    border-radius: 500px 500px 0 0px;
+}
+
+img.loginpicture {
+    width: 100%;
+    height: 50%;
+    -moz-border-radius: 150px 0 0 150px;
+    border-radius: 500px 500px 0 0px;
+    -webkit-filter: grayscale(100%) opacity(30%);
+    filter: grayscale(100%) opacity(30%);
+}
+
+.containerLoginForm input[type=text], .containerLoginForm input[type=password] {
     width: 30em;
     padding: 5% 5% 1% 1%;
     margin: 8px 0;
@@ -72,8 +118,13 @@
     border-bottom: 1px solid #ccc;
 }
 
+.containerLoginForm {
+    padding: 2px;
+    width: 20em;
+    margin-top: 0em;
+    margin-left: 5em;
+}
 
-/*DETTE SKAL VÆRE HER!*/
 /* Set a style for all buttons */
 .loginBtn, .cancelBtn {
     color: white;
@@ -99,59 +150,6 @@
 /* Extra styles for the cancel button */
 .cancelBtn {
     background-color: #f44336;
-}
-
-/* Center the image and position the close button */
-.imgcontainer-login {
-    width: 100.1%;
-    left: 0em;
-    text-align: center;
-     /* 24px from the top, 12px from the bottom and centered */
-    position: relative;
-    background: black;
-    -moz-border-radius: 150px 0 0 150px;
-    border-radius: 500px 500px 0 0px;
-}
-
-img.avatar {
-    width: 100%;
-    height: 50%;
-    -moz-border-radius: 150px 0 0 150px;
-    border-radius: 500px 500px 0 0px;
-    -webkit-filter: grayscale(100%) opacity(30%);
-    filter: grayscale(100%) opacity(30%);
-}
-
-.containerLoginForm {
-    padding: 2px;
-    width: 20em;
-    margin-top: 0em;
-    margin-left: 5em;
-}
-
-/* The Modal background */
-.modal-LoginPopup {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(150,150,150,0.7); /* Black w/ opacity */
-    padding-top: 60px;
-}
-
-/* Modal Box */
-.modal-content-login {
-    background-color: #fefefe;
-    margin: 1% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 30em; /* Could be more or less, depending on screen size */
-    height: 30em;
-    border-radius: 500px;
-    z-index: 5;
 }
 
 /* Add Zoom Animation */
