@@ -6,9 +6,6 @@ html
     body
         include ./fixed/header.pug
 
-        if user
-            p du er logget inn som: #{user.email}
-
 
         p.nextDay(onclick="getNextDay()")
         #showDate
