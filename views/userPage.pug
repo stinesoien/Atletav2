@@ -4,6 +4,8 @@ html
         link(rel='stylesheet', href='/stylesheets/userPage.css')
         script(type="text/javascript", src="js/jquery-3.2.1.js")
         script(type="text/javascript", src="js/editUser.js")
+        script(type="text/javascript" src="https://www.gstatic.com/charts/loader.js")
+        script(type="text/javascript", src= "js/statistic.js")
     body
         include ./fixed/header.pug
 
@@ -50,6 +52,8 @@ html
                 a(href="./documents/TreningHelkropp.pdf" TreningHelkropp) Treningsprogram - Helkropp
                 a(href="./documents/TreningMRL.pdf" TreningsMRL) Treningsprogram - MRL (Mage, rumpe og lår)
                 a(href="./documents/TreningNybegynner.pdf" TreningNybegynner) Treningsprogram - Nybegynner
+
+        #chart_div
 
 
         script.
