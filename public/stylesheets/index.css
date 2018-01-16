@@ -18,18 +18,9 @@ footer {
     width: 100%;
 }
 
-.imgcontent{
-    padding-top: 50px;
-    display: inline-block;
-    position: relative;
-    background: url(https://www.vitamins.nl/blog/wp-content/uploads/2016/03/Blog-buikje.jpg) center center / cover no-repeat;
-}
+/* FØRSTE SEKSJON */
 
-
-.frontpic {
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
+section.first {
     background: url(https://www.vitamins.nl/blog/wp-content/uploads/2016/03/Blog-buikje.jpg) center center / cover no-repeat;
 }
 
@@ -104,18 +95,25 @@ footer {
 }
 
 .h1NewUser {
-    padding: 5% 0 0 35%;
+    padding-top: 3%;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .containerNew {
+    padding-top: 0;
     font-family: Arial;
-    margin-top: 1%;
+    /*margin-top: 1%;*/
     margin-left: 8%;
 }
 
+.containerNew div {
+    padding: 0 1% 0.5% 1%;
+}
+
 .containerNew input {
-    width: 90%;
-    padding: 1% 5% 1% 1%;
+    width: 89%;
+    padding: 1% 0 1% 1%;
     margin: 2%;
     display: inline-block;
     border: 0;
@@ -146,6 +144,254 @@ footer {
     transition: 0.3s;
 }
 
+/* ANDRE SEKSJON */
+
+section.second {
+    background: url(https://purefitnessnaples.com/wp-content/uploads/sites/6/2016/12/kettlebell-push-ups.jpg) center center / cover no-repeat;
+    padding: 5% 0 0 0;
+}
+
+#groupclasses {
+    padding-left: 4%;
+    padding-top: 7%;
+}
+
+.containerClasses {
+    margin: auto;
+    width: 40%;
+    height: 95%;
+    display: inline-block;
+    border-radius: 10px;
+    background: rgba(237, 237, 237, 0.9);
+}
+
+#slidecontainer {
+    width: 100%;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+h1.classesHeader {
+    margin-left: 2%;
+    opacity: 1;
+}
+
+p.intensitySlider {
+    font-size: 50%;
+    margin-left: 1%;
+    margin-top: 4%;
+    width: 190%;
+}
+
+brp.intensityLevel {
+    margin-top: 5%;
+    margin-left: 2%;
+    font-weight: bolder;
+}
+
+.class-container {
+    margin-top: 4%;
+    font-size: 45%;
+}
+
+.class-container:hover .overlay{
+    border-radius: 5px;
+    height:100%;
+}
+
+.slider {
+    margin-top: -20%;
+    margin-left: 3%;
+    -webkit-appearance: none;
+    width: 20%;
+    height: 15px;
+    border-radius: 5px;
+    background: #ad3232;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ad3232;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background:  #ad3232;
+    cursor: pointer;
+}
+
+.thisClass {
+    font-family: Arial;
+    border-collapse: collapse;
+    width: 90%;
+    padding: 2%;
+    text-align: left;
+    border: 1px solid #bcbcbc;
+    cursor: pointer;
+    opacity: 1;
+    margin: 0.5%;
+}
+
+.thisClass:hover {
+    background-color: #ba5d5d;
+}
+
+/* TREDJE SEKSJON */
+
+section.third {
+    background-color: #ededed;
+}
+
+.box{
+    position: absolute;
+    right: 4.2em;
+    bottom: -83.9em;
+    background-color:white;
+    padding:20px;
+    height: 100%;
+    width: 90%;
+}
+
+.map {
+    width: 41%;
+    height: 100%;
+}
+
+i.marker {
+    z-index: 2;
+    color: #ad3232;
+}
+
+.h1SectionThree{
+    position: absolute;
+    right: 31%;
+    bottom: -125%;
+    text-align: left;
+}
+
+.gymInfo{
+    position: absolute;
+    right: 15%;
+
+    bottom: -175%;
+    text-align: left;
+}
+
+#gym1Btn {
+    position: absolute;
+    right: 80%;
+    bottom: -136%;
+}
+
+#gym2Btn {
+    position: absolute;
+    right: 90%;
+    bottom: -140%;
+}
+
+p.p2{
+    color: gray;
+    font-family: arial;
+    display: table-cell;
+    left: -20em;
+    bottom: -6.7em;
+    z-index: 1;
+    position: relative;
+}
+
+/* Modal Content */
+.modal-contentGym {
+    background-color: #fefefe;
+    padding: 20px;
+    width: 50%;
+    box-shadow: 10px 10px rgba(0,0,0,0.4);
+}
+
+
+.modalGym1 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 2%; /* Location of the box */
+    padding-left: 30%;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modalGym2 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 2%; /* Location of the box */
+    padding-left: 30%;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.gym1 {
+    display: block;
+    width: 50%;
+    height: auto;
+}
+
+/* FJERDE SEKSJON */
+
+section.fourth {
+    background: url(https://i.pinimg.com/originals/aa/40/7f/aa407f4200c300311d4bfa00ebe16bbf.jpg) center center / cover no-repeat;
+}
+
+/* PRIS */
+.h1sectionFour {
+    padding: 4% 0 0 5%;
+}
+
+.prices p {
+    font-size: 20px;
+    margin-left: 6%;
+}
+
+.prices h3 {
+    margin-left: 6%;
+}
+
+.infoPrice {
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 23%;
+    height: 75%;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #ededed;
+    opacity: 0.8;
+}
+
+
 /*Scrollbutton*/
 *,
 :after,
@@ -159,33 +405,6 @@ section {
     height: 100vh;
     width: 100%;
     display: table;
-}
-
-section.first {
-    background: url(https://www.vitamins.nl/blog/wp-content/uploads/2016/03/Blog-buikje.jpg) center center / cover no-repeat;
-}
-
-
-section.second {
-    background: url(https://media.self.com/photos/57d8844b4b76f0f832a0d8f6/master/pass/before-after-workout-tips-feat.jpg) center center / cover no-repeat;
-    /*background-color: #ededed;*/
-}
-
-section.third {
-    background-color: #ededed;
-}
-
-section.fourth {
-    background: url(https://i.pinimg.com/originals/aa/40/7f/aa407f4200c300311d4bfa00ebe16bbf.jpg) center center / cover no-repeat;
-}
-
-
-p.p1 {
-    color: white;
-    font-family: arial;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
 }
 
 .scroll-down1 {
@@ -305,281 +524,5 @@ p.p1 {
         transform: translateY(-5px);
     }
 }
-
-/* Map */
-
-.box{
-    position: absolute;
-    right: 4.2em;
-    bottom: -83.9em;
-    background-color:white;
-    padding:20px;
-    height: 100%;
-    width: 90%;
-}
-
-.map {
-    width: 41%;
-    height: 100%;
-}
-
-i.marker {
-    z-index: 2;
-    color: #ad3232;
-}
-
-.h1SectionThree{
-    position: absolute;
-    right: 31%;
-    bottom: -125%;
-    text-align: left;
-}
-
-.gymInfo{
-    position: absolute;
-    right: 15%;
-
-    bottom: -175%;
-    text-align: left;
-}
-
-#gym1Btn {
-    position: absolute;
-    right: 80%;
-    bottom: -136%;
-}
-
-#gym2Btn {
-    position: absolute;
-    right: 90%;
-    bottom: -140%;
-}
-
-p.p2{
-    color: gray;
-    font-family: arial;
-    display: table-cell;
-    left: -20em;
-    bottom: -6.7em;
-    z-index: 1;
-    position: relative;
-}
-
-
-
-/* Modal Content */
-.modal-contentGym {
-    background-color: #fefefe;
-    padding: 20px;
-    width: 50%;
-    box-shadow: 10px 10px rgba(0,0,0,0.4);
-}
-
-
-.modalGym1 {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Sit on top */
-    padding-top: 2%; /* Location of the box */
-    padding-left: 30%;
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.modalGym2 {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Sit on top */
-    padding-top: 2%; /* Location of the box */
-    padding-left: 30%;
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.gym1 {
-    display: block;
-    width: 50%;
-    height: auto;
-}
-/*
-.h1SectionThree{
-    padding-left: 55%;
-
-}
-
-.gymInfo{
-    padding-left: 55%;
-}*/
-
-
-#slidecontainer {
-    width: 100%;
-    margin-left: 1%;
-    margin-top: 1%;
-}
-
-.imgcontainerSpin {
-    float: right;
-    margin-top: -40%;
-    margin-right: 10%;
-}
-
-.imgcontainerDance {
-    float: right;
-    margin-right: 10%;
-    margin-top: -20%;
-
-}
-
-h1.classesH {
-    margin-left: 2%;
-}
-
-p.intensitySlider {
-    font-size: 50%;
-    margin-left: 1%;
-    margin-top: 1%;
-}
-
-brp.intensityLevel {
-    margin-top: 5%;
-    margin-left: 2%;
-    font-weight: bolder;
-}
-
-h4{
-    padding-left: 30%;
-}
-
-.class-container {
-    margin-top: 2%;
-    font-size: 45%;
-}
-
-.overlay{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #888888;
-    overflow: hidden;
-    width: 100%;
-    height: 0;
-    transition: .5s ease;
-}
-
-.class-container:hover .overlay{
-    border-radius: 5px;
-    height:100%;
-}
-
-.text{
-    white-space: nowrap;
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    overflow: hidden;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-}
-
-
-
-.slider {
-    margin-top: -20%;
-    margin-left: 3%;
-    -webkit-appearance: none;
-    width: 20%;
-    height: 15px;
-    border-radius: 5px;
-    background: #ad3232;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-
-}
-
-.slider:hover {
-    opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #ad3232;
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background:  #ad3232;
-    cursor: pointer;
-}
-
-.thisClass {
-    font-family: Arial;
-    border-collapse: collapse;
-    width: 50%;
-    padding: 15px;
-    text-align: left;
-    border: 1px solid #ddd;
-    cursor: pointer;
-}
-
-.thisClass:hover {
-    background-color: #ad3232;
-    opacity: 0.7;
-}
-
-.second {
-    padding: 5% 0 0 0;
-}
-
-
-/* PRIS */
-.h1sectionFour {
-    padding: 4% 0 0 5%;
-}
-
-.prices p {
-    font-size: smaller;
-    margin-left: 6%;
-}
-
-.prices h3 {
-    margin-left: 6%;
-}
-
-.infoPrice {
-    margin-top: 5%;
-    margin-left: 5%;
-    width: 23%;
-    height: 75%;
-    display: inline-block;
-    border-radius: 10px;
-    background-color: #ededed;
-    opacity: 0.8;
-}
-
-
-
 
 
