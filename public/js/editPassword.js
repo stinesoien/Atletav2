@@ -14,6 +14,7 @@ var updatePassword = function () {
         },
         dataType: 'json',
         success: function(data){
+            window.location.href = "/userpage";
             alert("Passordet ditt er lagret!");
         },
         error: function(data){

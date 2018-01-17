@@ -19,6 +19,7 @@ html
                     .h1NewUser
                         h1 Bli Medlem
                     .containerNew
+                        a.closeBtn#closeNew &times
                         div
                             input(type = "text" id = "fname", required='', placeholder="Fornavn:")
                         div
@@ -78,19 +79,21 @@ html
                 i(id="gym2Btn" class="fa fa-map-marker" style='font-size:50px')
             #modalGym1.modalGym1
                 .modal-contentGym
-                    h3 Atleta Midtbyen
+                    a.closeBtnGym#closeGym1 &times
+                    h3 ATLETA MIDTBYEN
                     img.gym1(src="./images/gym1.jpg", alt="Bilde av treningssenteret", style="width:100%")
                     p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
                     p Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                    p montes, nascetur ridiculus mus. Donec quam felis,
+                    p montes, nascetur ridiculus mus.
 
             #modalGym2.modalGym2
                 .modal-contentGym
-                    h3 Atleta Ilsvika
+                    a.closeBtnGym#closeGym2 &times
+                    h3 ATLETA ILSVIKA
                     img.gym1(src="./images/gym1.jpg", alt="Bilde av treningssenteret", style="width:100%")
                     p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
                     p Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                    p montes, nascetur ridiculus mus. Donec quam felis,
+                    p montes, nascetur ridiculus mus.
 
             a.scroll-down3(href='#fourth', address='true')
 
@@ -114,8 +117,6 @@ html
                     h3 Drop-in
                         p 75,- for en dag
 
-                        p hei
-
             a.scroll-down4(href='#fifth', address='true')
 
         script.
@@ -127,6 +128,10 @@ html
 
             var newUserBtn = document.getElementById("newBtn");
             var newUserPop = document.getElementById("modalNew");
+
+            var closeBtn1 = document.getElementById("closeNew");
+            var closeBtn2 = document.getElementById("closeGym1");
+            var closeBtn3 = document.getElementById("closeGym2");
 
             //Åpner modal 1
             iconBtn1.onclick = function() {
@@ -150,6 +155,19 @@ html
             // åpner bli medlem
             newUserBtn.onclick = function () {
                 newUserPop.style.display = "block";
+            }
+
+            // Lukker popup ved å trykke på x
+            closeBtn1.onclick = function () {
+                newUserPop.style.display = "none";
+            }
+
+            closeBtn2.onclick = function () {
+                modal1.style.display = "none";
+            }
+
+            closeBtn3.onclick = function () {
+                modal2.style.display = "none";
             }
 
             // Slider
