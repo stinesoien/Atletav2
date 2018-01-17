@@ -6,13 +6,17 @@ html
     body
         include ./fixed/header.pug
 
+        .backgroundPicture
+            .containerBooking
+                h1.bookingHeader Book en gruppetime
+                .theDates
+                    span
+                        p.nextDay(onclick="getNextDay()")
+                        #showDate
+                        p.pastDay(onclick="getPastDay()")
 
-        p.nextDay(onclick="getNextDay()")
-        #showDate
-        p.pastDay(onclick="getPastDay()")
-
-        .container#bookClasses
-            pre#groupClass
+                .container#bookClasses
+                    pre#groupClass
 
         script.
             var thisDate = document.getElementById("showDate");
@@ -55,23 +59,19 @@ html
                 }).done(function (data) {
                     //console.log(data);
                     document.getElementById("groupClass").innerHTML = ' ';
-                    for (var i = 0; i < data.length; i++){
+                    for (var i = 0; i < data.length; i++) {
                         thisBook = data[i].b_id;
-                        document.getElementById("groupClass").innerHTML += '<div id="bookClass" >' + JSON.stringify("       "+
-                        data[i].time + "                       " + data[i].b_name).replace(/\"/g, "")
-                        + '<button type="button" id="bookButton" onclick="makeBooking(this)" data-id='+ thisBook +'>Book time</button>' + '</div>';
-                        //makeBooking(thisBook);
-                        //thisBook = data[i].b_id;
-                        //console.log(thisBook);
-                        //console.log(this);
+                        document.getElementById("groupClass").innerHTML += '<div id="bookClass" >' + JSON.stringify("       " +
+                            data[i].time + "                       " + data[i].b_name).replace(/\"/g, "")
+                            + '<button type="button" id="bookButton" onclick="makeBooking(this)" data-id=' + thisBook + '>Book time</button>' + '</div>';
+
                     }
                 })
             };
 
-            //var thisClass = document.getElementById("bookClass");
             var makeBooking = function (e) {
                 var test = $(e).data("id");
-                //console.log(test);
+                console.log(test);
                 $.ajax({
                     url: 'booking/',
                     type: 'POST',

@@ -1,7 +1,15 @@
 html
     head
         link(rel='stylesheet', href='/stylesheets/footer.css')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     body
         .container-footer
-            a(href = "/login") Logg inn
-            a(href = "/newuser") Bli medlem
+            i.copyrightIcon(id="copyright" class="fa fa-copyright" style='font-size:13px')    2017-18 Atleta AS, REG NO 07553800
+            i.phoneIcon(id="phone" class="fa fa-phone" style='font-size:13px')   47 62 83 94
+
+            p.followUs Følg oss:
+            .followIcons
+                a.snapchatIcon(id="snapchat" class="fa fa-snapchat-square" style='font-size: 20px' href="https://www.snapchat.com/l/nb-no/")
+                a.facebookIcon(id="facebook" class="fa fa-facebook-square" style='font-size:20px' href="https://www.facebook.com/")
+                a.instagramIcon(id="instagram" class= "fa fa-instagram" style='font-size: 20px' href="https://www.instagram.com/")
+                a.twitterIcon(id="twitter" class="fa fa-twitter" style='font-size: 20px' href="https://twitter.com/twitter")

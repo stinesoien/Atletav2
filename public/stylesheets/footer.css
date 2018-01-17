@@ -1,24 +1,77 @@
 .container-footer {
-    position: relative;
-    bottom: 0em;
     left: 0;
-    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    position: absolute;
+    padding-bottom: 0%;
     width: 100%;
     height: 3em;
     background-color: white;
     color: white;
-    text-align: center;
+}
+/*
+.container-footer div{
+    text-align: left;
+}*/
+
+.followUs{
+    display: inline-block;
+    color: black;
+    padding-left: 55%;
+
 }
 
-.container-footer a {
-    padding: 2%;
-    color: #424242;
+.followIcons{
+    display: inline-block;
+    width: 10%;
+}
+
+.instagramIcon{
+    color: black;
+    margin-left: 10%;
     text-decoration: none;
-    font-family: Arial;
 }
 
-.container-footer a:hover {
+.twitterIcon{
+    color: black;
+    margin-left: 10%;
+    text-decoration: none;
+}
+
+.snapchatIcon{
+    color: black;
+    margin-left: 10%;
+    text-decoration: none;
+
+}
+
+.facebookIcon{
+    color: black;
+    margin-left: 10%;
+    text-decoration: none;
+
+}
+
+
+.followIcons a:hover {
     color: #ad3232;
     background-color: transparent;
-    text-decoration: underline;
+    text-decoration: none;
 }
+
+
+
+.copyrightIcon{
+    display: inline-block;
+    padding-top: 1.5%;
+    padding-left: 2%;
+    color: black;
+}
+
+.phoneIcon{
+    display: inline-block;
+    padding-left: 2%;
+    color:black;
+}
+
+
