@@ -211,9 +211,6 @@ app.get('/classes', function (req, res) {
     res.render('classes');
 });
 
-app.get('/pt', function(req, res){
-    res.render('pt');
-});
 
 app.get('/statistic', function (req, res) {
     res.render('statistic')

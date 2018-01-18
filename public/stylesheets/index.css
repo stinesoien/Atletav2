@@ -1,17 +1,3 @@
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-
-body {
-    background-color: #d8d8d8;
-    /*text-align: center;*/
-    z-index:2;
-    padding-bottom: 3em;
-}
-
 footer {
     position: relative;
     bottom: 0;
@@ -21,7 +7,10 @@ footer {
 /* FØRSTE SEKSJON */
 
 section.first {
-    background: url(https://www.vitamins.nl/blog/wp-content/uploads/2016/03/Blog-buikje.jpg) center center / cover no-repeat;
+    background: url(sectionImg/frontpicture1.jpg) center center / cover no-repeat;
+    /*background: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
 }
 
 /* Sign up button*/
@@ -162,7 +151,7 @@ section.first {
 /* ANDRE SEKSJON */
 
 section.second {
-    background: url(https://purefitnessnaples.com/wp-content/uploads/sites/6/2016/12/kettlebell-push-ups.jpg) center center / cover no-repeat;
+    background: url(sectionImg/frontpicture2.jpg) center center / cover no-repeat;
     padding: 5% 0 0 0;
 }
 
@@ -303,7 +292,6 @@ i.marker {
 .gymInfo{
     position: absolute;
     right: 15%;
-
     bottom: -175%;
     text-align: left;
 }
@@ -396,7 +384,7 @@ p.p2{
 /* FJERDE SEKSJON */
 
 section.fourth {
-    background: url(https://i.pinimg.com/originals/aa/40/7f/aa407f4200c300311d4bfa00ebe16bbf.jpg) center center / cover no-repeat;
+    background: url(sectionImg/frontpicture4.jpg) center center / cover no-repeat;
 }
 
 /* PRIS */
@@ -424,6 +412,348 @@ section.fourth {
     opacity: 0.8;
 }
 
+/* FEMTE SEKSJON */
+.fifth h1 {
+    position: absolute;
+    right: 24.5%;
+    bottom: -335%;
+    text-align: left;
+    z-index: 2;
+}
+
+.aboutPT {
+    position: absolute;
+    right: 4%;
+    bottom: -375%;
+    text-align: left;
+}
+
+.backgroundPT {
+    position: absolute;
+    right: 0;
+    opacity: 0.8;
+    width: 45%;
+    height: 100%;
+    border-left: solid black 1px;
+}
+
+/* PT1 */
+.containerTrainers1 {
+    padding: 7% 5% 5% 5%;
+}
+
+.containerPT1{
+    top: 10%;
+    border-radius: 5px;
+    position: relative;
+    background-color: #e0e0e0;
+    width: 20%;
+    height: 36%;
+    box-shadow: 7px 10px 10px #474747;
+}
+
+.avatarman1{
+    display: block;
+    border-radius: 5px 5px 0 0;
+    width: 70%;
+    padding-top: 5%;
+    padding-left: 28%;
+    height: auto;
+}
+
+.namePT1{
+    text-align: center;
+}
+
+.contactInfo1 {
+    margin-top: 12%;
+}
+
+.pinIcon1 {
+    text-align: center;
+}
+
+.mailAddress1 {
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.descriptionPT1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ba5d5d;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.containerPT1:hover .descriptionPT1 {
+    border-radius: 5px;
+    height:100%;
+}
+
+.textPT1 {
+    text-align: center;
+    padding:2%;
+    white-space: nowrap;
+    color: black;
+    font-size: 16px;
+    position: absolute;
+    overflow: hidden;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.moreIcon1 {
+    position: absolute;
+    left: 90%;
+    bottom: 5%;
+}
+
+/* PT2 */
+.containerTrainers2 {
+    margin-top: -22.6%;
+    padding-left: 30%;
+}
+
+.containerPT2{
+    top: 10%;
+    border-radius: 5px;
+    position: relative;
+    background-color: #e0e0e0;
+    width: 25.5%;
+    height: 36%;
+    box-shadow: 7px 10px 10px #474747;
+}
+
+.avatarman2{
+    display: block;
+    border-radius: 5px 5px 0 0;
+    width: 70%;
+    padding-top: 5%;
+    padding-left: 28%;
+    height: auto;
+}
+
+.namePT2 {
+    text-align: center;
+}
+
+.contactInfo2 {
+    margin-top: 12%;
+}
+
+.pinIcon2 {
+    text-align: center;
+}
+
+.mailAddress2 {
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.descriptionPT2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ba5d5d;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.containerPT2:hover .descriptionPT2 {
+    border-radius: 5px;
+    height:100%;
+}
+
+.textPT2 {
+    text-align: center;
+    padding:2%;
+    white-space: nowrap;
+    color: black;
+    font-size: 16px;
+    position: absolute;
+    overflow: hidden;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.moreIcon2 {
+    position: absolute;
+    left: 90%;
+    bottom: 5%;
+}
+
+/* PT3 */
+.containerTrainers3 {
+    padding: 2% 5% 5% 5%;
+}
+
+.containerPT3 {
+    top: 10%;
+    border-radius: 5px;
+    position: relative;
+    background-color: #e0e0e0;
+    width: 20%;
+    height: 36%;
+    box-shadow: 7px 10px 10px #474747;
+}
+
+.avatarman3 {
+    display: block;
+    border-radius: 5px 5px 0 0;
+    width: 70%;
+    padding-top: 5%;
+    padding-left: 28%;
+    height: auto;
+}
+
+.namePT3 {
+    text-align: center;
+}
+
+.contactInfo3 {
+    margin-top: 12%;
+}
+
+.pinIcon3 {
+    text-align: center;
+}
+
+.mailAddress3 {
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.descriptionPT3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ba5d5d;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.containerPT3:hover .descriptionPT3 {
+    border-radius: 5px;
+    height:100%;
+}
+
+.textPT3 {
+    text-align: center;
+    padding:2%;
+    white-space: nowrap;
+    color: black;
+    font-size: 16px;
+    position: absolute;
+    overflow: hidden;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.moreIcon3 {
+    position: absolute;
+    left: 90%;
+    bottom: 5%;
+}
+
+/* PT4 */
+.containerTrainers4 {
+    margin-top: -22.6%;
+    padding-left: 30%;
+}
+
+.containerPT4{
+    top: 10%;
+    border-radius: 5px;
+    position: relative;
+    background-color: #e0e0e0;
+    width: 25.5%;
+    height: 36%;
+    box-shadow: 7px 10px 10px #474747;
+}
+
+.avatarman4 {
+    display: block;
+    border-radius: 5px 5px 0 0;
+    width: 70%;
+    padding-top: 5%;
+    padding-left: 28%;
+    height: auto;
+}
+
+.namePT4 {
+    text-align: center;
+}
+
+.contactInfo4 {
+    margin-top: 12%;
+}
+
+.pinIcon4 {
+    text-align: center;
+}
+
+.mailAddress4 {
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.descriptionPT4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ba5d5d;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.containerPT4:hover .descriptionPT4 {
+    border-radius: 5px;
+    height:100%;
+}
+
+.textPT4 {
+    text-align: center;
+    padding:2%;
+    white-space: nowrap;
+    color: black;
+    font-size: 16px;
+    position: absolute;
+    overflow: hidden;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.moreIcon4 {
+    position: absolute;
+    left: 90%;
+    bottom: 5%;
+}
 
 /*Scrollbutton*/
 *,
@@ -439,11 +769,9 @@ section {
     width: 100%;
     display: table;
 }
-
+/* Go to classes */
 .scroll-down1 {
     opacity: 1;
-    -webkit-transition: all .5s ease-in 3s;
-    transition: all .5s ease-in 3s;
     position: absolute;
     bottom: 4%;
     left: 50%;
@@ -468,14 +796,13 @@ section {
     width: 30px;
     height: 30px;
     content: "";
-    border: 2px solid white;
+    border: solid white;
     border-width: 0px 0 4px 4px;
 }
 
+/* Go to gyms */
 .scroll-down2 {
     opacity: 1;
-    -webkit-transition: all .5s ease-in 3s;
-    transition: all .5s ease-in 3s;
     position: absolute;
     bottom: -96%;
     left: 50%;
@@ -500,14 +827,14 @@ section {
     width: 30px;
     height: 30px;
     content: "";
-    border: 2px solid white;
+    border: solid white;
     border-width: 0px 0 4px 4px;
 }
 
+/* Go to prices */
 .scroll-down3 {
     opacity: 1;
-    -webkit-transition: all .5s ease-in 3s;
-    transition: all .5s ease-in 3s;
+    transition-duration: 3s;
     position: absolute;
     bottom: -196%;
     left: 50%;
@@ -532,7 +859,40 @@ section {
     width: 30px;
     height: 30px;
     content: "";
-    border: 2px solid white;
+    border: solid white;
+    border-width: 0px 0 4px 4px;
+}
+
+
+/* Go to PT */
+.scroll-down4 {
+    opacity: 1;
+    transition-duration: 3s;
+    position: absolute;
+    bottom: -296%;
+    left: 50%;
+    margin-left: -16px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-size: 14px auto;
+    z-index: 1;
+    -webkit-animation: bounce 2s infinite 2s;
+    animation: bounce 2s infinite 2s;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.scroll-down4:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 30px;
+    height: 30px;
+    content: "";
+    border: solid darkgrey;
     border-width: 0px 0 4px 4px;
 }
 
