@@ -1,32 +1,23 @@
 body {
     background-color: #d8d8d8;
-    top: 33em;
 }
 
-
-
-#myReservations {
-    color: black;
-    font-size: 30px;
-    position: absolute;
-    top: 4em;
-    left: 19.6em;
-    cursor: default;
+.myReservations {
+    width: 35%;
+    height: 80%;
+    display: inline-block;
+    border-radius: 10px;
+    background: rgba(237, 237, 237, 0.9);
 }
 
 #reservations {
-    margin-top: 11em;
-    margin-left: 21%;
     text-align: left;
-    width: 50%;
 }
 
 #reservation {
-    top: 10em;
     font-family: Arial;
     margin: 0.7em;
     border-collapse: collapse;
-    width: 100%;
     padding: 20px;
     text-align: left;
     background-color: #ededed;
@@ -39,9 +30,10 @@ body {
 }
 
 #deleteReservation {
-    background: #2d7a27;
+    background: red;
     margin-top: -2%;
     width: 20%;
+    height: 5%;
     float: right;
 }
 

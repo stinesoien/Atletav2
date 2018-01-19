@@ -101,9 +101,7 @@ app.get('/myReservations', function (req, res) {
 });
 
 app.delete('/deleteReservation', function (req, res) {
-    console.log("jeg er utenfor index-delete");
     if(req.user){
-        console.log("jeg er i index-delete");
         reservationController.deleteReservations(req, res);
     }else{
         res.status(401).json({message: "you are not logged in."});
@@ -159,8 +157,12 @@ app.put('/updatePassword', function (req, res) {
 });
 
 //Henter booking.pug
-app.get('/booking', function (req, res) {
-    res.render('booking');
+app.get('/notLoggedInBooking', function (req, res) {
+    res.render('notLoggedInBooking');
+});
+
+app.get('/loggedInBooking', function (req, res) {
+    res.render('loggedInBooking');
 });
 
 app.get('/reservations', function (req,res) {
@@ -189,6 +191,7 @@ app.get('/logout', function(req, res) {
 
 app.post('/newUser', function (req, res) {
     registerController.register(req,res);
+
 });
 
 
@@ -217,11 +220,20 @@ app.get('/statistic', function (req, res) {
 });
 
 app.get('/userPage', function (req, res) {
-    res.render('userPage');
+    if(req.isAuthenticated()) {
+        res.render('userPage', {user: req.user});
+    }
+    else {
+        res.render('userPage');
+    }
 });
 
 
-app.get('/booking/:date', function (req, res) {
+app.get('/notLoggedInBooking/:date', function (req, res) {
+    bookingController.getBooking(req, res);
+});
+
+app.get('/loggedInBooking/:date', function (req, res) {
     bookingController.getBooking(req, res);
 });
 
@@ -230,9 +242,5 @@ app.get('/classes/:level', function (req, res) {
     classesController.getClasses(req, res);
 });
 
-//Våre sentre
-app.get('/gyms', function (req, res) {
-    res.render('index')
-});
 
 app.listen(3000);

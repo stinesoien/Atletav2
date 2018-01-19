@@ -12,7 +12,7 @@ var newMember = function () {
         },
         dataType: 'json',
         success: function (res) {
-            window.location.href = "/gyms";
+            window.location.href = "/";
             alert("Bruker opprettet");
         }
     })

@@ -6,6 +6,7 @@ html
         script(type="text/javascript", src="js/editUser.js")
         script(type="text/javascript", src="js/editPassword.js")
         script(type="text/javascript" src="https://www.gstatic.com/charts/loader.js")
+        script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js")
         script(type="text/javascript", src= "js/statistic.js")
     body
         include ./fixed/header.pug
@@ -80,6 +81,16 @@ html
                 a.prog2(href="./documents/TreningMRL.pdf" TreningsMRL) Treningsprogram - MRL (Mage, rumpe og lår)
                 a.prog3(href="./documents/TreningNybegynner.pdf" TreningNybegynner) Treningsprogram - Nybegynner
 
+
+        #myBookingsBox.modal-reserv
+            .modal-content-reserv
+                a.closeBtn#closePopRes &times
+                h1 Mine reservasjoner
+                .myReservations
+                    .container#reservations
+                        pre#oneReservation
+
+
         div
             .statCon
                 .statistic#chart_div
@@ -98,10 +109,16 @@ html
             var closeButton = document.getElementById("closePop");
             var closeButton2 = document.getElementById("closePop2");
             var closeButton3 = document.getElementById("closePsw");
+            var closeButton4 = document.getElementById("closePopRes");
 
             //Endre passord
             var pswButton = document.getElementById("editPsw");
             var editPswPop = document.getElementById("editPswBox");
+
+            //Mine reservasjoner
+            var resButton = document.getElementById("reserv");
+            var resPopup = document.getElementById("myBookingsBox");
+
 
             // popup - endre info
             endreInfoBtn.onclick = function () {
@@ -116,6 +133,11 @@ html
             // popup - endre passord
             pswButton.onclick = function () {
                 editPswPop.style.display = "block";
+            }
+
+            // popup - mine reservasjoner
+            resButton.onclick = function () {
+                resPopup.style.display = "block";
             }
 
             window.onclick = function (event) {
@@ -142,5 +164,63 @@ html
             closeButton3.onclick = function () {
                 editPswPop.style.display = "none";
             }
+
+            closeButton4.onclick = function () {
+                resPopup.style.display = "none";
+
+            }
+
+            //reservasjoner js-kode
+            var month = Date.today().toString("MM");
+            var day = Date.today().toString("dd");
+            var year = Date.today().toString("yyyy");
+
+            var todaysDate = day + month + year;
+            var intDate = parseInt(todaysDate);
+            console.log("Dagens dato:" + intDate);
+
+            var thisReservation = document.getElementById("reservation")
+
+            var getReservations = function () {
+                $.ajax({
+                    url: 'myReservations/',
+                    type: 'GET'
+                }).done(function (data) {
+                    document.getElementById("oneReservation").innerHTML = ' ';
+                    for (var i = 0; i < data.length; i++) {
+                        var daySql = data[i].sqlDay;
+                        var monthSql = data[i].sqlMonth;
+                        var yearSql = data[i].sqlYear;
+                        var currentDate = daySql + monthSql + yearSql;
+                        var intCurrentDate = parseInt(currentDate);
+
+                        console.log("current dato:" + intCurrentDate + " b id:" + data[i].b_id);
+
+                        if (intCurrentDate >= intDate) {
+                            thisReservation = data[i].b_id;
+                            console.log("thisReservation:" + thisReservation);
+                            document.getElementById("oneReservation").innerHTML += '<div id="reservation">' + JSON.stringify("        " + data[i].b_name + "          " + data[i].time + "         " + data[i].dateFormat).replace(/\"/g, "")
+                                + '<button type="button" id="deleteReservation" onclick="deleteReservations(this)" data-id=' + thisReservation + '>Avbestill time</button>' + '</div>';
+                        }
+                    }
+                })
+            };
+
+            var deleteReservations = function (e) {
+                var test = $(e).data("id");
+                $.ajax({
+                    url: 'deleteReservation/',
+                    type: 'DELETE',
+                    data: {
+                        'b_id': test
+                    }
+                }).done(function () {
+                    getReservations();
+                })
+
+            }
+
+            getReservations();
+            deleteReservations(thisReservation);
 
         //include ./fixed/footer.pug
