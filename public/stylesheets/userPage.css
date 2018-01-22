@@ -21,7 +21,7 @@ body {
     font-family: Arial;
     font-size: 30px;
     left: 27em;
-    top: 4em;
+    top: 3em;
 }
 
 .endreInfoBtn h3 {
@@ -149,7 +149,7 @@ body {
     font-family: Arial;
     font-size: 30px;
     left: 27.25em;
-    top: 10em;
+    top: 9em;
 }
 
 .workoutProgBtn h3 {
@@ -236,7 +236,7 @@ body {
 }
 
 .statCon {
-    margin-top: 1%;
+    margin-top: -1%;
     margin-left: 2%;
     width: 40%;
     height: 60%;
@@ -329,7 +329,7 @@ body {
     font-family: Arial;
     font-size: 30px;
     left: 27.25em;
-    top: 15.8em;
+    top: 14.8em;
 }
 
 .reservationBtn h3 {
@@ -393,6 +393,7 @@ body {
     font-weight: bold;
     text-decoration: none;
     color: darkgrey;
+    cursor: pointer;
 }
 
 #closePopRes:hover {
@@ -493,3 +494,5 @@ body {
 #closePsw:hover {
     color: #ad3232;
 }
+
+

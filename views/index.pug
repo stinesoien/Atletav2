@@ -20,25 +20,27 @@ html
                         h1 Bli Medlem
                     .containerNew
                         a.closeBtn#closeNew &times
-                        div
-                            input(type = "text" id = "fname", required='', placeholder="Fornavn:")
-                        div
-                            input(type = "text" id = "sname", required='', placeholder="Etternavn:")
+                        form
+                            div
+                                input(type = "text" id = "fname" name='fname' required pattern="^[A-Za-z -]+$" title="Fornavn kan ikke inneholde tall" placeholder="Fornavn:")
 
-                        div
-                            input(type = "text" id = "phone", required='', placeholder="Telefonnummer:")
+                            div
+                                input(type = "text" id = "sname" name='sname' required pattern="[A-Za-z]+[a-zA-Z]" title="Etternavn kan ikke inneholde tall" placeholder="Etternavn:")
 
-                        div
-                            input(type = "text" id = "email", required='', placeholder="E-postadresse:")
+                            div
+                                input(type = "text" id = "phone" name='phone' required pattern="[0-9].{7,}" title="Telefonnummer må bestå av minst 8 tall" placeholder="Telefonnummer:")
 
-                        div
-                            input(type = "text" id = "address", required='', placeholder="Adresse:")
+                            div
+                                input(type = "email" id = "email" name='email' required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+[A-Za-z]{1,63}$" title="Ugyldig E-postadresse" placeholder="E-postadresse:")
 
-                        div
-                            input(type = "password" id = "password", required='', placeholder="Passord:")
+                            div
+                                input(type = "text" id = "address" name='address' required pattern="[A-Za-z]+[a-zA-Z]+?=.*?[0-9]" title="Adresse må bestå av minst ett tall" placeholder="Adresse:")
 
-                        button.registerBtn(onclick="newMember()", type = "button", style="vertical-align:middle")
-                            span Registrer
+                            div
+                                input(type = "password" id = "password" name='password' required pattern=".{8,}" title="Passord må inneholde minst 8 tegn" placeholder="Passord:")
+
+                            button.registerBtn(onclick="newMember()", type = "submit", value="submit", style="vertical-align:middle")
+                                span Registrer
 
             a.scroll-down1(href='#second', address='true')
 
@@ -299,6 +301,7 @@ html
                 var index = ev.target.id;
                 ev.target.innerHTML = info[index].information;
             }
+
 
     footer
         include ./fixed/footer.pug
