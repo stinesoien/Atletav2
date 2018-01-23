@@ -178,7 +178,7 @@ app.get('/login', function(req, res){
 app.post('/login',
     passport.authenticate('local', { failureRedirect: '/login' }),
     function(req, res ) {
-        res.redirect('/userPage');
+        res.redirect('/');
 });
 
 //Logger ut en bruker og sender h*n tilbake til hjemsiden
