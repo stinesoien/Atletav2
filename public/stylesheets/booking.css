@@ -1,10 +1,10 @@
-body{
+.bookingBody{
     background: url(https://media2.s-nbcnews.com/i/newscms/2017_36/2144546/170905-working-out-group-ac-512p_2b5db137b66bedb7f1d96c24b8ca1b8a.jpg) center center / cover no-repeat;
 
 }
 
 .backgroundPicture{
-    /*background: url(https://media2.s-nbcnews.com/i/newscms/2017_36/2144546/170905-working-out-group-ac-512p_2b5db137b66bedb7f1d96c24b8ca1b8a.jpg) center center / cover no-repeat;*/
+
     padding: 5% 0 0 0;
 }
 

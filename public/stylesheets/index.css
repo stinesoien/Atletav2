@@ -23,8 +23,8 @@ section.first {
     text-align: center;
     font-size: 40px;
     padding: 20px;
-    width: 300px;
-    height: 100px;
+    width: 23vw;
+    height: 8vw;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
@@ -39,6 +39,7 @@ section.first {
     display: inline-block;
     position: relative;
     transition: 0.5s;
+    font-size: calc(13px + 1.3vw);
 }
 
 .newUserBtn span:after {
@@ -257,19 +258,101 @@ brp.intensityLevel {
 }
 
 /* TREDJE SEKSJON */
-
-section.third {
-    background-color: #ededed;
+section.third{
+    background: url(https://media2.s-nbcnews.com/i/newscms/2017_36/2144546/170905-working-out-group-ac-512p_2b5db137b66bedb7f1d96c24b8ca1b8a.jpg) center center / cover no-repeat;
 }
 
-.box{
-    position: absolute;
-    right: 4.2em;
-    bottom: -83.9em;
-    background-color:white;
-    padding:20px;
-    height: 100%;
-    width: 90%;
+.backgroundPicture{
+    padding: 5% 0 0 0;
+}
+
+h1.bookingHeader{
+    margin-top: 12%;
+    margin-left: 2%;
+    opacity: 1;
+}
+
+.containerBooking{
+    width: 35%;
+    height: 80%;
+    display: inline-block;
+    border-radius: 10px;
+    background: rgba(237, 237, 237, 0.9);
+}
+
+.theDates{
+    margin-top: 5%;
+}
+
+.nextDay {
+    margin-right: 2%;
+    float: right;
+    transform: rotate(-45deg);
+    display: block;
+    width: 15px;
+    height: 15px;
+
+    border: 1px solid black;
+    border-width: 0px 4px 4px 0px;
+}
+
+.pastDay {
+    margin-left: 2%;
+    margin-top: -4%;
+    float: left;
+    transform: rotate(-45deg);
+    display: block;
+    width: 15px;
+    height: 15px;
+
+    border: 1px solid black;
+    border-width: 4px 0px 0px 4px;
+}
+
+#showDate {
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    left: 19.6em;
+    cursor: default;
+}
+
+#bookClasses {
+    text-align: left;
+}
+
+#bookClass {
+    font-family: Arial;
+    margin: 0.7em;
+    border-collapse: collapse;
+    padding: 20px;
+    text-align: left;
+    background-color: #ededed;
+    box-shadow: 4px 4px 4px #888888;
+    cursor: pointer;
+}
+
+#bookClass:hover{
+    box-shadow: 7px 7px 7px #888888;
+}
+
+#bookButton {
+    background: #2d7a27;
+    margin-top: -2%;
+    width: 20%;
+    height: 5%;
+    float: right;
+}
+
+#bookButton:focus {
+    outline: 0;
+}
+
+
+/* FJERDE SEKSJON*/
+
+section.fourth {
+    background-color: #ededed;
 }
 
 .map {
@@ -282,30 +365,30 @@ i.marker {
     color: #ad3232;
 }
 
-.h1SectionThree{
+.h1SectionFourth{
     position: absolute;
     right: 31%;
-    bottom: -125%;
+    bottom: -225%;
     text-align: left;
 }
 
 .gymInfo{
     position: absolute;
     right: 15%;
-    bottom: -175%;
+    bottom: -275%;
     text-align: left;
 }
 
 #gym1Btn {
     position: absolute;
     right: 80%;
-    bottom: -136%;
+    bottom: -236%;
 }
 
 #gym2Btn {
     position: absolute;
     right: 90%;
-    bottom: -140%;
+    bottom: -240%;
 }
 
 p.p2{
@@ -381,14 +464,14 @@ p.p2{
     color: #ad3232;
 }
 
-/* FJERDE SEKSJON */
+/* FEMTE SEKSJON */
 
-section.fourth {
+section.fifth {
     background: url(sectionImg/frontpicture4.jpg) center center / cover no-repeat;
 }
 
 /* PRIS */
-.h1sectionFour {
+.h1sectionFifth {
     padding: 4% 0 0 5%;
 }
 
@@ -412,11 +495,11 @@ section.fourth {
     opacity: 0.8;
 }
 
-/* FEMTE SEKSJON */
-.fifth h1 {
+/* SJETTE SEKSJON */
+.sixth h1 {
     position: absolute;
     right: 24.5%;
-    bottom: -335%;
+    bottom: -425%;
     text-align: left;
     z-index: 2;
 }
@@ -424,7 +507,7 @@ section.fourth {
 .aboutPT {
     position: absolute;
     right: 4%;
-    bottom: -375%;
+    bottom: -475%;
     text-align: left;
 }
 
@@ -896,6 +979,68 @@ section {
     border-width: 0px 0 4px 4px;
 }
 
+.scroll-down5 {
+    opacity: 1;
+    transition-duration: 3s;
+    position: absolute;
+    bottom: -396%;
+    left: 50%;
+    margin-left: -16px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-size: 14px auto;
+    z-index: 1;
+    -webkit-animation: bounce 2s infinite 2s;
+    animation: bounce 2s infinite 2s;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.scroll-down5:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 30px;
+    height: 30px;
+    content: "";
+    border: solid darkgrey;
+    border-width: 0px 0 4px 4px;
+}
+
+.scroll-down6 {
+    opacity: 1;
+    transition-duration: 3s;
+    position: absolute;
+    bottom: -496%;
+    left: 50%;
+    margin-left: -16px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-size: 14px auto;
+    z-index: 1;
+    -webkit-animation: bounce 2s infinite 2s;
+    animation: bounce 2s infinite 2s;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.scroll-down6:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 30px;
+    height: 30px;
+    content: "";
+    border: solid darkgrey;
+    border-width: 0px 0 4px 4px;
+}
+
 @keyframes bounce {
     0%,
     100%,
@@ -918,64 +1063,6 @@ section {
     }
 }
 
-/* Map */
-
-.box{
-    position: absolute;
-    right: 4.2em;
-    bottom: -83.9em;
-    background-color:white;
-    padding:20px;
-    height: 100%;
-    width: 90%;
-}
-
-.map {
-    width: 41%;
-    height: 100%;
-}
-
-i.marker {
-    z-index: 2;
-    color: #ad3232;
-}
-
-.h1SectionThree{
-    position: absolute;
-    right: 31%;
-    bottom: -125%;
-    text-align: left;
-}
-
-.gymInfo{
-    position: absolute;
-    right: 15%;
-
-    bottom: -175%;
-    text-align: left;
-}
-
-#gym1Btn {
-    position: absolute;
-    right: 80%;
-    bottom: -136%;
-}
-
-#gym2Btn {
-    position: absolute;
-    right: 90%;
-    bottom: -140%;
-}
-
-p.p2{
-    color: gray;
-    font-family: arial;
-    display: table-cell;
-    left: -20em;
-    bottom: -6.7em;
-    z-index: 1;
-    position: relative;
-}
 
 
 

@@ -214,6 +214,10 @@ app.get('/classes', function (req, res) {
     res.render('classes');
 });
 
+app.get('/alertSuccess', function (req, res) {
+    res.render('alertSuccess');
+});
+
 
 app.get('/statistic', function (req, res) {
     res.render('statistic')

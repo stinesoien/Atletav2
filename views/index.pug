@@ -1,11 +1,14 @@
 html
     head
         link(rel='stylesheet', href='/stylesheets/index.css')
+        link(rel='stylesheet', href='/stylesheets/booking.css')
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
         link( rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css")
+        script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js")
         script(type="text/javascript", src="js/jquery-3.2.1.js")
         script(type="text/javascript", src="./js/index.js")
         script(type="text/javascript", src="./js/newUser.js")
+
     body
         include ./fixed/header.pug
 
@@ -55,8 +58,22 @@ html
                             pre#allClasses
             a.scroll-down2(href='#gyms', address='true')
 
-        section.third#gyms
-            .h1SectionThree
+        section.third#booking
+            .backgroundPicture
+                .containerBooking
+                    h1.bookingHeader Book en gruppetime
+                    .theDates
+                        span
+                            p.nextDay(onclick="getNextDay()")
+                            #showDate
+                            p.pastDay(onclick="getPastDay()")
+
+                    .container#bookClasses
+                        pre#groupClass
+            a.scroll-down3
+
+        section.fourth#gyms
+            .h1SectionFourth
                 h1 Vår treningsfilosofi
             .gymInfo
                 pre Lorem ipsum dolor sit amet,
@@ -95,11 +112,11 @@ html
                     p Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
                     p montes, nascetur ridiculus mus.
 
-            a.scroll-down3(href='#information', address='true')
+            a.scroll-down4(href='#information', address='true')
 
-        section.fourth#information
+        section.fifth#information
             .infoPrice
-                .h1sectionFour
+                .h1sectionFifth
                     h1 Priser
                 .prices
                     h3 Ordinært medslemskap
@@ -117,9 +134,9 @@ html
                     h3 Drop-in
                         p 75,- for en dag
 
-            a.scroll-down4(href='#PTinformation', address='true')
+            a.scroll-down5(href='#PTinformation', address='true')
 
-        section.fifth#PTinformation
+        section.sixth#PTinformation
             h1 Hva er en PT?
             img.backgroundPT(src="./images/background5.jpg", alt="Bakgrunnsbilde")
             .aboutPT
@@ -204,7 +221,9 @@ html
                             br
                             | consectetuer adipiscing elit.
 
-            a.scroll-down5(href='#sixth', address='true')
+
+
+
 
         script.
             var modal1 = document.getElementById("modalGym1");
