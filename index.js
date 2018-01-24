@@ -17,7 +17,6 @@ var bookingController = require('./controllers/booking');
 var reservationController = require('./controllers/reservation');
 
 
-
 app.use(session({
     secret: 'myVerySecretKey',
     resave: true,
@@ -178,7 +177,7 @@ app.get('/login', function(req, res){
 app.post('/login',
     passport.authenticate('local', { failureRedirect: '/login' }),
     function(req, res ) {
-        res.redirect('/userPage');
+        res.redirect('/');
 });
 
 //Logger ut en bruker og sender h*n tilbake til hjemsiden

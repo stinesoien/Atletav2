@@ -1,50 +1,148 @@
 html
     head
-        link(rel='stylesheet', href='/stylesheets/index.css')
-        link(rel='stylesheet', href='/stylesheets/booking.css')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
-        link( rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css")
-        script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js")
+        link(rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css")
+        link(rel='stylesheet', href='/stylesheets/userPage.css')
+        link(rel='stylesheet', href='/stylesheets/index.css')
+        link(rel='stylesheet', href='/stylesheet/booking.css')
+
         script(type="text/javascript", src="js/jquery-3.2.1.js")
-        script(type="text/javascript", src="./js/index.js")
-        script(type="text/javascript", src="./js/newUser.js")
+        script(type="text/javascript" src="https://www.gstatic.com/charts/loader.js")
+        script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js")
+
 
     body
         include ./fixed/header.pug
 
-        section.first#main
-            //img(src="./images/frontpicture1.jpg", alt="Frontbilde")
-            button.newUserBtn#newBtn(type="button" style='vertical-align:middle')
-                span Bli Medlem
 
-            #modalNew.modalNew
-                .modal-contentNew
-                    .h1NewUser
-                        h1 Bli Medlem
-                    .containerNew
-                        a.closeBtn#closeNew &times
-                        div
-                            input(type = "text" id = "fname", required='', placeholder="Fornavn:")
-                        div
-                            input(type = "text" id = "sname", required='', placeholder="Etternavn:")
+        //SEKSJON 1
+        if user
+            section.first#mainLogedIn
+                //Endre info - knapp
+                .endreInfoBtn#editInfo
+                    h3 Endre Bruker
 
-                        div
-                            input(type = "text" id = "phone", required='', placeholder="Telefonnummer:")
+                //treningsprogram - knapp
+                .workoutProgBtn#woProg
+                    h3 Treningsprogram
 
-                        div
-                            input(type = "text" id = "email", required='', placeholder="E-postadresse:")
+                .reservationBtn#reserv
+                    h3 Mine bookinger
 
-                        div
-                            input(type = "text" id = "address", required='', placeholder="Adresse:")
+                //Endre info - popup
+                #editInfoBox.modal-editInfo
+                    .modal-contentInfo
+                        div.containerInfo
+                            a.closeBtn#closePop &times
+                            h1 ENDRE BRUKER
+                            div
+                                label
+                                    b Fornavn
+                                    br
+                                input(type = "text", id = "fname")
+                            div
+                                label
+                                    b Etternavn
+                                    br
+                                input(type = "text", id = "sname")
+                            div
+                                label
+                                    b Adresse
+                                    br
+                                input(type = "text", id = "address")
+                            div
+                                label
+                                    b Telefonnummer
+                                    br
+                                input(type = "text", id = "phone")
 
-                        div
-                            input(type = "password" id = "password", required='', placeholder="Passord:")
+                            .updateBtn(onclick="updateUser()", type="button") Oppdater profil
+                            .editPswBtn#editPsw Endre Passord
+                            //a.editPswBtn(href="/editPassword") Endre Passord
+                        #editPswBox.modal-editPsw
+                            .modal-contentPsw
+                                div.containerPsw
+                                    a.closeBtn#closePsw &times
+                                    h1 ENDRE PASSORD
+                                    div
+                                        label(for = "oldPassword") Gammelt passord
+                                        input(id = "oldPassword", type="password", required='')
+                                        br
 
-                        button.registerBtn(onclick="newMember()", type = "button", style="vertical-align:middle")
-                            span Registrer
+                                    div
+                                        label(for = "newPassword1") Nytt passord
+                                        input(id = "newPassword1" type="password", required='')
+                                        br
+                                    div
+                                        label(for = "newPassword2") Bekreft nytt passord
+                                        input(id = "newPassword2" type="password", required='')
+                                        br
+                                    button.savePsw(onclick='updatePassword()' type="button") Lagre nytt passord
 
-            a.scroll-down1(href='#second', address='true')
 
+                #workoutProgBox.modal-woProg
+                    .modal-content-woProg
+                        a.closeBtn#closePop2 &times
+                        h1 TRENINGSPROGRAMMER TIL NEDLASTNING
+                        a.prog1(href="./documents/TreningHelkropp.pdf" TreningHelkropp) Treningsprogram - Helkropp
+                        a.prog2(href="./documents/TreningMRL.pdf" TreningsMRL) Treningsprogram - MRL (Mage, rumpe og lår)
+                        a.prog3(href="./documents/TreningNybegynner.pdf" TreningNybegynner) Treningsprogram - Nybegynner
+
+
+                #myBookingsBox.modal-reserv
+                    .modal-content-reserv
+                        a.closeBtn#closePopRes &times
+                        h1 Mine reservasjoner
+                        .myReservations
+                            .container#reservations
+                                pre#oneReservation
+
+
+                div
+                    .statCon
+                        .statistic#chart_div
+
+                a.scroll-down1(href='#second', address='true')
+
+        else
+            section.first#main
+                button.newUserBtn#newBtn(type="button" style='vertical-align:middle')
+                    span Bli Medlem
+
+                #modalNew.modalNew
+                    .modal-contentNew
+                        .h1NewUser
+                            h1 Bli Medlem
+                        .containerNew
+                            a.closeBtn#closeNew &times
+                            form
+                                div
+                                    input(type = "text" id = "fname" name='fname' required pattern="^[A-Za-z -]+$" title="Fornavn kan ikke inneholde tall" placeholder="Fornavn:")
+
+                                div
+                                    input(type = "text" id = "sname" name='sname' required pattern="[A-Za-z]+[a-zA-Z]" title="Etternavn kan ikke inneholde tall" placeholder="Etternavn:")
+
+                                div
+                                    input(type = "text" id = "phone" name='phone' required pattern="[0-9].{7,}" title="Telefonnummer må bestå av minst 8 tall" placeholder="Telefonnummer:")
+
+                                div
+                                    input(type = "email" id = "email" name='email' required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+[A-Za-z]{1,63}$" title="Ugyldig E-postadresse" placeholder="E-postadresse:")
+
+                                div
+                                    input(type = "text" id = "address" name='address' required pattern="[A-Za-z]+[a-zA-Z]+?=.*?[0-9]" title="Adresse må bestå av minst ett tall" placeholder="Adresse:")
+
+                                div
+                                    input(type = "password" id = "password" name='password' required pattern=".{8,}" title="Passord må inneholde minst 8 tegn" placeholder="Passord:")
+
+                                button.registerBtn(onclick="newMember()", type = "submit", value="submit", style="vertical-align:middle")
+                                    span Registrer
+
+                a.scroll-down1(href='#second', address='true')
+
+
+        //SEKSJON 2
         section.second#groupclasses
             .containerClasses
                 h1.classesHeader Våre gruppetimer
@@ -58,37 +156,26 @@ html
                             pre#allClasses
             a.scroll-down2(href='#gyms', address='true')
 
-        section.third#booking
-            .backgroundPicture
-                .containerBooking
-                    h1.bookingHeader Book en gruppetime
-                    .theDates
-                        span
-                            p.nextDay(onclick="getNextDay()")
-                            #showDate
-                            p.pastDay(onclick="getPastDay()")
 
-                    .container#bookClasses
-                        pre#groupClass
-            a.scroll-down3
-
-        section.fourth#gyms
-            .h1SectionFourth
-                h1 Vår treningsfilosofi
-            .gymInfo
-                pre Lorem ipsum dolor sit amet,
-                    |consectetuer adipiscing elit.
-                    |Aenean commodo ligula eget dolor. Aenean massa.
-                    |Cum sociis natoque penatibus et magnis dis parturient
-                    |montes, nascetur ridiculus mus. Donec quam felis,
-                    |ultricies nec, pellentesque eu, pretium quis, sem.
-                    |Nulla consequat massa quis enim. Donec pede justo,
-                    |fringilla vel, aliquet nec, vulputate eget, arcu.
-                    |In enim justo, rhoncus ut, imperdiet a, venenatis
-                    |vitae, justo. Nullam dictum felis eu pede mollis pretium.
-                    |Integer tincidunt. Cras dapibus. Vivamus elementum
-                    |semper nisi. Aenean vulputate eleifend tellus. Aenean leo
-                    |ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+        //SEKSJON 3
+        section.third#gyms
+            .informationGyms
+                .h1SectionThree
+                    h1 Vår treningsfilosofi
+                .gymInfo
+                    pre Lorem ipsum dolor sit amet,
+                        |consectetuer adipiscing elit.
+                        |Aenean commodo ligula eget dolor. Aenean massa.
+                        |Cum sociis natoque penatibus et magnis dis parturient
+                        |montes, nascetur ridiculus mus. Donec quam felis,
+                        |ultricies nec, pellentesque eu, pretium quis, sem.
+                        |Nulla consequat massa quis enim. Donec pede justo,
+                        |fringilla vel, aliquet nec, vulputate eget, arcu.
+                        |In enim justo, rhoncus ut, imperdiet a, venenatis
+                        |vitae, justo. Nullam dictum felis eu pede mollis pretium.
+                        |Integer tincidunt. Cras dapibus. Vivamus elementum
+                        |semper nisi. Aenean vulputate eleifend tellus. Aenean leo
+                        |ligula, porttitor eu, consequat vitae, eleifend ac, enim.
 
             .gymMap
                 img.map(src="./images/kart.png", alt="Kart over Trondheim")
@@ -112,11 +199,14 @@ html
                     p Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
                     p montes, nascetur ridiculus mus.
 
-            a.scroll-down4(href='#information', address='true')
+            a.scroll-down3(href='#information', address='true')
 
-        section.fifth#information
+
+
+            //SEKSJON 4
+        section.fourth#information
             .infoPrice
-                .h1sectionFifth
+                .h1sectionFour
                     h1 Priser
                 .prices
                     h3 Ordinært medslemskap
@@ -134,9 +224,12 @@ html
                     h3 Drop-in
                         p 75,- for en dag
 
-            a.scroll-down5(href='#PTinformation', address='true')
+            a.scroll-down4(href='#PTinformation', address='true')
 
-        section.sixth#PTinformation
+
+
+        //SEKSJON 5
+        section.fifth#PTinformation
             h1 Hva er en PT?
             img.backgroundPT(src="./images/background5.jpg", alt="Bakgrunnsbilde")
             .aboutPT
@@ -221,103 +314,52 @@ html
                             br
                             | consectetuer adipiscing elit.
 
+            a.scroll-down5(href='#sixth', address='true')
 
+        //SEKSJON 6
+        if user
+            section.sixth#booking
+                .containerBooking
+                    h1.bookingHeader Book en gruppetime
+                    .theDates
+                        span
+                            p.nextDay(onclick="getNextDay()")
+                            #showDate
+                            p.pastDay(onclick="getPastDay()")
 
+                    .container#bookClasses
+                        pre#groupClass
 
+        script
+            include ../public/js/index.js
 
-        script.
-            var modal1 = document.getElementById("modalGym1");
-            var modal2 = document.getElementById("modalGym2");
+        script
+            include ../public/js/userPage.js
 
-            var iconBtn1 = document.getElementById("gym1Btn");
-            var iconBtn2 = document.getElementById("gym2Btn");
+        script
+            include ../public/js/statistic.js
 
-            var newUserBtn = document.getElementById("newBtn");
-            var newUserPop = document.getElementById("modalNew");
+        script
+            include ../public/js/editPassword.js
 
-            var closeBtn1 = document.getElementById("closeNew");
-            var closeBtn2 = document.getElementById("closeGym1");
-            var closeBtn3 = document.getElementById("closeGym2");
+        script
+            include ../public/js/editUser.js
 
-            //Åpner modal 1
-            iconBtn1.onclick = function() {
-                modal1.style.display = "block";
-            };
+        script
+            include ../public/js/newUser.js
 
-            //Åpner modal 2
-            iconBtn2.onclick = function() {
-                modal2.style.display = "block";
-            };
+        script
+            include ../public/js/classes.js
 
-            //Lukker når klikker utenfor
-            window.onclick = function (event) {
-                if(event.target == modal1 || event.target == modal2 || event.target == newUserPop) {
-                    modal1.style.display = "none";
-                    modal2.style.display = "none";
-                    newUserPop.style.display = "none";
-                }
-            };
+        script
+            include ../public/js/gyms.js
 
-            // åpner bli medlem
-            newUserBtn.onclick = function () {
-                newUserPop.style.display = "block";
-            }
+        script
+            include ../public/js/myResarvations.js
 
-            // Lukker popup ved å trykke på x
-            closeBtn1.onclick = function () {
-                newUserPop.style.display = "none";
-            }
+        script
+            include ../public/js/booking.js
 
-            closeBtn2.onclick = function () {
-                modal1.style.display = "none";
-            }
-
-            closeBtn3.onclick = function () {
-                modal2.style.display = "none";
-            }
-
-            // Slider
-            var slider = document.getElementById("myRange");
-            var output = document.getElementById("demo");
-            output.innerHTML = slider.value;
-
-            var startLevel = slider.value;
-            var info;
-
-            var getLevel = function (level) {
-                $.ajax({
-                    url: 'classes/' + level,
-                    type: 'GET'
-                }).done(function (data) {
-                    info = data;
-                    document.getElementById("allClasses").innerHTML = '';
-                    for (var i = 0; i < data.length; i++) {
-                        document.getElementById("allClasses").innerHTML += '<ul id="' + i + '" class="thisClass">'
-                            + JSON.stringify(data[i].class_name).replace(/\"/g, "") + '</ul>';
-
-                    }
-                    buttons = document.getElementsByClassName("thisClass");
-                    for (var i = 0; i < buttons.length; i++) {
-                        buttons[i].addEventListener("click", redirect, false);
-                    }
-                });
-
-            };
-
-            slider.oninput = function () {
-                output.innerHTML = this.value;
-                var level = this.value;
-                getLevel(level);
-            }
-
-            getLevel(startLevel);
-
-
-            function redirect(ev) {
-                console.log("redirect");
-                var index = ev.target.id;
-                ev.target.innerHTML = info[index].information;
-            }
 
     footer
         include ./fixed/footer.pug

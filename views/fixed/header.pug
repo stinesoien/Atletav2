@@ -1,15 +1,13 @@
 html
     head
         link(rel='stylesheet', href='/stylesheets/header.css')
+        script(type="text/javascript", src="js/jquery-3.2.1.js")
     body
         .navbar
             a(href="/#main") ATLETA
+            //a(href="/pt") Personlig Trener
             if user
-                a(href="/loggedInBooking") Timeplan
-            else
-                a(href="/notLoggedInBooking") Timeplan
-            a(href="/pt") Personlig Trener
-            a(href="/booking") Timeplan
+                a.scroll-booking(href="/#booking") Timeplan
             a.scroll-PT(href="/#PTinformation") Personlig Trener
             a.scroll-classes(href="/#groupclasses") Gruppetimer
             a.scroll-gyms(href="/#gyms") Sentre
@@ -17,7 +15,7 @@ html
 
             if user
                 a(class="active" href='/logout') Logg ut
-                a(href='/userPage' id="userName") #{user.fname +' ' + user.sname}
+                a(href='/' id="userName") #{user.fname +' ' + user.sname}
             else
                 a(class="active" style="float:right" onclick="document.getElementById('loginForm').style.display='block'") Logg inn
 
@@ -26,6 +24,8 @@ html
                 .imgcontainer-login
                     img.loginpicture(src='images/running_login.jpg', alt='Avatar')
                 .containerLoginForm
+                    a.closeBtnLog#closeLog &times
+
                     label(for = "email")
                     input(class="input-text", type='text', name='email', required='', placeholder="Skriv inn e-postadressen")
 
@@ -33,10 +33,24 @@ html
                     input(class="input-text", type="password" placeholder="Skriv inn passord" name="password" required='')
 
 
-                    button.loginBtn(type="submit") Logg inn
-                    button.cancelBtn(type = "button", onclick="document.getElementById('loginForm').style.display='none'") Avbryt
+                    button.loginBtn#logIn(type="submit") Logg inn
+                    //button.cancelBtn(type = "button", onclick="document.getElementById('loginForm').style.display='none'") Avbryt
 
 
+        script.
+
+            var loginBox = document.getElementById("loginForm");
+            var closeButtonLog = document.getElementById("closeLog");
+
+            closeButtonLog.onclick = function () {
+                loginBox.style.display = "none";
+            }
+
+            window.onclick = function (event) {
+                if (event.target == loginBox){
+                    loginBox.style.display = "none";
+                }
+            }
 
 
 
