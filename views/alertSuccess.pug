@@ -1,0 +1,20 @@
+html
+    head
+        link(rel='stylesheet', href='/stylesheets/alertSuccess.css')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(type="text/javascript", src="js/jquery-3.2.1.js")
+
+    body
+        .containerSuccess#success
+            .modal-success
+                div.success
+                    i.successIcon(id="pin" class="fa fa-check-circle" style='font-size:120px')
+                .okButton#okButtonId Ok
+
+        script.
+            var okButton = document.getElementById("okButton");
+            var modalSuccess = document.getElementById("success");
+
+            okButton.onclick = function () {
+                modalSuccess.style.display = "none";
+            }
