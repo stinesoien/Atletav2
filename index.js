@@ -5,6 +5,8 @@ var session = require('express-session');
 var LocalStrategy = require('passport-local').Strategy;
 var connection = require('./config');
 var bcrypt = require('bcrypt');
+var JSAlert = require("js-alert");
+var basedir = require('base-dir');
 
 var app = express();
 
@@ -171,11 +173,13 @@ app.get('/reservations', function (req,res) {
 //HER ØNSKER VI Å SENDE EN TILBAKEMELD OM FEIL PASSORD ELLER BRUKERNAVN!!!!
 app.get('/login', function(req, res){
     res.redirect('/');
+    //console.log('Feil');
+    JSAlert.alert("This is an alert.");
 });
 
 /* route to handle login and registration */
 app.post('/login',
-    passport.authenticate('local', { failureRedirect: '/login' }),
+    passport.authenticate('local', { failureRedirect: '/login'  }),
     function(req, res ) {
         res.redirect('/');
 });
@@ -241,5 +245,10 @@ app.get('/classes/:level', function (req, res) {
     classesController.getClasses(req, res);
 });
 
+//app.locals.basedir = '';
+
+//basedir.root = 'Altetav2';
+/*var main = basedir.import('/public/js/index.js');
+console.log('text: %s', main.text);*/
 
 app.listen(3000);

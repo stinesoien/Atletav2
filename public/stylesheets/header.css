@@ -41,6 +41,7 @@
     float: right;
 
 }
+
 /*
 .navbar p{
     position: static;
@@ -74,9 +75,10 @@
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(150,150,150,0.7); /* Black w/ opacity */
+    background-color: rgb(255,255,255); /* Fallback color */
+    background-color: rgba(255,255,255,0.5); /* Black w/ opacity */
     padding-top: 60px;
+
 }
 
 /* Modal Box */
@@ -89,6 +91,7 @@
     border-radius: 500px;
     z-index: 5;
 }
+
 
 /* Center the image and position the close button */
 .imgcontainer-login {
