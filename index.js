@@ -17,7 +17,6 @@ var bookingController = require('./controllers/booking');
 var reservationController = require('./controllers/reservation');
 
 
-
 app.use(session({
     secret: 'myVerySecretKey',
     resave: true,

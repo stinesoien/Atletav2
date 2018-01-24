@@ -18,7 +18,7 @@ html
 
             if user
                 a(class="active" href='/logout') Logg ut
-                a(href='/userPage' id="userName") #{user.fname +' ' + user.sname}
+                a(href='/' id="userName") #{user.fname +' ' + user.sname}
             else
                 a(class="active" style="float:right" onclick="document.getElementById('loginForm').style.display='block'") Logg inn
 

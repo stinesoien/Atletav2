@@ -17,18 +17,18 @@ html
     body
         include ./fixed/header.pug
 
-        if user
-            section.first#mainLogedIn
+        section.first#main
+            if user
                 //Endre info - knapp
                 .endreInfoBtn#editInfo
-                   h3 Endre Bruker
+                    h3 Endre Bruker
 
                 //treningsprogram - knapp
                 .workoutProgBtn#woProg
-                   h3 Treningsprogram
+                    h3 Treningsprogram
 
                 .reservationBtn#reserv
-                   h3 Mine bookinger
+                    h3 Mine bookinger
 
                 //Endre info - popup
                 #editInfoBox.modal-editInfo
@@ -92,40 +92,38 @@ html
                 div
                     .statCon
                         .statistic#chart_div
-            a.scroll-down1(href='#second', address='true')
 
-        else
-            section.first#main
+            else
                 button.newUserBtn#newBtn(type="button" style='vertical-align:middle')
                     span Bli Medlem
 
-            #modalNew.modalNew
-                .modal-contentNew
-                    .h1NewUser
-                        h1 Bli Medlem
-                    .containerNew
-                        a.closeBtn#closeNew &times
-                        form
-                            div
-                                input(type = "text" id = "fname" name='fname' required pattern="^[A-Za-z -]+$" title="Fornavn kan ikke inneholde tall" placeholder="Fornavn:")
+                #modalNew.modalNew
+                    .modal-contentNew
+                        .h1NewUser
+                            h1 Bli Medlem
+                        .containerNew
+                            a.closeBtn#closeNew &times
+                            form
+                                div
+                                    input(type = "text" id = "fname" name='fname' required pattern="^[A-Za-z -]+$" title="Fornavn kan ikke inneholde tall" placeholder="Fornavn:")
 
-                            div
-                                input(type = "text" id = "sname" name='sname' required pattern="[A-Za-z]+[a-zA-Z]" title="Etternavn kan ikke inneholde tall" placeholder="Etternavn:")
+                                div
+                                    input(type = "text" id = "sname" name='sname' required pattern="[A-Za-z]+[a-zA-Z]" title="Etternavn kan ikke inneholde tall" placeholder="Etternavn:")
 
-                            div
-                                input(type = "text" id = "phone" name='phone' required pattern="[0-9].{7,}" title="Telefonnummer må bestå av minst 8 tall" placeholder="Telefonnummer:")
+                                div
+                                    input(type = "text" id = "phone" name='phone' required pattern="[0-9].{7,}" title="Telefonnummer må bestå av minst 8 tall" placeholder="Telefonnummer:")
 
-                            div
-                                input(type = "email" id = "email" name='email' required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+[A-Za-z]{1,63}$" title="Ugyldig E-postadresse" placeholder="E-postadresse:")
+                                div
+                                    input(type = "email" id = "email" name='email' required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+[A-Za-z]{1,63}$" title="Ugyldig E-postadresse" placeholder="E-postadresse:")
 
-                            div
-                                input(type = "text" id = "address" name='address' required pattern="[A-Za-z]+[a-zA-Z]+?=.*?[0-9]" title="Adresse må bestå av minst ett tall" placeholder="Adresse:")
+                                div
+                                    input(type = "text" id = "address" name='address' required pattern="[A-Za-z]+[a-zA-Z]+?=.*?[0-9]" title="Adresse må bestå av minst ett tall" placeholder="Adresse:")
 
-                            div
-                                input(type = "password" id = "password" name='password' required pattern=".{8,}" title="Passord må inneholde minst 8 tegn" placeholder="Passord:")
+                                div
+                                    input(type = "password" id = "password" name='password' required pattern=".{8,}" title="Passord må inneholde minst 8 tegn" placeholder="Passord:")
 
-                            button.registerBtn(onclick="newMember()", type = "submit", value="submit", style="vertical-align:middle")
-                                span Registrer
+                                button.registerBtn(onclick="newMember()", type = "submit", value="submit", style="vertical-align:middle")
+                                    span Registrer
 
             a.scroll-down1(href='#second', address='true')
 
@@ -295,8 +293,102 @@ html
             a.scroll-down5(href='#sixth', address='true')
 
         script.
+            var modal1 = document.getElementById("modalGym1");
+            var modal2 = document.getElementById("modalGym2");
 
-            // USERPAGE
+            var iconBtn1 = document.getElementById("gym1Btn");
+            var iconBtn2 = document.getElementById("gym2Btn");
+
+            var newUserBtn = document.getElementById("newBtn");
+            var newUserPop = document.getElementById("modalNew");
+
+            var closeBtn1 = document.getElementById("closeNew");
+            var closeBtn2 = document.getElementById("closeGym1");
+            var closeBtn3 = document.getElementById("closeGym2");
+
+            //Åpner modal 1
+            iconBtn1.onclick = function() {
+                modal1.style.display = "block";
+            };
+
+            //Åpner modal 2
+            iconBtn2.onclick = function() {
+                modal2.style.display = "block";
+            };
+
+            //Lukker når klikker utenfor
+            window.onclick = function (event) {
+                if(event.target == modal1 || event.target == modal2 || event.target == newUserPop) {
+                    modal1.style.display = "none";
+                    modal2.style.display = "none";
+                    newUserPop.style.display = "none";
+                }
+            };
+
+            // åpner bli medlem
+            newUserBtn.onclick = function () {
+                console.log("Trykker bli medlem");
+                newUserPop.style.display = "block";
+            }
+
+            // Lukker popup ved å trykke på x
+            closeBtn1.onclick = function () {
+                newUserPop.style.display = "none";
+            }
+
+            closeBtn2.onclick = function () {
+                modal1.style.display = "none";
+            }
+
+            closeBtn3.onclick = function () {
+                modal2.style.display = "none";
+            }
+
+            // Slider
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value;
+
+            var startLevel = slider.value;
+            var info;
+
+            var getLevel = function (level) {
+                $.ajax({
+                    url: 'classes/' + level,
+                    type: 'GET'
+                }).done(function (data) {
+                    info = data;
+                    document.getElementById("allClasses").innerHTML = '';
+                    for (var i = 0; i < data.length; i++) {
+                        document.getElementById("allClasses").innerHTML += '<ul id="' + i + '" class="thisClass">'
+                            + JSON.stringify(data[i].class_name).replace(/\"/g, "") + '</ul>';
+
+                    }
+                    buttons = document.getElementsByClassName("thisClass");
+                    for (var i = 0; i < buttons.length; i++) {
+                        buttons[i].addEventListener("click", redirect, false);
+                    }
+                });
+
+            };
+
+            slider.oninput = function () {
+                output.innerHTML = this.value;
+                var level = this.value;
+                getLevel(level);
+            }
+
+            getLevel(startLevel);
+
+
+            function redirect(ev) {
+                console.log("redirect");
+                var index = ev.target.id;
+                ev.target.innerHTML = info[index].information;
+            }
+
+
+        script.
             //Endre info
             var endreInfoBtn = document.getElementById("editInfo");
             var editInfoPopup = document.getElementById("editInfoBox");
@@ -422,99 +514,6 @@ html
             getReservations();
             deleteReservations(thisReservation);
 
-            var modal1 = document.getElementById("modalGym1");
-            var modal2 = document.getElementById("modalGym2");
-
-            var iconBtn1 = document.getElementById("gym1Btn");
-            var iconBtn2 = document.getElementById("gym2Btn");
-
-            var newUserBtn = document.getElementById("newBtn");
-            var newUserPop = document.getElementById("modalNew");
-
-            var closeBtn1 = document.getElementById("closeNew");
-            var closeBtn2 = document.getElementById("closeGym1");
-            var closeBtn3 = document.getElementById("closeGym2");
-
-            //Åpner modal 1
-            iconBtn1.onclick = function() {
-                modal1.style.display = "block";
-            };
-
-            //Åpner modal 2
-            iconBtn2.onclick = function() {
-                modal2.style.display = "block";
-            };
-
-            //Lukker når klikker utenfor
-            window.onclick = function (event) {
-                if(event.target == modal1 || event.target == modal2 || event.target == newUserPop) {
-                    modal1.style.display = "none";
-                    modal2.style.display = "none";
-                    newUserPop.style.display = "none";
-                }
-            };
-
-            // åpner bli medlem
-            newUserBtn.onclick = function () {
-                console.log("Trykker bli medlem");
-                newUserPop.style.display = "block";
-            }
-
-            // Lukker popup ved å trykke på x
-            closeBtn1.onclick = function () {
-                newUserPop.style.display = "none";
-            }
-
-            closeBtn2.onclick = function () {
-                modal1.style.display = "none";
-            }
-
-            closeBtn3.onclick = function () {
-                modal2.style.display = "none";
-            }
-
-            // Slider
-            var slider = document.getElementById("myRange");
-            var output = document.getElementById("demo");
-            output.innerHTML = slider.value;
-
-            var startLevel = slider.value;
-            var info;
-
-            var getLevel = function (level) {
-                $.ajax({
-                    url: 'classes/' + level,
-                    type: 'GET'
-                }).done(function (data) {
-                    info = data;
-                    document.getElementById("allClasses").innerHTML = '';
-                    for (var i = 0; i < data.length; i++) {
-                        document.getElementById("allClasses").innerHTML += '<ul id="' + i + '" class="thisClass">'
-                            + JSON.stringify(data[i].class_name).replace(/\"/g, "") + '</ul>';
-
-                    }
-                    buttons = document.getElementsByClassName("thisClass");
-                    for (var i = 0; i < buttons.length; i++) {
-                        buttons[i].addEventListener("click", redirect, false);
-                    }
-                });
-
-            };
-
-            slider.oninput = function () {
-                output.innerHTML = this.value;
-                var level = this.value;
-                getLevel(level);
-            }
-
-            getLevel(startLevel);
-
-
-            function redirect(ev) {
-                console.log("redirect");
-                var index = ev.target.id;
-                ev.target.innerHTML = info[index].information;
-            }
 
     footer
         include ./fixed/footer.pug
