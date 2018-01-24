@@ -259,18 +259,16 @@
 
 }
 
-/* MINE RESERVASJONER */
-
 #reservation {
-     font-family: Arial;
-     margin: 0.7em;
-     border-collapse: collapse;
-     padding: 20px;
-     text-align: left;
-     background-color: #ededed;
-     box-shadow: 4px 4px 4px #888888;
-     cursor: pointer;
- }
+    font-family: Arial;
+    margin: 0.7em;
+    border-collapse: collapse;
+    padding: 20px;
+    text-align: left;
+    background-color: #ededed;
+    box-shadow: 4px 4px 4px #888888;
+    cursor: pointer;
+}
 
 #reservation:hover{
     box-shadow: 7px 7px 7px #888888;
@@ -329,7 +327,7 @@
     font-family: Arial;
     font-size: 30px;
     left: 27.25em;
-    top: 14.8em;
+    top: 15.8em;
 }
 
 .reservationBtn h3 {
@@ -480,6 +478,8 @@
     transition: 0.3s;
 }
 
+
+
 #closePsw {
     position: absolute;
     margin-left: 34%;
@@ -495,4 +495,17 @@
     color: #ad3232;
 }
 
+#closePopRes {
+    position: absolute;
+    margin-left: 37%;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: darkgrey;
+}
+
+#closePopRes:hover {
+    color: #ad3232;
+}
 

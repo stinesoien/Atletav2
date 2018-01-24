@@ -5,12 +5,9 @@ html
     body
         .navbar
             a(href="/#main") ATLETA
-            if user
-                a(href="/loggedInBooking") Timeplan
-            else
-                a(href="/notLoggedInBooking") Timeplan
             //a(href="/pt") Personlig Trener
-            //a(href="/booking") Timeplan
+            if user
+                a.scroll-booking(href="/#booking") Timeplan
             a.scroll-PT(href="/#PTinformation") Personlig Trener
             a.scroll-classes(href="/#groupclasses") Gruppetimer
             a.scroll-gyms(href="/#gyms") Sentre
