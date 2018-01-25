@@ -25,3 +25,10 @@ $(function() {
         return false;
     });
 });
+
+$(function() {
+    $('.scroll-down5').click (function() {
+        $('html, body').animate({scrollTop: $('section.sixth').offset().top }, 'slow');
+        return false;
+    });
+});

@@ -11,6 +11,12 @@
     z-index: 2;
 }
 
+#logo{
+    font-family: Futura;
+    font-size: 110%;
+    padding: 1% 2% 1% 2%;
+}
+
 /* Links inside the navbar */
 .navbar a {
     float: left;
@@ -18,8 +24,10 @@
     color: black;
     vertical-align: middle;
     text-align: center;
+    font-weight: bold;
     text-decoration: none;
-    font-family: Arial;
+    font-family: "Heiti TC";
+    font-size: 110%;
     font-size:calc(13px + 0.4vw);
     height: 100%;
     padding: 1% 2% 1% 2%;
@@ -71,7 +79,7 @@
 .modal-LoginPopup {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 2; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -84,6 +92,7 @@
 
 /* Modal Box */
 .modal-content-login {
+    font-family: "Heiti TC";
     background-color: #fefefe;
     margin: 1% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
@@ -115,10 +124,21 @@ img.loginpicture {
     filter: grayscale(100%) opacity(30%);
 }
 
-.containerLoginForm input[type=text], .containerLoginForm input[type=password] {
+.containerLoginForm input[type=text] {
     width: 20em;
-    padding: 5% 5% 1% 1%;
-    margin: 8px 0;
+    /*padding: 5% 5% 1% 1%;*/
+    margin-top: -5%;
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #ccc;
+}
+
+.containerLoginForm input[type=password] {
+    width: 20em;
+    /*padding: 5% 5% 1% 1%;*/
+    margin-top: 10%;
     display: inline-block;
     border: 0;
     outline: 0;
@@ -146,11 +166,11 @@ img.loginpicture {
     color: white;
     background-color: #ad3232;
     cursor: pointer;
-    font-family: Arial;
+    font-family: "Heiti TC";
     width: 60%;
     padding: 3% 5%;
     margin-left: 18%;
-    margin-top: 6%;
+    margin-top: 10%;
     text-align: center;
     display: inline-block;
     border-radius: 10px;
@@ -220,10 +240,9 @@ img.loginpicture {
 }
 
 #closeLog {
-    position: absolute;
-    margin-left: 27%;
-    margin-top: -1%;
-    transition: all 200ms;
+    cursor: pointer;
+    /*position: fixed;*/
+    margin-left: 115%;
     font-size: 25px;
     font-weight: bold;
     text-decoration: none;

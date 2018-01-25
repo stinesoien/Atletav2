@@ -93,7 +93,7 @@ html
                 #myBookingsBox.modal-reserv
                     .modal-content-reserv
                         a.closeBtn#closePopRes &times
-                        h1 Mine reservasjoner
+                        h1 MINE BOOKINGER
                         .myReservations
                             .container#reservations
                                 pre#oneReservation
@@ -118,19 +118,19 @@ html
                             a.closeBtn#closeNew &times
                             form
                                 div
-                                    input(type = "text" id = "fname" name='fname' required pattern="^[A-Za-z -]+$" title="Fornavn kan ikke inneholde tall" placeholder="Fornavn:")
+                                    input(type = "text" id = "fname" name='fname' required pattern="^[A-ÆØÅa-æøå -]+$" title="Fornavn kan ikke inneholde tall" placeholder="Fornavn:")
 
                                 div
-                                    input(type = "text" id = "sname" name='sname' required pattern="[A-Za-z]+[a-zA-Z]" title="Etternavn kan ikke inneholde tall" placeholder="Etternavn:")
+                                    input(type = "text" id = "sname" name='sname' required pattern="[A-ÆØÅa-æøå]+[a-æøåA-ÆØÅ]" title="Etternavn kan ikke inneholde tall" placeholder="Etternavn:")
 
                                 div
                                     input(type = "text" id = "phone" name='phone' required pattern="[0-9].{7,}" title="Telefonnummer må bestå av minst 8 tall" placeholder="Telefonnummer:")
 
                                 div
-                                    input(type = "email" id = "email" name='email' required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+[A-Za-z]{1,63}$" title="Ugyldig E-postadresse" placeholder="E-postadresse:")
+                                    input(type = "email" id = "email" name='email' required pattern="[A-ÆØÅa-æøå0-9._%+-]+@[A-ÆØÅa-æøå0-9.-]+[A-ÆØÅa-æøå]{1,63}$" title="Ugyldig E-postadresse" placeholder="E-postadresse:")
 
                                 div
-                                    input(type = "text" id = "address" name='address' required pattern="[A-Za-z]+[a-zA-Z]+?=.*?[0-9]" title="Adresse må bestå av minst ett tall" placeholder="Adresse:")
+                                    input(type = "text" id = "address" name='address' required placeholder="Adresse:")
 
                                 div
                                     input(type = "password" id = "password" name='password' required pattern=".{8,}" title="Passord må inneholde minst 8 tegn" placeholder="Passord:")
@@ -185,8 +185,9 @@ html
             #modalGym1.modalGym1
                 .modal-contentGym
                     a.closeBtnGym#closeGym1 &times
-                    h3 ATLETA MIDTBYEN
                     img.gym1(src="./images/gym1.jpg", alt="Bilde av treningssenteret", style="width:100%")
+                    h3 ATLETA MIDTBYEN
+                    hr
                     p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
                     | Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
                     | montes, nascetur ridiculus mus.
@@ -194,8 +195,9 @@ html
             #modalGym2.modalGym2
                 .modal-contentGym
                     a.closeBtnGym#closeGym2 &times
-                    h3 ATLETA ILSVIKA
                     img.gym1(src="./images/gym1.jpg", alt="Bilde av treningssenteret", style="width:100%")
+                    h3 ATLETA ILSVIKA
+                    hr
                     p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
                     | Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
                     | montes, nascetur ridiculus mus.
@@ -315,10 +317,12 @@ html
                             br
                             | consectetuer adipiscing elit.
 
-            a.scroll-down5(href='#sixth', address='true')
+                //a.scroll-down5(href='#sixth', address='true')
+
 
         //SEKSJON 6
         if user
+            a.scroll-down5(href='#booking', address='true')
             section.sixth#booking
                 .containerBooking
                     .bookingHeader
