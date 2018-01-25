@@ -309,6 +309,7 @@ section.third {
 }
 
 .gymInfo{
+    font-family: "Heiti TC";
     position: absolute;
     width: 45vw;
     left: 45%;
@@ -520,6 +521,7 @@ section.fourth {
 }
 
 .aboutPT {
+    font-family: "Heiti TC";
     position: absolute;
     bottom: -375%;
     right: 6.5%;
