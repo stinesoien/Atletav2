@@ -16,14 +16,15 @@
     float: left;
     display: block;
     color: black;
+    vertical-align: middle;
     text-align: center;
-    font-weight: bold;
     text-decoration: none;
     font-family: Arial;
-    font-size: 110%;
+    font-size:calc(13px + 0.4vw);
     height: 100%;
     padding: 1% 2% 1% 2%;
 }
+
 
 /* Change the color of links on hover */
 .navbar a:hover {

@@ -6,7 +6,6 @@ html
         link(rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css")
         link(rel='stylesheet', href='/stylesheets/userPage.css')
         link(rel='stylesheet', href='/stylesheets/index.css')
-        link(rel='stylesheet', href='/stylesheet/booking.css')
 
         script(type="text/javascript", src="js/jquery-3.2.1.js")
         script(type="text/javascript" src="https://www.gstatic.com/charts/loader.js")
@@ -163,32 +162,34 @@ html
                 .h1SectionThree
                     h1 Vår treningsfilosofi
                 .gymInfo
-                    pre Lorem ipsum dolor sit amet,
-                        |consectetuer adipiscing elit.
-                        |Aenean commodo ligula eget dolor. Aenean massa.
-                        |Cum sociis natoque penatibus et magnis dis parturient
-                        |montes, nascetur ridiculus mus. Donec quam felis,
-                        |ultricies nec, pellentesque eu, pretium quis, sem.
-                        |Nulla consequat massa quis enim. Donec pede justo,
-                        |fringilla vel, aliquet nec, vulputate eget, arcu.
-                        |In enim justo, rhoncus ut, imperdiet a, venenatis
-                        |vitae, justo. Nullam dictum felis eu pede mollis pretium.
-                        |Integer tincidunt. Cras dapibus. Vivamus elementum
-                        |semper nisi. Aenean vulputate eleifend tellus. Aenean leo
-                        |ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                    p Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    |Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+                    |montes, nascetur ridiculus mus. Donec quam felis,
+                    |ultricies nec, pellentesque eu, pretium quis, sem.
+                    |Nulla consequat massa quis enim. Donec pede justo,
+                    |fringilla vel, aliquet nec, vulputate eget, arcu.
+                    |In enim justo, rhoncus ut, imperdiet a, venenatis
+                    |vitae, justo. Nullam dictum felis eu pede mollis pretium.
+                    |Integer tincidunt. Cras dapibus. Vivamus elementum
+                    |semper nisi. Aenean vulputate eleifend tellus. Aenean leo
+                    |ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                    br
+                    br
+                    | Trykk på kartmarkøren for mer informasjon om hvert av våre sentere.
 
             .gymMap
                 img.map(src="./images/kart.png", alt="Kart over Trondheim")
                 i(id="gym1Btn" class="fa fa-map-marker" style='font-size:50px')
                 i(id="gym2Btn" class="fa fa-map-marker" style='font-size:50px')
+
             #modalGym1.modalGym1
                 .modal-contentGym
                     a.closeBtnGym#closeGym1 &times
                     h3 ATLETA MIDTBYEN
                     img.gym1(src="./images/gym1.jpg", alt="Bilde av treningssenteret", style="width:100%")
                     p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                    p Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                    p montes, nascetur ridiculus mus.
+                    | Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+                    | montes, nascetur ridiculus mus.
 
             #modalGym2.modalGym2
                 .modal-contentGym
@@ -196,8 +197,8 @@ html
                     h3 ATLETA ILSVIKA
                     img.gym1(src="./images/gym1.jpg", alt="Bilde av treningssenteret", style="width:100%")
                     p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                    p Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                    p montes, nascetur ridiculus mus.
+                    | Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+                    | montes, nascetur ridiculus mus.
 
             a.scroll-down3(href='#information', address='true')
 
@@ -233,19 +234,19 @@ html
             h1 Hva er en PT?
             img.backgroundPT(src="./images/background5.jpg", alt="Bakgrunnsbilde")
             .aboutPT
-                pre Lorem ipsum dolor sit amet,
-                    | consectetuer adipiscing elit.
-                    | Aenean commodo ligula eget dolor. Aenean massa.
-                    | Cum sociis natoque penatibus et magnis dis parturient
-                    | montes, nascetur ridiculus mus. Donec quam felis,
-                    | ultricies nec, pellentesque eu, pretium quis, sem.
-                    | Nulla consequat massa quis enim. Donec pede justo,
-                    | fringilla vel, aliquet nec, vulputate eget, arcu.
-                    | In enim justo, rhoncus ut, imperdiet a, venenatis
-                    | vitae, justo. Nullam dictum felis eu pede mollis pretium.
-                    | Integer tincidunt. Cras dapibus. Vivamus elementum
-                    | semper nisi. Aenean vulputate eleifend tellus. Aenean leo
-                    | ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                p Lorem ipsum dolor sit amet,
+                | consectetuer adipiscing elit.
+                | Aenean commodo ligula eget dolor. Aenean massa.
+                | Cum sociis natoque penatibus et magnis dis parturient
+                | montes, nascetur ridiculus mus. Donec quam felis,
+                | ultricies nec, pellentesque eu, pretium quis, sem.
+                | Nulla consequat massa quis enim. Donec pede justo,
+                | fringilla vel, aliquet nec, vulputate eget, arcu.
+                | In enim justo, rhoncus ut, imperdiet a, venenatis
+                | vitae, justo. Nullam dictum felis eu pede mollis pretium.
+                | Integer tincidunt. Cras dapibus. Vivamus elementum
+                | semper nisi. Aenean vulputate eleifend tellus. Aenean leo
+                | ligula, porttitor eu, consequat vitae, eleifend ac, enim.
             .containerTrainers1
                 .containerPT1
                     img.avatarman1(src="./images/avatarman.png", alt="Mann")
@@ -320,7 +321,8 @@ html
         if user
             section.sixth#booking
                 .containerBooking
-                    h1.bookingHeader Book en gruppetime
+                    .bookingHeader
+                        h1 Book en gruppetime
                     .theDates
                         span
                             p.nextDay(onclick="getNextDay()")
