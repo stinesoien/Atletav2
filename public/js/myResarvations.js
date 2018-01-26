@@ -27,30 +27,32 @@ var thisReservation = document.getElementById("reservation")
 var getReservations = function () {
     $.ajax({
         url: 'myReservations/',
-        type: 'GET'
-    }).success(function (data) {
-        document.getElementById("oneReservation").innerHTML = ' ';
-        for (var i = 0; i < data.length; i++) {
-            var daySql = data[i].sqlDay;
-            var monthSql = data[i].sqlMonth;
-            var yearSql = data[i].sqlYear;
-            var currentDate = daySql + monthSql + yearSql;
-            var intCurrentDate = parseInt(currentDate);
+        type: 'GET',
+        success: function (data) {
+            document.getElementById("oneReservation").innerHTML = ' ';
+            for (var i = 0; i < data.length; i++) {
+                var daySql = data[i].sqlDay;
+                var monthSql = data[i].sqlMonth;
+                var yearSql = data[i].sqlYear;
+                var currentDate = daySql + monthSql + yearSql;
+                var intCurrentDate = parseInt(currentDate);
 
-            console.log("current dato:" + intCurrentDate + " b id:" + data[i].b_id);
+                console.log("current dato:" + intCurrentDate + " b id:" + data[i].b_id);
 
-            if (intCurrentDate >= intDate) {
-                thisReservation = data[i].b_id;
-                console.log("thisReservation:" + thisReservation);
-                document.getElementById("oneReservation").innerHTML += '<div id="reservation">' + JSON.stringify("        " + data[i].b_name + "          " + data[i].time + "         " + data[i].dateFormat).replace(/\"/g, "")
-                    + '<button type="button" id="deleteReservation" onclick="deleteReservations(this)" data-id=' + thisReservation + '>Avbestill time</button>' + '</div>';
+                if (intCurrentDate >= intDate) {
+                    thisReservation = data[i].b_id;
+                    console.log("thisReservation:" + thisReservation);
+                    document.getElementById("oneReservation").innerHTML += '<div id="reservation">' + JSON.stringify("        " + data[i].b_name + "          " + data[i].time + "         " + data[i].dateFormat).replace(/\"/g, "")
+                        + '<button type="button" id="deleteReservation" onclick="deleteReservations(this)" data-id=' + thisReservation + '>Avbestill time</button>' + '</div>';
+                }
             }
         }
-    })
+    });
 };
 
 var deleteReservations = function (e) {
     var test = $(e).data("id");
+    document.getElementById("deleteReservation").style.visibility="hidden";
     $.ajax({
         url: 'deleteReservation/',
         type: 'DELETE',
@@ -61,7 +63,7 @@ var deleteReservations = function (e) {
         getReservations();
     })
 
-}
+};
 
 getReservations();
 deleteReservations(thisReservation);

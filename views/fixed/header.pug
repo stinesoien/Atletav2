@@ -5,11 +5,11 @@ html
     body
         .navbar
             a(href="/#main")#logo ATLETA
-            if user
-                a.scroll-booking(href="/#booking") Timeplan
-            a.scroll-PT(href="/#PTinformation") Personlig Trener
             a.scroll-classes(href="/#groupclasses") Gruppetimer
             a.scroll-gyms(href="/#gyms") Sentre
+            a.scroll-PT(href="/#PTinformation") Personlig Trener
+            if user
+                a.scroll-booking(href="/#booking") Timeplan
 
 
             if user

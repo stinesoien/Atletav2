@@ -335,24 +335,28 @@ html
 
                     .container#bookClasses
                         pre#groupClass
+        if user
+            script
+                include ../public/js/userPage.js
+            script
+                include ../public/js/statistic.js
+
+            script
+                include ../public/js/editPassword.js
+
+            script
+                include ../public/js/editUser.js
+            script
+                include ../public/js/myResarvations.js
+
+            script
+                include ../public/js/booking.js
+        else
+            script
+                include ../public/js/newUser.js
 
         script
             include ../public/js/index.js
-
-        script
-            include ../public/js/userPage.js
-
-        script
-            include ../public/js/statistic.js
-
-        script
-            include ../public/js/editPassword.js
-
-        script
-            include ../public/js/editUser.js
-
-        script
-            include ../public/js/newUser.js
 
         script
             include ../public/js/classes.js
@@ -360,11 +364,6 @@ html
         script
             include ../public/js/gyms.js
 
-        script
-            include ../public/js/myResarvations.js
-
-        script
-            include ../public/js/booking.js
 
 
     footer

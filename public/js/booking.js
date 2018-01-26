@@ -52,6 +52,7 @@ var getClassesForBooking = function (date) {
 
 var makeBooking = function (e) {
     var test = $(e).data("id");
+    document.getElementById("bookButton").style.visibility="hidden";
     console.log(test);
     $.ajax({
         url: 'booking/',
@@ -60,15 +61,6 @@ var makeBooking = function (e) {
             'b_id': test
         },
         dataType: 'json',
-        success: function (){
-            //console.log(this);
-            document.getElementById("bookButton").style.visibility="hidden";
-            this.innerHTML = "Avbestill time";
-            //this.style.backgroundColor = "8c0000";
-            //this.style.opacity = "0.7";
-
-
-        },
         error: function (data) {
             console.log(data);
         }

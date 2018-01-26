@@ -209,7 +209,11 @@ app.get('/', function(req, res){
 });
 
 app.get('/newUser', function (req, res) {
-    res.render('newUser');
+    if(req.user){
+        res.send("Innlogget");
+    } else {
+        res.render('newUser');
+    }
 });
 
 
