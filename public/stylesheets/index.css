@@ -31,6 +31,7 @@ footer {
 }
 
 .newUserBtn span {
+    font-family: "Heiti TC";
     cursor: pointer;
     display: inline-block;
     position: relative;
@@ -121,7 +122,6 @@ background-color: rgba(255,255,255,0.5);*/
 .containerNew {
     padding-top: 0;
     font-family: "Heiti TC";
-    /*margin-top: 1%;*/
     margin-left: 3vw;
 }
 
@@ -340,7 +340,7 @@ section.third {
 
 .map {
     width: 42vw;
-    height: 50vw;
+    height: 53vw;
 }
 
 .gymMap i {
@@ -382,6 +382,7 @@ p.p2{
     background-color: white;
     left: 50%;
     box-shadow: 7px 10px 10px #474747;
+    word-break: keep-all;
 }
 
 
@@ -1081,7 +1082,7 @@ section {
 .bookingHeader h1{
     font-family: "Heiti TC";
     font-weight: bolder;
-    margin-top: 12%;
+    margin-top: 3%;
     margin-left: 2%;
     opacity: 1;
 }

@@ -19,6 +19,10 @@ html
         //SEKSJON 1
         if user
             section.first#mainLogedIn
+                //Statistikk
+                div#statistics
+                    .statistic#chart_div
+
                 //Endre info - knapp
                 .endreInfoBtn#editInfo
                     h3 Endre Bruker
@@ -84,7 +88,7 @@ html
                 #workoutProgBox.modal-woProg
                     .modal-content-woProg
                         a.closeBtn#closePop2 &times
-                        h1 TRENINGSPROGRAMMER TIL NEDLASTNING
+                        h1 TRENINGSPROGRAM
                         a.prog1(href="./documents/TreningHelkropp.pdf" TreningHelkropp) Treningsprogram - Helkropp
                         a.prog2(href="./documents/TreningMRL.pdf" TreningsMRL) Treningsprogram - MRL (Mage, rumpe og lår)
                         a.prog3(href="./documents/TreningNybegynner.pdf" TreningNybegynner) Treningsprogram - Nybegynner
@@ -98,10 +102,6 @@ html
                             .container#reservations
                                 pre#oneReservation
 
-
-                div
-                    .statCon
-                        .statistic#chart_div
 
                 a.scroll-down1(href='#second', address='true')
 
@@ -189,8 +189,8 @@ html
                     h3 ATLETA MIDTBYEN
                     hr
                     p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                    | Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                    | montes, nascetur ridiculus mus.
+                    p Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+                    p montes, nascetur ridiculus mus.
 
             #modalGym2.modalGym2
                 .modal-contentGym
@@ -199,8 +199,8 @@ html
                     h3 ATLETA ILSVIKA
                     hr
                     p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                    | Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                    | montes, nascetur ridiculus mus.
+                    p Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+                    p montes, nascetur ridiculus mus.
 
             a.scroll-down3(href='#information', address='true')
 

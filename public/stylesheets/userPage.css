@@ -2,6 +2,27 @@
     background: url(sectionImg/frontpicture1.1.jpg) center center / cover no-repeat;
 }
 
+/*STATISTIKK*/
+#statistics {
+    margin-top: 15%;
+    margin-left: 2%;
+    width: 40%;
+    height: 45%;
+    border-radius: 10px;
+    background-color: white;
+    left: 50%;
+    opacity: 0.9;
+    min-width: 502px;
+}
+
+
+#chart_div{
+    position: sticky;
+    left: 1%;
+    padding-top: 4%;
+
+}
+
 /* ENDRE INFO */
 .endreInfoBtn {
     display: inline-block;
@@ -12,19 +33,18 @@
     text-align: center;
     font-size: 40px;
     padding: 3%;
-    width: 25%;
+    width: 26%;
     height: 8%;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
     position:relative;
-    font-family: "Heiti TC";
-    font-size: 30px;
-    left: 27em;
-    top: 3em;
+    left: 20.3em;
+    top: -10em;
 }
 
 .endreInfoBtn h3 {
+    font-family: "Heiti TC";
     margin: auto;
     display: block;
     position: relative;
@@ -32,16 +52,16 @@
 }
 
 .endreInfoBtn h3:after {
-    /*content: '\00bb';*/
     position: absolute;
     opacity: 0;
     top: 0;
     transition: 0.5s;
 }
 
-.endreInfoBtn:hover h3 {
-    font-size: 40px;
+.endreInfoBtn:hover h3  {
+    font-size: 33px;
 }
+
 
 .endreInfoBtn:hover {
     opacity: 0.8;
@@ -50,17 +70,20 @@
 .modal-editInfo {
     display: none;
     position: fixed;
-    left: 30%;
-    top: 5%;
-    z-index: 1;
+    left: 0;
+    top: 0;
+    z-index: 3;
     width: 100%;
     height: 100%;
-    padding-top: 4%;
-
+    padding-top: 6%;
+    background-color: rgb(255,255,255);
+    background-color: rgba(255,255,255,0.5);
 }
 
 .modal-contentInfo {
-    margin: auto;
+    font-family: "Heiti TC";
+    font-weight: bold;
+    margin: 1% auto 15% 30%;
     width: 40%;
     height: 82%;
     display: inline-block;
@@ -75,7 +98,10 @@
     font-family: "Heiti TC";
     margin-top: 1%;
     margin-left: 8%;
-    font-weight: normal;
+}
+
+.containerInfo h1 {
+    font-family: "Heiti TC";
 }
 
 .containerInfo label {
@@ -123,13 +149,11 @@
     width: 30%;
     padding: 3% 5%;
     margin-left: 4%;
-    margin-top: 6%;
+    margin-top: 5%;
     text-align: center;
     display: inline-block;
     border-radius: 10px;
 }
-
-
 
 /* TRENINGSPROGRAM */
 .workoutProgBtn {
@@ -141,19 +165,18 @@
     text-align: center;
     font-size: 40px;
     padding: 3%;
-    width: 25%;
-    height: 8%;
+    width: 26%;
+    height: 16.9%;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
     position:absolute;
-    font-family: "Heiti TC";
-    font-size: 30px;
-    left: 27.25em;
-    top: 9em;
+    left: 20.25em;
+    top: 7em;
 }
 
 .workoutProgBtn h3 {
+    font-family: "Heiti TC";
     margin: auto;
     display: block;
     position: relative;
@@ -169,15 +192,28 @@
 }
 
 .workoutProgBtn:hover h3 {
-    font-size: 40px;
+    font-size: 33px;
 }
 
 .workoutProgBtn:hover {
     opacity: 0.8;
 }
 
+.modal-woProg {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    padding-top: 6%;
+    background-color: rgb(255,255,255);
+    background-color: rgba(255,255,255,0.5);
+}
+
 .modal-content-woProg {
-    margin: auto;
+    margin: 1% auto 15% 30%;
     width: 40%;
     height: 82%;
     display: inline-block;
@@ -187,18 +223,6 @@
     left: 50%;
     box-shadow: 7px 10px 10px #474747;
 }
-
-.modal-woProg {
-    display: none;
-    position: fixed;
-    left: 30%;
-    top: 5%;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    padding-top: 4%;
-}
-
 
 .modal-content-woProg h1 {
     padding: 3%;
@@ -210,7 +234,7 @@
 
 .prog1, .prog2, .prog3  {
     height: 2%;
-    width: 70%;
+    width: 80%;
     background-color: #ad3232;
     color: white;
     font-family: "Heiti TC";
@@ -237,32 +261,7 @@
     transition: 0.3s;
 }
 
-.statCon {
-    margin-top: -1%;
-    margin-left: 2%;
-    width: 40%;
-    height: 60%;
-    display: inline-block;
-    border-radius: 10px;
-    background-color: white;
-    left: 50%;
-    opacity: 0.9;
-    /*background: rgba(237, 237, 237, 0.9);*/
-
-}
-
-
-#chart_div{
-    margin-top: 10%;
-    margin-left: -50%;
-    position: relative;
-    left: 50%;
-    top: 4%;
-
-}
-
 /* RESERVASJONER */
-
 #reservation {
     font-family: "Heiti TC";
     margin: 0.7em;
@@ -286,22 +285,10 @@
     float: right;
 }
 
-
 #deleteReservation:focus {
     outline: 0;
 }
 
-.modal-content-reserv {
-    margin: auto;
-    width: 40%;
-    height: 82%;
-    display: inline-block;
-    border-radius: 10px;
-    border: 1px solid #888;
-    background-color: white;
-    left: 50%;
-    box-shadow: 7px 10px 10px #474747;
-}
 
 .modal-reserv h1 {
     font-family: "Heiti TC";
@@ -311,12 +298,26 @@
 .modal-reserv {
     display: none;
     position: fixed;
-    left: 30%;
-    top: 5%;
-    z-index: 1;
+    left: 0;
+    top: 0;
+    z-index: 3;
     width: 100%;
     height: 100%;
-    padding-top: 4%;
+    padding-top: 6%;
+    background-color: rgb(255,255,255);
+    background-color: rgba(255,255,255,0.5);
+}
+
+.modal-content-reserv {
+    margin: 1% auto 15% 30%;
+    width: 40%;
+    height: 82%;
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid #888;
+    background-color: white;
+    left: 50%;
+    box-shadow: 7px 10px 10px #474747;
 }
 
 #deleteReservation {
@@ -334,18 +335,17 @@
     text-align: center;
     font-size: 40px;
     padding: 3%;
-    width: 25%;
-    height: 8%;
+    width: 26%;
+    height: 16.9%;
     transition: all 0.5s;
     margin: 5px;
     position:absolute;
-    font-family: "Heiti TC";
-    font-size: 30px;
-    left: 27.25em;
-    top: 15.8em;
+    left: 20.3em;
+    top: 11.5em;
 }
 
 .reservationBtn h3 {
+    font-family: "Heiti TC";
     margin: auto;
     display: block;
     position: relative;
@@ -353,7 +353,6 @@
 }
 
 .reservationBtn h3:after {
-    /*content: '\00bb';*/
     position: absolute;
     opacity: 0;
     top: 0;
@@ -361,13 +360,15 @@
 }
 
 .reservationBtn:hover h3 {
-    font-size: 40px;
+    font-size: 33px;
 }
 
 .reservationBtn:hover {
     opacity: 0.8;
 }
 
+/*LUKK POPUP-KNAPPER*/
+/*Endre bruker*/
 #closePop {
     position: absolute;
     margin-left: 34%;
@@ -384,20 +385,24 @@
     color: #ad3232;
 }
 
+/*Treningsprogram*/
 #closePop2 {
-     position: absolute;
-     margin-left: 37%;
-     transition: all 200ms;
-     font-size: 30px;
-     font-weight: bold;
-     text-decoration: none;
-     color: darkgrey;
+    font-family: "Heiti TC";
+    position: absolute;
+    margin-left: 37%;
+    margin-top: 0%;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: darkgrey;
  }
 
 #closePop2:hover {
     color: #ad3232;
 }
 
+/*Reservasjoner*/
 #closePopRes {
     position: absolute;
     margin-left: 37%;
@@ -416,24 +421,24 @@
 }
 
 
-
+/*ENDRE PASSORD*/
 .modal-editPsw {
     display: none;
     position: fixed;
     left: 30%;
-    top: 5%;
+    top: 4%;
     z-index: 1;
     width: 100%;
     height: 100%;
     padding-top: 4%;
 }
 .modal-contentPsw {
-    /*margin: auto;*/
-    margin-top: 1%;
+    margin-top: 0.5%;
     width: 40%;
-    height: 80%;
+    height: 83%;
     display: inline-block;
     border-radius: 10px;
+    border: 1px solid #888;
     background-color: white;
     left: 50%;
     box-shadow: 7px 10px 10px #474747;
@@ -444,6 +449,10 @@
     margin-top: 1%;
     margin-left: 8%;
     font-weight: normal;
+}
+
+.containerPsw h1 {
+    font-family: "Heiti TC";
 }
 
 .containerPsw label {
@@ -496,7 +505,7 @@
 }
 
 
-
+/* LUKK ENDRE PASSORD*/
 #closePsw {
     position: absolute;
     margin-left: 34%;

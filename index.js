@@ -249,10 +249,5 @@ app.get('/classes/:level', function (req, res) {
     classesController.getClasses(req, res);
 });
 
-//app.locals.basedir = '';
-
-//basedir.root = 'Altetav2';
-/*var main = basedir.import('/public/js/index.js');
-console.log('text: %s', main.text);*/
 
 app.listen(3000);

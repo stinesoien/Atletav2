@@ -62,6 +62,7 @@ var makeBooking = function (e) {
         dataType: 'json',
         success: function (){
             //console.log(this);
+            document.getElementById("bookButton").style.visibility="hidden";
             this.innerHTML = "Avbestill time";
             //this.style.backgroundColor = "8c0000";
             //this.style.opacity = "0.7";
