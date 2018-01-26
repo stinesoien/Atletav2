@@ -28,7 +28,7 @@ var getReservations = function () {
     $.ajax({
         url: 'myReservations/',
         type: 'GET'
-    }).done(function (data) {
+    }).success(function (data) {
         document.getElementById("oneReservation").innerHTML = ' ';
         for (var i = 0; i < data.length; i++) {
             var daySql = data[i].sqlDay;

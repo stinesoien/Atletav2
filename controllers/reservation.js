@@ -2,7 +2,7 @@ var connection = require('./../config');
 
 module.exports={
     getReservations: function(req, res){
-        connection.pool.query('SELECT DATE_FORMAT(date, \'%d.%M.%Y\') AS \'dateFormat\', TIME_FORMAT(time, \'%H:%i\') AS \'time\', DATE_FORMAT(date, \'%m\') AS \'sqlMonth\', DATE_FORMAT(date, \'%d\') AS \'sqlDay\', DATE_FORMAT(date, \'%Y\') AS \'sqlYear\', b_name, b_id FROM booking NATURAL JOIN users_booking ORDER BY date;', [req.body.b_id, req.params.date], function (err, result) {
+        connection.pool.query('SELECT DATE_FORMAT(date, \'%d.%M.%Y\') AS \'dateFormat\', TIME_FORMAT(time, \'%H:%i\') AS \'time\', DATE_FORMAT(date, \'%m\') AS \'sqlMonth\', DATE_FORMAT(date, \'%d\') AS \'sqlDay\', DATE_FORMAT(date, \'%Y\') AS \'sqlYear\', b_name, b_id FROM booking NATURAL JOIN users_booking WHERE email=? ORDER BY date;', [req.user.email], function (err, result) {
             if(err){
                 console.log(err);
                 return res.status(500).json({message: 'Something went wrong'});

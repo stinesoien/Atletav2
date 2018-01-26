@@ -8,6 +8,7 @@ footer {
 
 #main {
     background: url(sectionImg/frontpicture1.jpg) center center / cover no-repeat;
+
 }
 
 /* Sign up button*/
@@ -196,7 +197,7 @@ section.second {
     width: 39vw;
     height: 41vw;
     min-width: 370px;
-    min-height: 370px;
+    min-height: 420px;
     display: inline-block;
     border-radius: 10px;
     background: rgba(237, 237, 237, 0.9);
@@ -290,7 +291,6 @@ brp.intensityLevel {
 }
 
 /* TREDJE SEKSJON */
-
 section.third {
     background-color: #ededed;
 }
@@ -466,7 +466,6 @@ img.gym1 {
 }
 
 /* FJERDE SEKSJON */
-
 section.fourth {
     background: url(sectionImg/frontpicture4.jpg) center center / cover no-repeat;
 }
@@ -515,7 +514,7 @@ section.fourth {
     right: 6.5%;
     bottom: -335%;
     text-align: left;
-    z-index: 2;
+    z-index: 1;
     width: 35vw;
     height: 5vw;
     font-size:calc(20px + 1.5vw);
