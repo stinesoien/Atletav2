@@ -37,7 +37,7 @@ var getClassesForBooking = function (date) {
         url: 'loggedInBooking/' + date,
         type: 'GET'
     }).done(function (data) {
-        console.log(data.user);
+        //console.log(data.user);
 
         document.getElementById("groupClass").innerHTML = ' ';
         for (var i = 0; i < data.length; i++) {
@@ -52,8 +52,16 @@ var getClassesForBooking = function (date) {
 
 var makeBooking = function (e) {
     var test = $(e).data("id");
-    document.getElementById("bookButton").style.visibility="hidden";
     console.log(test);
+    $.ajax({
+        url: 'booking/',
+        type: 'POST',
+        data: {
+            'b_id': test
+        }
+    }).done(function () {
+    })
+    /*
     $.ajax({
         url: 'booking/',
         type: 'POST',
@@ -61,11 +69,13 @@ var makeBooking = function (e) {
             'b_id': test
         },
         dataType: 'json',
+        success: function (){
+            //document.getElementById("bookButton").style.visibility="hidden";
+        },
         error: function (data) {
             console.log(data);
         }
-
-    });
+    });*/
 };
 
 console.log(date);

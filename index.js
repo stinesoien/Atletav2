@@ -94,10 +94,8 @@ app.post('/booking', function(req, res){
 });
 
 app.get('/myReservations', function (req, res) {
-    if(req.user){
+    if(req.user) {
         reservationController.getReservations(req, res);
-    }else{
-        res.status(401).json({message: "you are not logged in."});
     }
 });
 
@@ -209,11 +207,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/newUser', function (req, res) {
-    if(req.user){
-        res.send("Innlogget");
-    } else {
-        res.render('newUser');
-    }
+    res.render('newUser');
 });
 
 
