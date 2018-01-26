@@ -20,6 +20,7 @@ var year = Date.today().toString("yyyy");
 
 var todaysDate = day + month + year;
 var intDate = parseInt(todaysDate);
+console.log("Dagens dato:" + intDate);
 
 var thisReservation = document.getElementById("reservation");
 
@@ -62,6 +63,7 @@ var deleteReservations = function (e) {
     }).done(function () {
         getReservations();
     })
+
 };
 
 getReservations();

@@ -8,7 +8,6 @@ footer {
 
 #main {
     background: url(sectionImg/frontpicture1.jpg) center center / cover no-repeat;
-
 }
 
 /* Sign up button*/
@@ -195,9 +194,9 @@ section.second {
 .containerClasses {
     margin: auto;
     width: 39vw;
-    height: 41vw;
+    height: 40vw;
     min-width: 370px;
-    min-height: 420px;
+    min-height: 390px;
     display: inline-block;
     border-radius: 10px;
     background: rgba(237, 237, 237, 0.9);
@@ -360,16 +359,6 @@ section.third {
     position: absolute;
     right: 90%;
     bottom: -140%;
-}
-
-p.p2{
-    color: gray;
-    font-family: "Heiti TC";
-    display: table-cell;
-    left: -20em;
-    bottom: -6.7em;
-    z-index: 1;
-    position: relative;
 }
 
 /* Modal Content */
@@ -559,6 +548,8 @@ section.fourth {
     background-color: #e0e0e0;
     width: 18vw;
     height: 18vw;
+    min-width: 200px;
+    min-height: 200px;
     box-shadow: 7px 10px 10px #474747;
     border: 1px solid #888;
 }
@@ -572,13 +563,20 @@ section.fourth {
     height: auto;
 }
 
-.namePT1{
+.namePT1 h4 {
     font-family: "Heiti TC";
     text-align: center;
+    font-size: calc(15px + 0.5vw);
 }
 
 .contactInfo1 {
-    margin-top: 12%;
+    margin-top: 6%;
+}
+
+.contactInfo1 p {
+    display: inline-block;
+    font-family: "Heiti TC";
+    font-size: calc(10px + 0.2vw);
 }
 
 .pinIcon1 {
@@ -642,6 +640,8 @@ section.fourth {
     background-color: #e0e0e0;
     width: 18vw;
     height: 18vw;
+    min-width: 200px;
+    min-height: 200px;
     box-shadow: 7px 10px 10px #474747;
     border: 1px solid #888;
 }
@@ -655,13 +655,20 @@ section.fourth {
     height: auto;
 }
 
-.namePT2 {
+.namePT2 h4 {
     font-family: "Heiti TC";
     text-align: center;
+    font-size: calc(15px + 0.5vw);
 }
 
 .contactInfo2 {
-    margin-top: 12%;
+    margin-top: 6%;
+}
+
+.contactInfo2 p {
+    display: inline-block;
+    font-family: "Heiti TC";
+    font-size: calc(10px + 0.2vw);
 }
 
 .pinIcon2 {
@@ -670,7 +677,6 @@ section.fourth {
 
 .mailAddress2 {
     text-align: center;
-    padding-bottom: 5%;
 }
 
 .descriptionPT2 {
@@ -724,6 +730,8 @@ section.fourth {
     background-color: #e0e0e0;
     width: 18vw;
     height: 18vw;
+    min-width: 200px;
+    min-height: 200px;
     box-shadow: 7px 10px 10px #474747;
     border: 1px solid #888;
 }
@@ -737,13 +745,20 @@ section.fourth {
     height: auto;
 }
 
-.namePT3 {
+.namePT3 h4 {
     font-family: "Heiti TC";
     text-align: center;
+    font-size: calc(15px + 0.5vw);
 }
 
 .contactInfo3 {
-    margin-top: 12%;
+    margin-top: 6%;
+}
+
+.contactInfo3 p {
+    display: inline-block;
+    font-family: "Heiti TC";
+    font-size: calc(10px + 0.2vw);
 }
 
 .pinIcon3 {
@@ -820,13 +835,20 @@ section.fourth {
     height: auto;
 }
 
-.namePT4 {
+.namePT4 h4 {
     font-family: "Heiti TC";
     text-align: center;
+    font-size: calc(15px + 0.5vw);
 }
 
 .contactInfo4 {
-    margin-top: 12%;
+    margin-top: 6%;
+}
+
+.contactInfo4 p {
+    display: inline-block;
+    font-family: "Heiti TC";
+    font-size: calc(10px + 0.2vw);
 }
 
 .pinIcon4 {
@@ -1081,7 +1103,7 @@ section {
 .bookingHeader h1{
     font-family: "Heiti TC";
     font-weight: bolder;
-    margin-top: 3%;
+    margin-top: 12%;
     margin-left: 2%;
     opacity: 1;
 }

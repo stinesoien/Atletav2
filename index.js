@@ -101,7 +101,11 @@ app.get('/', function(req, res){
 
 //Bruker getBooking-funskjonen for å utføre SQL-spørring til å finne gruppetimer på en spesifikk dato.
 app.get('/loggedInBooking/:date', function (req, res) {
-    bookingController.getBooking(req, res);
+    if(req.user) {
+        bookingController.getBooking(req, res);
+    } else {
+        res.status(401).json({message: "you are not logged in."});
+    }
 });
 
 //Bruker updateBooking-funskjonen for å utføre SQL-spørringen som utfører en booking på den innloggede persjonen.
@@ -121,6 +125,8 @@ app.post('/booking', function(req, res){
 app.get('/myReservations', function (req, res) {
     if(req.user) {
         reservationController.getReservations(req, res);
+    }else{
+        res.status(401).json({message: "you are not logged in."});
     }
 });
 
@@ -188,6 +194,7 @@ app.put('/updatePassword', function (req, res) {
 //Bruker register-funskjonen for å utføre SQL-spørring som lager/registerer en ny bruker.
 app.post('/newUser', function (req, res) {
     registerController.register(req,res);
+
 });
 
 
