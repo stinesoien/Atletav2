@@ -39,7 +39,7 @@ var getClassesForBooking = function (date) {
             thisBook = data[i].b_id;
             document.getElementById("groupClass").innerHTML += '<div id="bookClass" >' + JSON.stringify("       " +
                 data[i].time + "                       " + data[i].b_name).replace(/\"/g, "")
-                + '<button type="button" class="'+ i +'" id="bookButton" onclick="makeBooking(this)" data-id=' + thisBook + '>Book time</button>' + '</div>';
+                + '<button type="button" id="bookButton" onclick="makeBooking(this)" data-id=' + thisBook + ' >Book time</button>' + '</div>';
         }
     })
 };
@@ -47,11 +47,16 @@ var getClassesForBooking = function (date) {
 
 var makeBooking = function (e) {
     var test = $(e).data("id");
-    buttons1= document.getElementById("bookButton");
-    for(var i= 0; i<buttons1.length; i++){
-        buttons1[i].style.visibility="hidden";
-    }
-    //document.getElementById("bookButton").style.visibility="hidden";
+    console.log(test);
+    $.ajax({
+        url: 'booking/',
+        type: 'POST',
+        data: {
+            'b_id': test
+        }
+    }).done(function () {
+    })
+    /*
     $.ajax({
         url: 'booking/',
         type: 'POST',
@@ -59,13 +64,14 @@ var makeBooking = function (e) {
             'b_id': test
         },
         dataType: 'json',
-
+        success: function (){
+            //document.getElementById("bookButton").style.visibility="hidden";
+        },
         error: function (data) {
             console.log(data);
         }
-    });
+    });*/
 };
 
 makeBooking(thisBook);
 getClassesForBooking(date);
-

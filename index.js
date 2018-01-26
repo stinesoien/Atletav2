@@ -119,10 +119,8 @@ app.post('/booking', function(req, res){
 
 //Bruker getReservation-funskjonen for å utføre SQL-spørringen som finner alle reservasjoene som tilhører en bestemt person.
 app.get('/myReservations', function (req, res) {
-    if(req.user){
+    if(req.user) {
         reservationController.getReservations(req, res);
-    }else{
-        res.status(401).json({message: "you are not logged in."});
     }
 });
 

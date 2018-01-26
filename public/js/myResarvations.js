@@ -36,17 +36,23 @@ var getReservations = function () {
                 var currentDate = daySql + monthSql + yearSql;
                 var intCurrentDate = parseInt(currentDate);
 
-            if (intCurrentDate >= intDate) {
-                thisReservation = data[i].b_id;
-                document.getElementById("oneReservation").innerHTML += '<div id="reservation">' + JSON.stringify("        " + data[i].b_name + "          " + data[i].time + "         " + data[i].dateFormat).replace(/\"/g, "")
-                    + '<button type="button" id="deleteReservation" onclick="deleteReservations(this)" data-id=' + thisReservation + '>Avbestill time</button>' + '</div>';
+                console.log("current dato:" + intCurrentDate + " b id:" + data[i].b_id);
+
+                if (intCurrentDate >= intDate) {
+                    thisReservation = data[i].b_id;
+                    console.log("thisReservation:" + thisReservation);
+                    document.getElementById("oneReservation").innerHTML += '<div id="reservation">' + JSON.stringify("        " + data[i].b_name + "          " + data[i].time + "         " + data[i].dateFormat).replace(/\"/g, "")
+                        + '<button type="button" id="deleteReservation" onclick="deleteReservations(this); window.location.reload(true);" data-id=' + thisReservation + '>Avbestill time</button>' + '</div>';
+                }
             }
         }
     });
 };
 
 var deleteReservations = function (e) {
+    getReservations();
     var test = $(e).data("id");
+    //document.getElementById("deleteReservation").style.visibility="hidden";
     $.ajax({
         url: 'deleteReservation/',
         type: 'DELETE',
@@ -56,7 +62,6 @@ var deleteReservations = function (e) {
     }).done(function () {
         getReservations();
     })
-
 };
 
 getReservations();
