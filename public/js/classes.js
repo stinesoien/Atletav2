@@ -30,7 +30,7 @@ slider.oninput = function () {
     output.innerHTML = this.value;
     var level = this.value;
     getLevel(level);
-}
+};
 
 getLevel(startLevel);
 

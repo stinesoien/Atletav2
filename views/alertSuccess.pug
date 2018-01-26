@@ -9,12 +9,9 @@ html
             .modal-success
                 div.success
                     i.successIcon(id="pin" class="fa fa-check-circle" style='font-size:120px')
-                .okButton#okButtonId Ok
+                    p#text
 
         script.
-            var okButton = document.getElementById("okButton");
-            var modalSuccess = document.getElementById("success");
-
-            okButton.onclick = function () {
-                modalSuccess.style.display = "none";
-            }
+            var modalSuccess = document.getElementById("alertBoxMember");
+            document.getElementById("text").innerHTML = "Some text to enter";
+            window.setTimeout(modalSuccess, 10000);

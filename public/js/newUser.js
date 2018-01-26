@@ -1,4 +1,5 @@
-var newMember = function () {
+$('#form').submit(function(e){
+    e.preventDefault();
     $.ajax({
         url: '/newUser',
         type: 'POST',
@@ -8,15 +9,27 @@ var newMember = function () {
             'phone': document.getElementById("phone").value,
             'email': document.getElementById("email").value,
             'address': document.getElementById("address").value,
-            'password': document.getElementById("password").value,
+            'password': document.getElementById("password").value
         },
         dataType: 'json',
-        success: function (res) {
+        success: function (data) {
+            /*
+            var modalMemberSuccess = document.getElementById("alertSuccessMember");
+            modalMemberSuccess.style.display = "block";
+            document.getElementById("textSuccessMember").innerHTML = "Velkommen " + data.User.fname + data.User.sname;
+            window.setTimeout(modalMemberSuccess, 10000);*/
             window.location.href = "/";
-            alert("Bruker opprettet");
+            //alert("Bruker opprettet");
+        },
+        error: function () {
+            var modalMemberError = document.getElementById("alertErrorMember");
+            modalMemberError.style.display="block";
+            document.getElementById("textErrorMember").innerHTML = "Noe gikk galt";
+            window.setTimeout(modalMemberError, 10000);
         }
     })
-};
+});
+
 
 //Modal: Bli Medlem
 var newUserBtn = document.getElementById("newBtn");

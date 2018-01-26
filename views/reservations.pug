@@ -18,7 +18,6 @@ html
 
             var todaysDate = day+month+year;
             var intDate = parseInt(todaysDate);
-            console.log("Dagens dato:" + intDate);
 
             var thisReservation = document.getElementById("reservation")
 
@@ -35,11 +34,8 @@ html
                         var currentDate= daySql+monthSql+yearSql;
                         var intCurrentDate = parseInt(currentDate);
 
-                        console.log("current dato:" + intCurrentDate + " b id:" + data[i].b_id);
-
                         if(intCurrentDate>= intDate){
                             thisReservation = data[i].b_id;
-                            console.log("thisReservation:" + thisReservation);
                             document.getElementById("oneReservation").innerHTML += '<div id="reservation">' + JSON.stringify("        " + data[i].b_name + "          " + data[i].time + "         " + data[i].dateFormat).replace(/\"/g, "")
                                 + '<button type="button" id="deleteReservation" onclick="deleteReservations(this)" data-id=' + thisReservation + '>Avbestill time</button>' + '</div>';
                         }

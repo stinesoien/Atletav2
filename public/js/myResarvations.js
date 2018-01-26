@@ -6,12 +6,12 @@ var resPopup = document.getElementById("myBookingsBox");
 // popup - mine reservasjoner
 resButton.onclick = function () {
     resPopup.style.display = "block";
-}
+};
 
 closeButton4.onclick = function () {
     resPopup.style.display = "none";
 
-}
+};
 
 //reservasjoner js-kode
 var month = Date.today().toString("MM");
@@ -20,9 +20,8 @@ var year = Date.today().toString("yyyy");
 
 var todaysDate = day + month + year;
 var intDate = parseInt(todaysDate);
-console.log("Dagens dato:" + intDate);
 
-var thisReservation = document.getElementById("reservation")
+var thisReservation = document.getElementById("reservation");
 
 var getReservations = function () {
     $.ajax({
@@ -37,14 +36,10 @@ var getReservations = function () {
                 var currentDate = daySql + monthSql + yearSql;
                 var intCurrentDate = parseInt(currentDate);
 
-                console.log("current dato:" + intCurrentDate + " b id:" + data[i].b_id);
-
-                if (intCurrentDate >= intDate) {
-                    thisReservation = data[i].b_id;
-                    console.log("thisReservation:" + thisReservation);
-                    document.getElementById("oneReservation").innerHTML += '<div id="reservation">' + JSON.stringify("        " + data[i].b_name + "          " + data[i].time + "         " + data[i].dateFormat).replace(/\"/g, "")
-                        + '<button type="button" id="deleteReservation" onclick="deleteReservations(this)" data-id=' + thisReservation + '>Avbestill time</button>' + '</div>';
-                }
+            if (intCurrentDate >= intDate) {
+                thisReservation = data[i].b_id;
+                document.getElementById("oneReservation").innerHTML += '<div id="reservation">' + JSON.stringify("        " + data[i].b_name + "          " + data[i].time + "         " + data[i].dateFormat).replace(/\"/g, "")
+                    + '<button type="button" id="deleteReservation" onclick="deleteReservations(this)" data-id=' + thisReservation + '>Avbestill time</button>' + '</div>';
             }
         }
     });
@@ -52,7 +47,6 @@ var getReservations = function () {
 
 var deleteReservations = function (e) {
     var test = $(e).data("id");
-    document.getElementById("deleteReservation").style.visibility="hidden";
     $.ajax({
         url: 'deleteReservation/',
         type: 'DELETE',
