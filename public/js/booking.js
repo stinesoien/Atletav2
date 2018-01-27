@@ -42,7 +42,7 @@ var getClassesForBooking = function (date) {
             thisBook = data[i].b_id;
             document.getElementById("groupClass").innerHTML += '<div id="bookClass" >' + JSON.stringify("       " +
                 data[i].time + "                       " + data[i].b_name).replace(/\"/g, "")
-                + '<button type="button" id="bookButton" onclick="makeBooking(this); window.location.reload(true);" data-id=' + thisBook + ' >Book time</button>' + '</div>';
+                + '<button type="button" id="bookButton" onclick="makeBooking(this); location.reload(true)" data-id=' + thisBook + ' >Book time</button>' + '</div>';
         }
     })
 };

@@ -6,6 +6,7 @@ html
         link(rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css")
         link(rel='stylesheet', href='/stylesheets/userPage.css')
         link(rel='stylesheet', href='/stylesheets/index.css')
+        link(rel='stylesheet', href='/stylesheets/alertSuccess.css')
 
         script(type="text/javascript", src="js/jquery-3.2.1.js")
         script(type="text/javascript" src="https://www.gstatic.com/charts/loader.js")
@@ -61,7 +62,8 @@ html
                                     br
                                 input(type = "text", id = "phone")
 
-                            .updateBtn(onclick="updateUser()", type="button") Oppdater profil
+                            .updateBtn#updateUsr Oppdater profil
+                                //(onclick="updateUser()", type="button")
                             .editPswBtn#editPsw Endre Passord
                             //a.editPswBtn(href="/editPassword") Endre Passord
                         #editPswBox.modal-editPsw
@@ -127,7 +129,7 @@ html
                                     input(type = "text" id = "phone" name='phone' required pattern="[0-9].{7,}" title="Telefonnummer må bestå av minst 8 tall" placeholder="Telefonnummer:")
 
                                 div
-                                    input(type = "email" id = "email" name='email' required pattern="[A-ÆØÅa-æøå0-9._%+-]+@[A-ÆØÅa-æøå0-9.-]+[A-ÆØÅa-æøå]{1,63}$" title="Ugyldig E-postadresse" placeholder="E-postadresse:")
+                                    input(type = "text" id = "email" name='email' required pattern="[A-ÆØÅa-æøå0-9._%+-]+@[A-ÆØÅa-æøå0-9.-]+[A-ÆØÅa-æøå]{1,63}$" title="Ugyldig E-postadresse" placeholder="E-postadresse:")
 
                                 div
                                     input(type = "text" id = "address" name='address' placeholder="Adresse:")
@@ -142,11 +144,6 @@ html
                                 div.containerSuccess
                                     i.successIcon(id="pin" class="fa fa-check-circle" style='font-size:120px')
                                     p#textSuccessMember
-                        #alertError.modal-error
-                            .modal-contentError
-                                div.containerError
-                                    i.errorIcon(id="pin" class="fa fa-exclamation-circle" style='font-size:120px')
-                                    p#textErrorMember
 
                 a.scroll-down1(href='#second', address='true')
 

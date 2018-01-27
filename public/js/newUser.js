@@ -13,19 +13,12 @@ $('#form').submit(function(e){
         },
         dataType: 'json',
         success: function (data) {
-            /*
-            var modalMemberSuccess = document.getElementById("alertSuccessMember");
+            var modalMemberSuccess = document.getElementById("alertSuccess");
             modalMemberSuccess.style.display = "block";
-            document.getElementById("textSuccessMember").innerHTML = "Velkommen " + data.User.fname + data.User.sname;
-            window.setTimeout(modalMemberSuccess, 10000);*/
+            //document.getElementById("textSuccessMember").innerHTML = "Velkommen " + data.User.fname + data.User.sname;
+            //window.setTimeout(modalMemberSuccess, 10000);
             window.location.href = "/";
             //alert("Bruker opprettet");
-        },
-        error: function () {
-            var modalMemberError = document.getElementById("alertErrorMember");
-            modalMemberError.style.display="block";
-            document.getElementById("textErrorMember").innerHTML = "Noe gikk galt";
-            window.setTimeout(modalMemberError, 10000);
         }
     })
 });

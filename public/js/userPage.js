@@ -11,6 +11,9 @@ var closeButton2 = document.getElementById("closePop2");
 var closeButton3 = document.getElementById("closePsw");
 var closeButton4 = document.getElementById("closePopRes");
 
+//Oppdater Profil
+var editButton = document.getElementById("updateUsr");
+
 //Endre passord
 var pswButton = document.getElementById("editPsw");
 var editPswPop = document.getElementById("editPswBox");
@@ -19,6 +22,9 @@ var editPswPop = document.getElementById("editPswBox");
 var resButton = document.getElementById("reserv");
 var resPopup = document.getElementById("myBookingsBox");
 
+editButton.onclick = function () {
+    updateUser();
+}
 
 // popup - endre info
 endreInfoBtn.onclick = function () {

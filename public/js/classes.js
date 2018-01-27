@@ -22,6 +22,7 @@ var getLevel = function (level) {
         for (var i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener("click", redirect, false);
         }
+
     });
 
 };
@@ -40,3 +41,4 @@ function redirect(ev) {
     var index = ev.target.id;
     ev.target.innerHTML = info[index].information;
 }
+
