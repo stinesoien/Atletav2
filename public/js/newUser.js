@@ -1,26 +1,28 @@
 $('#form').submit(function(e){
     e.preventDefault();
-    $.ajax({
-        url: '/newUser',
-        type: 'POST',
-        data: {
-            'fname': document.getElementById("fname").value,
-            'sname': document.getElementById("sname").value,
-            'phone': document.getElementById("phone").value,
-            'email': document.getElementById("email").value,
-            'address': document.getElementById("address").value,
-            'password': document.getElementById("password").value
-        },
-        dataType: 'json',
-        success: function (data) {
-            var modalMemberSuccess = document.getElementById("alertSuccess");
-            modalMemberSuccess.style.display = "block";
-            //document.getElementById("textSuccessMember").innerHTML = "Velkommen " + data.User.fname + data.User.sname;
-            //window.setTimeout(modalMemberSuccess, 10000);
-            window.location.href = "/";
-            //alert("Bruker opprettet");
-        }
-    })
+        $.ajax({
+            url: '/newUser',
+            type: 'POST',
+            data: {
+                'fname': document.getElementById("fname").value,
+                'sname': document.getElementById("sname").value,
+                'phone': document.getElementById("phone").value,
+                'email': document.getElementById("email").value,
+                'address': document.getElementById("address").value,
+                'password': document.getElementById("password").value
+            },
+            dataType: 'json',
+            success: function () {
+                var modalMemberSuccess = document.getElementById("alertSuccess");
+                modalMemberSuccess.style.display = "block";
+                window.location.href = "/";
+
+            },
+            error: function () {
+                var modalMemberError = document.getElementById("alertError");
+                modalMemberError.style.display="block";
+            }
+        })
 });
 
 

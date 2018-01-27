@@ -8,13 +8,13 @@ module.exports = {
             var oPassword = req.body.oldPassword;
             var cPassword = req.body.confirmPassword;
             var email = req.user.email;
+            var req = /.{8,}/;
             bcrypt.genSalt(10, function (err, salt) {
                 bcrypt.hash(password, salt, function (err, hash) {
                     if(err) {
-                        console.log(err);
                         return res.status(500).send();
                     }
-                    if(oPassword!="" && password!=""&&cPassword!=""){
+                    if(oPassword!="" && password!=""&&cPassword!="" && req.test(cPassword) && req.test(password)){
                         if(oPassword!=password){
                             if(password==cPassword){
                                 connection.pool.query('UPDATE users SET password = ? WHERE email=?', [hash, email], function (error) {

@@ -1,13 +1,15 @@
 html
     head
         link(rel='stylesheet', href='/stylesheets/header.css')
+        link(rel='stylesheet', href='/stylesheets/alerts.css')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
         script(type="text/javascript", src="js/jquery-3.2.1.js")
     body
         .navbar
             if user
                 a(href="/#mainLogedIn")#logo ATLETA
             else
-                a(href='/#main')#logo ATLETA
+                a(href="/#main")#logo ATLETA
             a.scroll-classes(href="/#groupclasses") Gruppetimer
             a.scroll-gyms(href="/#gyms") Sentre
             a.scroll-prices(href='/#information') Priser
@@ -39,20 +41,9 @@ html
                     button.loginBtn#logIn(type="submit") Logg inn
 
 
-        script.
 
-            var loginBox = document.getElementById("loginForm");
-            var closeButtonLog = document.getElementById("closeLog");
-
-            closeButtonLog.onclick = function () {
-                loginBox.style.display = "none";
-            }
-
-            window.onclick = function (event) {
-                if (event.target == loginBox){
-                    loginBox.style.display = "none";
-                }
-            }
+        script
+            include ../../public/js/loggIn.js
 
 
 

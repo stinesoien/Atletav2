@@ -1,7 +1,6 @@
 var connection = require('./../config');
 var bcrypt = require('bcrypt');
 
-
 module.exports = {
     register: function (req, res) {
         var email = req.body.email;
@@ -18,7 +17,6 @@ module.exports = {
                         return res.status(500).json({message: 'Something went wrong.'});
                     }
                     return res.status(200).json({message: 'user registered sucessfully'});
-
                 });
 
             });

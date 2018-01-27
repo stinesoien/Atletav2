@@ -17,7 +17,6 @@ module.exports = {
         var loggedIn = require('/controllers/logged-in.js');
 
         app.get('/users', loggedIn, function (req, res) {
-            console.log('Got GET request');
             pool.getConnection(function(err){
                 if(err){
                     res.status(500);

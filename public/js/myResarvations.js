@@ -17,10 +17,8 @@ closeButton4.onclick = function () {
 var month = Date.today().toString("MM");
 var day = Date.today().toString("dd");
 var year = Date.today().toString("yyyy");
-
-var todaysDate = day + month + year;
+var todaysDate = year + month + day;
 var intDate = parseInt(todaysDate);
-console.log("Dagens dato:" + intDate);
 
 var thisReservation = document.getElementById("reservation");
 
@@ -34,10 +32,8 @@ var getReservations = function () {
                 var daySql = data[i].sqlDay;
                 var monthSql = data[i].sqlMonth;
                 var yearSql = data[i].sqlYear;
-                var currentDate = daySql + monthSql + yearSql;
+                var currentDate = yearSql + monthSql + daySql;
                 var intCurrentDate = parseInt(currentDate);
-
-                console.log("current dato:" + intCurrentDate + " b id:" + data[i].b_id);
 
                 if (intCurrentDate >= intDate) {
                     thisReservation = data[i].b_id;
@@ -51,9 +47,8 @@ var getReservations = function () {
 };
 
 var deleteReservations = function (e) {
-    //getReservations();
+    getReservations();
     var test = $(e).data("id");
-    //document.getElementById("deleteReservation").style.visibility="hidden";
     $.ajax({
         url: 'deleteReservation/',
         type: 'DELETE',
@@ -66,5 +61,5 @@ var deleteReservations = function (e) {
 
 };
 
-//getReservations();
-//deleteReservations(thisReservation);
+getReservations();
+deleteReservations(thisReservation);

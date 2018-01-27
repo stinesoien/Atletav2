@@ -20,9 +20,6 @@ var getNextDay = function() {
 var getPastDay = function () {
     compareDate = Date.today().addDays(op - 1);
     var compareRes = today.compareTo(compareDate);
-    //console.log("Sammenligningsdato: " + compareDate);
-    //console.log("Dagens dato:" + today);
-    //console.log("ResTall: " + compareRes);
     if(op >= -6 && compareRes < 1) {
         correctDate = Date.today().addDays(op - 1).toString("yyyy-MM-dd");
         getClassesForBooking(correctDate);
@@ -42,7 +39,7 @@ var getClassesForBooking = function (date) {
             thisBook = data[i].b_id;
             document.getElementById("groupClass").innerHTML += '<div id="bookClass" >' + JSON.stringify("       " +
                 data[i].time + "                       " + data[i].b_name).replace(/\"/g, "")
-                + '<button type="button" id="bookButton" onclick="makeBooking(this); location.reload(true)" data-id=' + thisBook + ' >Book time</button>' + '</div>';
+                + '<button type="button" id="bookButton" onclick="makeBooking(this); window.location.reload(true);" data-id=' + thisBook + ' >Book time</button>' + '</div>';
         }
     })
 };
@@ -60,22 +57,7 @@ var makeBooking = function (e) {
     }).done(function () {
         getClassesForBooking(date);
     })
-    /*
-    $.ajax({
-        url: 'booking/',
-        type: 'POST',
-        data: {
-            'b_id': test
-        },
-        dataType: 'json',
-        success: function (){
-            //document.getElementById("bookButton").style.visibility="hidden";
-        },
-        error: function (data) {
-            console.log(data);
-        }
-    });*/
 };
 
-//makeBooking(thisBook);
+makeBooking(thisBook);
 getClassesForBooking(date);

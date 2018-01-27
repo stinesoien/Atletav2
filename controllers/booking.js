@@ -14,10 +14,9 @@ module.exports={
     updateBooking: function (req, res) {
         connection.pool.query('INSERT INTO users_booking SET b_id=?, email=?',[req.body.b_id, req.user.email], function (err) {
             if (err) {
-                console.log(err);
                 return res.status(500).json({message: 'Something went wrong.'});
             }
-            return res.status(200).json({message: 'The class is booked'});
+            return res.status(200).json({message: 'Youre class is booked'});
         });
 
     }

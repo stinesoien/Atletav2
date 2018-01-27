@@ -46,8 +46,11 @@ passport.use(new LocalStrategy({
             }
 
             //Hvis brukeren er funnet, men passordet er feil
-            if (!bcrypt.compareSync(password, rows[0].password))
+            if (!bcrypt.compareSync(password, rows[0].password)){
+                console.log("");
                 return done(null, false);
+            }
+
 
             // Returnerer suksessfull bruker
             return done(null, rows[0]);
@@ -67,14 +70,6 @@ passport.deserializeUser(function(email, done){
     });
 });
 
-//Finner brukeren som er logget på via session, og henter dens brukerinformasjon og fyller inn i inputfeltene i editUser.
-app.get('/session', function(req, res){
-    if(req.user) {
-        res.json({epost: req.user.email});
-    } else {
-        res.send("Session failed");
-    }
-});
 
 //Legger inn endringene på brukeren som er logget inn via session.
 app.put('/session', function(req, res){
@@ -147,13 +142,14 @@ app.get('/error', function(req, res){
     res.send('Login Failed');
 });
 
+
 app.get('/callback', passport.authenticate('local', {failtureRedirect: '/error'}), function(req, res){
     res.redirect('/');
 });
 
 //Logger inn en bruker
 app.post('/login',
-    passport.authenticate('local', { failureRedirect: '/login'  }),
+    passport.authenticate('local', { failureRedirect: '/'}),
     function(req, res ) {
         res.redirect('/');
     });
@@ -167,6 +163,15 @@ app.get('/logout', function(req, res) {
 
 
 //ENDRE BRUKER-INFORMASJON
+
+//Finner brukeren som er logget på via session, og henter dens brukerinformasjon og fyller inn i inputfeltene i editUser.
+app.get('/session', function(req, res){
+    if(req.user) {
+        res.json({epost: req.user.email});
+    } else {
+        res.send("Session failed");
+    }
+});
 
 //Bruker getUserByEmail-funskjonen for å utføre SQL-spørringen som henter en bruker på mailadressen sin.
 app.get('/users/:email', function(req, res) {

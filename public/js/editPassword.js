@@ -13,12 +13,13 @@ var updatePassword = function () {
             'confirmPassword': confirmPassword
         },
         dataType: 'json',
-        success: function(data){
-            window.location.href = "/userpage";
-            alert("Passordet ditt er lagret!");
+        success: function(){
+            var modalSuccess = document.getElementById("alertSuccess");
+            modalSuccess.style.display = "block";
         },
         error: function(data){
-            console.log(data);
+            var modalError = document.getElementById("alertError");
+            modalError.style.display="block";
         }
     });
 };

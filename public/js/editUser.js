@@ -1,11 +1,8 @@
-
 var updateUser = function() {
-    console.log("in update");
     $.ajax({
         url: 'session',
         type: 'PUT',
         success: function (data) {
-            console.log(data);
             $.ajax({
                 url: 'users/' + data.epost,
                 type: 'PUT',
@@ -17,15 +14,15 @@ var updateUser = function() {
                     'email': data.epost
                 },
                 dataType: 'json',
-                success: function(data){
-                    alert("Profilen din er lagret!");
+                success: function(){
+                    var modalSuccess = document.getElementById("alertSuccess");
+                    modalSuccess.style.display = "block";
                 },
-                error: function(data) {
-                    console.log(data);
+                error: function() {
+                    var modalError = document.getElementById("alertError");
+                    modalError.style.display = "block";
                 }
-
             });
-
         }
     })
 };
@@ -36,7 +33,6 @@ var getUser = function() {
         url: 'session',
         type: 'GET',
         success: function(data){
-            console.log(data);
             $.ajax({
                 url: 'users/' + data.epost,
                 type: 'GET',
@@ -56,6 +52,5 @@ var getUser = function() {
             alert(data.responseJSON.message);
         }
     });
-
 };
 getUser();
