@@ -77,5 +77,5 @@ var makeBooking = function (e) {
     });*/
 };
 
-makeBooking(thisBook);
+//makeBooking(thisBook);
 getClassesForBooking(date);

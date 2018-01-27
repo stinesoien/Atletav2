@@ -51,7 +51,7 @@ var getReservations = function () {
 };
 
 var deleteReservations = function (e) {
-    getReservations();
+    //getReservations();
     var test = $(e).data("id");
     //document.getElementById("deleteReservation").style.visibility="hidden";
     $.ajax({
@@ -66,5 +66,5 @@ var deleteReservations = function (e) {
 
 };
 
-getReservations();
-deleteReservations(thisReservation);
+//getReservations();
+//deleteReservations(thisReservation);

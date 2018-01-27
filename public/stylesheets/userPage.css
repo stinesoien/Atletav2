@@ -34,13 +34,13 @@
     font-size: 40px;
     padding: 3%;
     width: 26%;
-    height: 8%;
+    height: 16.9%;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
-    position:relative;
-    left: 20.3em;
-    top: -10em;
+    position:absolute;
+    left: 60vw;
+    top: 10vw;
 }
 
 .endreInfoBtn h3 {
@@ -172,8 +172,8 @@
     cursor: pointer;
     margin: 5px;
     position:absolute;
-    left: 20.25em;
-    top: 7em;
+    left: 60vw;
+    top: 22vw;
 }
 
 .workoutProgBtn h3 {
@@ -353,8 +353,8 @@
     transition: all 0.5s;
     margin: 5px;
     position:absolute;
-    left: 20.3em;
-    top: 11.5em;
+    left: 60vw;
+    top: 34vw;
     cursor: pointer;
 }
 
@@ -447,6 +447,7 @@
     padding-top: 4%;
 }
 .modal-contentPsw {
+    margin-top: 0.5%;
     width: 40%;
     height: 83%;
     display: inline-block;

@@ -2,8 +2,7 @@
 .navbar {
     left:0;
     overflow: hidden;
-    background-color: #ad3232;
-    opacity: 0.8;
+    background-color: #ad4747;
     position: fixed; /* Set the navbar to fixed position */
     top: 1.5%; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */

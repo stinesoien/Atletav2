@@ -4,9 +4,13 @@ html
         script(type="text/javascript", src="js/jquery-3.2.1.js")
     body
         .navbar
-            a(href="/#main")#logo ATLETA
+            if user
+                a(href="/#mainLogedIn")#logo ATLETA
+            else
+                a(href='/#main')#logo ATLETA
             a.scroll-classes(href="/#groupclasses") Gruppetimer
             a.scroll-gyms(href="/#gyms") Sentre
+            a.scroll-prices(href='/#information') Priser
             a.scroll-PT(href="/#PTinformation") Personlig Trener
             if user
                 a.scroll-booking(href="/#booking") Timeplan
