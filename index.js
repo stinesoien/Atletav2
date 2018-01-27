@@ -91,7 +91,6 @@ app.get('/', function(req, res){
 });
 
 
-
 //BOOKING
 
 //Bruker getBooking-funskjonen for å utføre SQL-spørring til å finne gruppetimer på en spesifikk dato.
@@ -111,8 +110,6 @@ app.post('/booking', function(req, res){
         res.status(401).json({message: "you are not logged in."});
     }
 });
-
-
 
 //RESERVASJONER
 
@@ -142,7 +139,6 @@ app.get('/error', function(req, res){
     res.send('Login Failed');
 });
 
-
 app.get('/callback', passport.authenticate('local', {failtureRedirect: '/error'}), function(req, res){
     res.redirect('/');
 });
@@ -159,7 +155,6 @@ app.get('/logout', function(req, res) {
     req.logOut();
     res.redirect('/');
 });
-
 
 
 //ENDRE BRUKER-INFORMASJON
@@ -184,14 +179,12 @@ app.put('/users/:email', function(req, res) {
 });
 
 
-
 //ENDRE PASSORD
 
 //Bruker updatePassword-funskjonen for å utføre SQL-spørringen som oppdaterer det gamle passordet til det nye brukeren har skrevet inn.
 app.put('/updatePassword', function (req, res) {
     editPasswordController.updatePassword(req,res);
 });
-
 
 
 //EN NY BRUKER BLIR MEDLEM
@@ -201,21 +194,6 @@ app.post('/newUser', function (req, res) {
     registerController.register(req,res);
 
 });
-
-
-
-//ALERTS
-
-//Laster suksess-alerten
-app.get('/alertSuccess', function (req, res) {
-    res.render('alertSuccess');
-});
-
-//Laster feilvarsel-alerten
-app.get('/alertError', function (req, res) {
-    res.render('alertError');
-});
-
 
 
 //GRUPPETIMER

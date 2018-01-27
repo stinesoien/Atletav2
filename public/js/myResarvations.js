@@ -39,7 +39,7 @@ var getReservations = function () {
                     thisReservation = data[i].b_id;
                     console.log("thisReservation:" + thisReservation);
                     document.getElementById("oneReservation").innerHTML += '<div id="reservation">' + JSON.stringify("        " + data[i].b_name + "          " + data[i].time + "         " + data[i].dateFormat).replace(/\"/g, "")
-                        + '<button type="button" id="deleteReservation" onclick="deleteReservations(this); window.location.reload(true);" data-id=' + thisReservation + '>Avbestill time</button>' + '</div>';
+                        + '<button type="button" id="deleteReservation" onclick="deleteReservations(this); window.location.reload(true);" data-id=' + thisReservation + '>Avbestill </button>' + '</div>';
                 }
             }
         }
