@@ -30,6 +30,8 @@ $('#form').submit(function(e){
 var newUserBtn = document.getElementById("newBtn");
 var newUserPop = document.getElementById("modalNew");
 var closeNewBtn = document.getElementById("closeNew");
+var closeError = document.getElementById("closeErr");
+var errorPop = document.getElementById("alertError");
 
 //Lukker når klikker utenfor
 window.onclick = function (event) {
@@ -46,4 +48,8 @@ newUserBtn.onclick = function () {
 // Lukker popup ved å trykke på x
 closeNewBtn.onclick = function () {
     newUserPop.style.display = "none";
+};
+
+closeError.onclick = function () {
+    errorPop.style.display = "none";
 };

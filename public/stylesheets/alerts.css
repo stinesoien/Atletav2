@@ -30,6 +30,7 @@
     transition: all 200ms;
     margin-left: 84%;
     margin-top: -1%;
+    cursor: pointer;
 }
 
 #closePopError{
@@ -40,6 +41,7 @@
     transition: all 200ms;
     margin-left: 84%;
     margin-top: -1%;
+    cursor: pointer;
 }
 
 .modal-contentSuccess {
@@ -90,4 +92,16 @@
     padding-top: 4%;
     background-color: rgb(255,255,255);
     background-color: rgba(255,255,255,0.5);
+}
+
+#closeErr {
+    color: darkgrey;
+    font-family: "Heiti TC";
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    transition: all 200ms;
+    margin-left: 84%;
+    margin-top: -1%;
+    cursor: pointer;
 }
